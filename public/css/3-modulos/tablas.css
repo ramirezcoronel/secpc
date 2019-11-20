@@ -1,0 +1,35 @@
+.tabla {
+  color: #333;
+  font-family: Helvetica, Arial, sans-serif;
+  background: #fff;
+  border-collapse: collapse;
+  min-width: 100px;
+}
+.tabla-secundaria {
+  color: #fff;
+  background-color: transparent;
+}
+
+.tabla input {
+  width: 100%;
+  height: 100%;
+}
+.tabla td,
+.tabla th {
+  text-align: center;
+  border: 2px solid #333;
+  height: 30px;
+}
+
+.tabla tr td:first-child {
+  padding: 5px 10px;
+}
+.tabla tbody:nth-child(even) td {
+  color: #333;
+  background: #f1f1f1;
+}
+
+.tabla tbody:nth-child(odd) td {
+  color: #333;
+  background: #c5c5c5;
+}

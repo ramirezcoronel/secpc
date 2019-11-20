@@ -1,0 +1,69 @@
+.form {
+  color: #fff;
+  font-family: helvetica, sans-serif;
+  height: auto;
+  padding: 20px;
+  background: rgba(3, 3, 3, 0.7);
+  box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+.form__box {
+  margin-bottom: 10px;
+}
+
+.select {
+  padding: 5px 10px;
+  cursor: pointer;
+  text-decoration: none;
+  background: #e64c3c;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+}
+.form fieldset legend {
+  margin-bottom: 10px;
+  border: none;
+}
+.form__box input {
+  font-size: 1em;
+  text-align: center;
+  padding: 5px;
+  margin: auto;
+  display: inline-block;
+  border-radius: 5px;
+  border: none;
+  border-bottom: 3px solid #e64c3c;
+}
+
+/* variantes */
+.agrandar {
+  transform: scale(1.2);
+}
+
+.botonForm {
+  color: #333;
+  font-weight: 600;
+  text-decoration: underline;
+  margin: 0 5px;
+}
+
+.select {
+  
+}
+
+input.grande {
+  width: 100%;
+}
+input.pequeño {
+  width: 100px;
+}
+/* JAVASCRIPT */
+.desaparecer {
+  display: none;
+  transition: display 2s ease;
+}
+.aparecer {
+  display: inline-block;
+  margin-bottom: 0;
+}

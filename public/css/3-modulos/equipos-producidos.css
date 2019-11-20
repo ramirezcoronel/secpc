@@ -1,0 +1,50 @@
+.produccion {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.733);
+}
+.produccion h2 {
+  background: #e64c3c;
+  text-align: center;
+  color: #eee;
+  height: 60px;
+  line-height: 60px;
+  font-family: helvetica, sans-serif;
+}
+.produccion__equipos {
+  min-height: 300px;
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+.equipos__laptops,
+.equipos__tablets {
+  width: 50%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.equipos__tablets {
+  float: right;
+}
+.produccion__equipos ul {
+  list-style: none;
+}
+.produccion__equipos p,
+.produccion__equipos li {
+  font-size: 2em;
+  font-family: helvetica;
+  font-weight: bold;
+  color: #333;
+}
+.produccion__equipos li {
+  font-size: 1em;
+}
+.produccion__equipos img {
+  height: 200px;
+}
