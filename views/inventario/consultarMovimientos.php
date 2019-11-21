@@ -44,7 +44,7 @@
       </div>
       
       <div class="centrar">
-        <a href="<?php echo constant('URL')?>inventario/agregar" class="boton margin-lados">Agregar</a>
+        <a href="<?php echo constant('URL')?>inventario/agregarMovimiento" class="boton margin-lados">Agregar</a>
         <a href="<?php echo constant('URL')?>inventario" class="boton margin-lados">Volver</a>
       </div>
   

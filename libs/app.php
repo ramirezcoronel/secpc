@@ -51,10 +51,9 @@
             		for ($i=2; $i < $nparam; $i++) { 
             			array_push($param, $url[$i]);
             		}
-
-            		$controller->{$url[1]}($param);
+                $controller->load($url[1], $param);
             	}else {
-            		$controller->{$url[1]}();
+            		$controller->load($url[1]);
             	}
             } else {
             	$controller->render();
