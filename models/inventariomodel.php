@@ -7,18 +7,20 @@
 
   //CRUDS
 
-  require 'source/modelo/CRUD.php';
+  require 'source/modelos/CRUD.php';
+  require 'source/marcas/CRUD.php';
 
 
   class InventarioModel extends Model {
 
     public $modelos;
+    public $marcas;
 
     function __construct() {
         parent::__construct();
 
         $this->modelos = new modelosCRUD();
-
+        $this->marcas = new marcasCRUD();
     }
 
     
@@ -227,156 +229,6 @@
           return false;
         }
     }
-
-   /***************************************************************************
-              CRUD DE MODELOS
-
-  ***************************************************************************/
-
-    function insertModelo ($data) {
-
-      try{
-        $query = $this->db->connect()->prepare('INSERT INTO modelos (idmodelo, nommodelo, estatusmodelo, idmarca) VALUES(:idmodelo, :nommodelo, :estatusmodelo, :idmarca)');
-
-        $query->execute(['idmodelo'=>$data['idmodelo'], 'nommodelo'=>$data['nommodelo'],  'estatusmodelo'=>$data['estatusmodelo'], 'idmarca'=>$data['idmarca']]);
-        
-        return true;
-      } catch(PDOException $e){
-        echo $e->getMessage();
-        return false;
-      }
-    }
-
-
-    function getModelos ($id = null) {
-      $items = [];
-      try {
-        if ( isset($id) ) {
-          $query = $this->db->connect()->prepare('SELECT * FROM modelos WHERE idmodelo = :id');
-          $query->execute(['id'=>$id]);
-        }else {
-
-         $query = $this->db->connect()->query('SELECT * FROM modelos');
-        }
-
-        while($row = $query->fetch()){
-          $item = new ModelosClass();
-          
-          $item->setId($row['idmodelo']);
-          $item->setNombre($row['nommodelo']);
-          $item->setEstatus($row['estatusmodelo']);
-
-          array_push($items, $item);
-        }
-        return $items;
-      } catch (PDOException $e) {
-        return [];
-      }
-    }
-
-    public function deleteModelo ($id) {
-      try{
-          $query = $this->db->connect()->prepare('DELETE FROM modelos WHERE idmodelo = :id');
-
-          $query->execute(['id'=>$id]);
-          
-          return true;
-        } catch(PDOException $e){
-          echo $e->getMessage();
-          return false;
-        }
-    }
-
-    function updateModelo ($data) {
-      try{
-          $query = $this->db->connect()->prepare('UPDATE modelos SET nommodelo = :nommodelo, estatusmodelo = :estatusmodelo, idmarca = :idmarca WHERE idmodelo = :idmodelo');
-
-          $query->execute(['idmodelo'=>$data['idmodelo'], 'nommodelo'=>$data['nommodelo'],'estatusmodelo'=>$data['estatusmodelo'],'idmarca'=>$data['idmarca']]);
-
-          return true;
-        } catch(PDOException $e){
-          echo $e->getMessage();
-          return false;
-        }
-    }
-
-    
-
-
-    
-
-    
-
-    /***************************************************************************
-              CRUD DE MARCAS
-
-  ***************************************************************************/
-
-    function insertMarca ($data) {
-      try{
-          $query = $this->db->connect()->prepare('INSERT INTO marca (id,nombre,estatus ) VALUES(:id, :nombre, :estatus)');
-
-          $query->execute(['id'=>$data['id'], 'nombre'=>$data['nombre'],'estatus'=>$data['estatus']]);
-          
-          return true;
-        } catch(PDOException $e){
-          echo $e->getMessage();
-          return false;
-        }
-    }
-
-    function getMarca ($id = null) {
-      $items = [];
-      try {
-        if ( isset($id) ) {
-          $query = $this->db->connect()->prepare('SELECT * FROM marca WHERE id = :id');
-          $query->execute(['id'=>$id]);
-        }else {
-
-         $query = $this->db->connect()->query('SELECT * FROM marca');
-        }
-
-        while($row = $query->fetch()){
-          $item = new MarcasClass();
-          
-          $item->setId($row['id']);
-          $item->setNombre($row['nombre']);
-          $item->setEstatus($row['estatus']);
-
-          array_push($items, $item);
-        }
-        return $items;
-      } catch (PDOException $e) {
-        return [];
-      }
-    }
-
-    function deleteMarca ($id) {
-      try{
-          $query = $this->db->connect()->prepare('DELETE FROM marca WHERE id = :id');
-
-          $query->execute(['id'=>$id]);
-          
-          return true;
-        } catch(PDOException $e){
-          echo $e->getMessage();
-          return false;
-        }
-    }
-
-    function updateMarca ($data) {
-      try{
-          $query = $this->db->connect()->prepare('UPDATE marca SET nombre = :nombre, estatus = :estatus WHERE id = :id');
-
-          $query->execute(['id'=>$data['id'], 'nombre'=>$data['nombre'],'estatus'=>$data['estatus']]);
-          
-          return true;
-        } catch(PDOException $e){
-          echo $e->getMessage();
-          return false;
-        }
-    }
-
   }
 
 ?>

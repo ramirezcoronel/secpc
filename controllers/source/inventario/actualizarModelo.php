@@ -23,7 +23,7 @@ if(isset($_POST['actualizar'])){
 	      $this->view->modelo = $modelo[0];
 
 	      if ( sizeof($modelo) ) {
-	      	$marcas = $this->model->getMarca();
+	      	$marcas = $this->model->marcas->get();
 	   		 $this->view->marcas = $marcas;
 		      $this->view->mensaje = 'Rellene los campos';
 			  $this->view->render('inventario/actualizarModelo');

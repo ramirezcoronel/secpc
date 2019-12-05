@@ -1,6 +1,6 @@
 <?php  
 
-		$marcas = $this->model->getMarca();
+		$marcas = $this->model->marcas->get();
 		$this->view->marcas = $marcas;
 
 		$this->view->render('inventario/consultarMarca');

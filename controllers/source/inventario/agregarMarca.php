@@ -4,7 +4,7 @@
       $id = ($_POST['id'] !== "") ? $_POST['id'] : NULL;
       $estatus = 1;
   
-      if ($this->model->insertMarca(['nombre'=>$nombre, 'id'=>$id, 'estatus'=>$estatus])){
+      if ($this->model->marcas->insert(['nombre'=>$nombre, 'id'=>$id, 'estatus'=>$estatus])){
 
       	$this->view->mensaje = 'Agregado Exitosamente';
 

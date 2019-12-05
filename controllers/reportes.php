@@ -26,7 +26,7 @@
 
 			$pdf->Cell(50,10, $row->getId(), 1, 0,'c', 0);
 			$pdf->Cell(50,10, $row->getEstatus(), 1, 0,'c', 0);
-			$pdf->Cell(50,10, $row->getMarca(), 1, 0,'c', 0);
+			$pdf->Cell(50,10, $row->get(), 1, 0,'c', 0);
 		    $pdf->Ln(10);//salto de linea
 			
 		}

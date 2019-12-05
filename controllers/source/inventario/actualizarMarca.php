@@ -4,7 +4,7 @@
 	  $id = ($_POST['id'] !== "") ? $_POST['id'] : NULL;
 	  $estatus = 1;
 
-	  if ($this->model->updateMarca(['nombre'=>$nombre, 'id'=>$id, 'estatus'=>$estatus])){
+	  if ($this->model->marcas->update(['nombre'=>$nombre, 'id'=>$id, 'estatus'=>$estatus])){
 
 	  	$this->view->mensaje = 'Actualizado Exitosamente';
 
@@ -18,7 +18,7 @@
 
 	}else{
 	  
-	  $marca = $this->model->getMarca($param[0]);
+	  $marca = $this->model->marcas->get($param[0]);
 	  $this->view->marca = $marca[0];
 
 	  if ( sizeof($marca) ) {

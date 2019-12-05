@@ -17,7 +17,7 @@
 	  $this->view->mensaje = 'Rellene los campos';
 	}
 
-	$marcas = $this->model->getMarca();
+	$marcas = $this->model->marcas->get();
 	$this->view->marcas = $marcas;
 
 	$this->view->render('inventario/agregarModelo');
