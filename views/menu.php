@@ -25,7 +25,7 @@
     </a>
     </li>
     <li >
-    <a href="<?php echo constant('URL')?>stressing" title="Stressing">
+    <a href="<?php echo constant('URL')?>pruebas" title="Pruebas">
         <img src="<?php echo constant('URL')?>public/img/stressing.png" />
     </a>
   </li>

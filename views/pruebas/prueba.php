@@ -19,7 +19,7 @@
     </div>
     <div class="form__box esquinas">
 
-      <form class="form" method="POST" name="formulario" action="<?php echo constant('URL')?>stressing/prueba">
+      <form class="form" method="POST" name="formulario" action="<?php echo constant('URL')?>pruebas/prueba">
         <div class="form__box esquinas">
           <span>Tipo de Prueba</span>
           <select name="codprueba" class="select" id="select">
@@ -55,7 +55,7 @@
         <textarea name="observacion" placeholder="Escriba la observacion del equipo que no pasó la prueba">
         </textarea>
         <button type="submit" name="agregar" id="btn" class="boton" value="agregar">Agregar</button>
-        <a href="<?php echo constant('URL')?>stressing/render" class="boton margin-lados" >Atras</a>
+        <a href="<?php echo constant('URL')?>pruebas/render" class="boton margin-lados" >Atras</a>
       </form>
       <div class="form"> 
         <table class="tabla tabla-secundaria">

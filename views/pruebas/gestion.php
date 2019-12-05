@@ -26,12 +26,12 @@
                 </td>
                 <tr>
                   <td>
-                  <div class="centrar"><a href="<?php echo constant('URL')?>stressing/agregarPrueba" class="boton margin-lados" >Agregar Prueba</a></div>
+                  <div class="centrar"><a href="<?php echo constant('URL')?>pruebas/agregarPrueba" class="boton margin-lados" >Agregar Prueba</a></div>
                   </td>
                 </tr>
                 <tr>
                   <td>
-                    <div class="centrar"><a href="<?php echo constant('URL')?>stressing/render" class="boton margin-lados" >Atras</a></div>
+                    <div class="centrar"><a href="<?php echo constant('URL')?>pruebas" class="boton margin-lados" >Atras</a></div>
                   </td>
                 </tr>
             </table>
@@ -52,8 +52,8 @@
                 <td><?php echo $stressing->getNombre(); ?></td>
                 <td><?php echo $stressing->getDes(); ?></td>
                 <td><?php echo $stressing->getDuracin(); ?></td>
-                <td><a class="botonForm" href="<?php echo constant('URL')?>stressing/actualizarPrueba/<?php echo $stressing->getCod()?>">Modificar</a></td>
-                <td><a id="eliminar" class="botonForm" href="<?php echo constant('URL')?>stressing/eliminarPrueba/<?php echo $stressing->getCod()?>">Eliminar</a></td>
+                <td><a class="botonForm" href="<?php echo constant('URL')?>pruebas/actualizarPrueba/<?php echo $stressing->getCod()?>">Modificar</a></td>
+                <td><a id="eliminar" class="botonForm" href="<?php echo constant('URL')?>pruebas/eliminarPrueba/<?php echo $stressing->getCod()?>">Eliminar</a></td>
               </tr>
                 <?php } ?>
             </table>

@@ -29,10 +29,10 @@
     </td>
     <tr>
       <td>
-      <div class="centrar"><a href="<?php echo constant('URL')?>stressing/gestion" class="boton margin-lados" >Gestionar Prueba</a></div>
+      <div class="centrar"><a href="<?php echo constant('URL')?>pruebas/gestion" class="boton margin-lados" >Gestionar Prueba</a></div>
      </td>
      <td>
-       <div class="centrar"><a href="<?php echo constant('URL')?>stressing/prueba" value="prueba" class="boton margin-lados" >Realizar Prueba</a></div>
+       <div class="centrar"><a href="<?php echo constant('URL')?>pruebas/prueba" value="prueba" class="boton margin-lados" >Realizar Prueba</a></div>
      </td>
     </tr>
 </table>

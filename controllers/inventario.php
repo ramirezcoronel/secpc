@@ -9,10 +9,9 @@ class Inventario extends Controller {
 	  $this->view->render('inventario/index');
 	}
 
-
 	public function load ($metodo, $param = null) {
 
-		$ruta = 'inventario/'.$metodo.'.php';
+		$ruta = 'source/inventario/'.$metodo.'.php';
 
 		require_once $ruta;
 	}

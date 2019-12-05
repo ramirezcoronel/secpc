@@ -18,7 +18,7 @@
     <form  action="gestionar_usuarios.php" method="POST" class="form">
       <div class="form__box">
         
-        <a href="<?php echo constant('URL')?>stressing/gestion" class="boton">Volver a gestion de prueba</a>
+        <a href="<?php echo constant('URL')?>pruebas/gestion" class="boton">Volver a gestion de prueba</a>
         </div>
       </form>
     </main>

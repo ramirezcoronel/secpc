@@ -1,6 +1,6 @@
 <?php
-  require 'libs/classes/stressing.class.php';
-  class stressingModel extends Model {
+  require 'libs/classes/pruebas.class.php';
+  class pruebasModel extends Model {
 
     function __construct() {
         parent::__construct();
