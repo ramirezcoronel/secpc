@@ -37,15 +37,18 @@
             require_once $archivoController; 
 
             //inicializar el controlador
-            $controller = new $url[0];
+            $controller = new $url[0]; //URL[0] es el controlador
             $controller->loadModel($url[0]);
+             
             $controller->setUsuario($_SESSION['usuario']);
 
-            // # elementos del array
+            // # elementos del array URL
             $nparam = sizeof($url);
 
             if ($nparam > 1) {
+
             	if ($nparam > 2) {
+
             		$param = [];
 
             		for ($i=2; $i < $nparam; $i++) { 
@@ -56,7 +59,7 @@
             		$controller->load($url[1]);
             	}
             } else {
-            	$controller->render();
+              $controller->render();
             }
             
           } else { //en caso de que no encuentre el archivo...
