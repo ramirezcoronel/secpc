@@ -9,7 +9,7 @@ class Usuarios extends Controller{
   function render () {
     $this->view->mensaje = 'Esta pagina controla los usuarios';
     
-    $usuarios = $this->model->get();
+    $usuarios = $this->model->usuarios->get();
     $this->view->usuarios = $usuarios;
     
     $this->view->render('usuarios/index');

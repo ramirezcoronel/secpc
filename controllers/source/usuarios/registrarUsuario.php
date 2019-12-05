@@ -9,7 +9,7 @@
       $pass     = ($_POST['pass'] !== "") ? $_POST['pass'] : NULL;
       $estatus     = ($_POST['estatus'] !== "") ? $_POST['estatus'] : NULL;
   
-      if ($this->model->insert(['nombreUsuario'=>$nombre, 'apellidoUsuario'=>$apellido, 'passUsuario'=>$pass, 'rolUsuario'=>$rol, 'cedulaUsuario'=>$cedula, 'estatusUsuario'=>$estatus, 'username'=>$username])){
+      if ($this->model->usuarios->insert(['nombreUsuario'=>$nombre, 'apellidoUsuario'=>$apellido, 'passUsuario'=>$pass, 'rolUsuario'=>$rol, 'cedulaUsuario'=>$cedula, 'estatusUsuario'=>$estatus, 'username'=>$username])){
         $this->view->mensaje = 'Usuario agregado exitosamente!.';
       }else{
         $this->view->mensaje = 'Ha ocurrido un error.';

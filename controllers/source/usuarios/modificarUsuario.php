@@ -10,7 +10,7 @@
       $pass     = ($_POST['pass'] !== "") ? $_POST['pass'] : NULL;
       $estatus     = ($_POST['estatus'] !== "") ? $_POST['estatus'] : NULL;
 
-      if ($this->model->update(['nombreUsuario'=>$nombre, 'apellidoUsuario'=>$apellido, 'passUsuario'=>$pass, 'rolUsuario'=>$rol, 'estatusUsuario'=>$estatus, 'username'=>$username, 'cedulaUsuario'=>$cedula])){
+      if ($this->model->usuarios->update(['nombreUsuario'=>$nombre, 'apellidoUsuario'=>$apellido, 'passUsuario'=>$pass, 'rolUsuario'=>$rol, 'estatusUsuario'=>$estatus, 'username'=>$username, 'cedulaUsuario'=>$cedula])){
         $this->view->mensaje = 'Usuario Modificado exitosamente!.';
 
       }else{
@@ -22,7 +22,7 @@
 
       $cedula     = ($_POST['cedula'] !== "") ? $_POST['cedula'] : NULL;
 
-      $usuarios = $this->model->search($cedula);
+      $usuarios = $this->model->usuarios->search($cedula);
 
 
       if (isset($usuarios)){
