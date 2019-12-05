@@ -6,7 +6,7 @@ if(isset($_POST['actualizar'])){
 	      $idmarca = ($_POST['idmarca'] !== "") ? $_POST['idmarca'] : NULL;
 
 
-	      if ($this->model->updateModelo(['idmodelo'=>$idmodelo, 'nommodelo'=>$nommodelo, 'estatusmodelo'=>$estatusmodelo, 'idmarca'=>$idmarca])){
+	      if ($this->model->modelos->update(['idmodelo'=>$idmodelo, 'nommodelo'=>$nommodelo, 'estatusmodelo'=>$estatusmodelo, 'idmarca'=>$idmarca])){
 
 	      	$this->view->mensaje = 'Actualizado Exitosamente';
 
@@ -18,7 +18,7 @@ if(isset($_POST['actualizar'])){
 
 	    }else{
           
-	      $modelo = $this->model->getModelos($param[0]);
+	      $modelo = $this->model->modelos->get($param[0]);
 
 	      $this->view->modelo = $modelo[0];
 

@@ -8,7 +8,7 @@
 	  $idmarca = ($_POST['idmarca'] !== "") ? $_POST['idmarca'] : NULL;
 
 
-	  if ($this->model->insertModelo(['idmodelo'=>$idmodelo, 'nommodelo'=>$nommodelo, 'estatusmodelo'=>$estatusmodelo, 'idmarca'=>$idmarca])){
+	  if ($this->model->modelos->insert(['idmodelo'=>$idmodelo, 'nommodelo'=>$nommodelo, 'estatusmodelo'=>$estatusmodelo, 'idmarca'=>$idmarca])){
 	    $this->view->mensaje = 'Modelo agregado exitosamente!.';
 	  }else{
 	    $this->view->mensaje = 'Ha ocurrido un error.';

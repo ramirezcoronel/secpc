@@ -5,26 +5,23 @@
   require 'libs/classes/movimientos.class.php';
   require 'libs/classes/marcas.class.php';
 
+  //CRUDS
+
+  require 'source/modelo/CRUD.php';
+
 
   class InventarioModel extends Model {
 
+    public $modelos;
+
     function __construct() {
         parent::__construct();
+
+        $this->modelos = new modelosCRUD();
+
     }
 
-    function insertModelo ($data) {
-
-      try{
-        $query = $this->db->connect()->prepare('INSERT INTO modelos (idmodelo, nommodelo, estatusmodelo, idmarca) VALUES(:idmodelo, :nommodelo, :estatusmodelo, :idmarca)');
-
-        $query->execute(['idmodelo'=>$data['idmodelo'], 'nommodelo'=>$data['nommodelo'],  'estatusmodelo'=>$data['estatusmodelo'], 'idmarca'=>$data['idmarca']]);
-        
-        return true;
-      } catch(PDOException $e){
-        echo $e->getMessage();
-        return false;
-      }
-    }
+    
 
     /***************************************************************************
               CRUD DE PARTES
@@ -235,6 +232,20 @@
               CRUD DE MODELOS
 
   ***************************************************************************/
+
+    function insertModelo ($data) {
+
+      try{
+        $query = $this->db->connect()->prepare('INSERT INTO modelos (idmodelo, nommodelo, estatusmodelo, idmarca) VALUES(:idmodelo, :nommodelo, :estatusmodelo, :idmarca)');
+
+        $query->execute(['idmodelo'=>$data['idmodelo'], 'nommodelo'=>$data['nommodelo'],  'estatusmodelo'=>$data['estatusmodelo'], 'idmarca'=>$data['idmarca']]);
+        
+        return true;
+      } catch(PDOException $e){
+        echo $e->getMessage();
+        return false;
+      }
+    }
 
 
     function getModelos ($id = null) {
