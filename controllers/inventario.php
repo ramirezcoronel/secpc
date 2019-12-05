@@ -10,9 +10,9 @@ class Inventario extends Controller {
 	}
 
 
-	public function load ($archivo, $param = null) {
+	public function load ($metodo, $param = null) {
 
-		$ruta = 'inventario/'.$archivo.'.php';
+		$ruta = 'inventario/'.$metodo.'.php';
 
 		require_once $ruta;
 	}

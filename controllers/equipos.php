@@ -216,8 +216,5 @@ class Equipos extends Controller{
       }
 
   }
-
-	
-  
 }
 ?>
