@@ -6,7 +6,7 @@
   	  			$estatus = 1;
   	  			$codequipo = ($_POST['codequipo'] !=="") ? $_POST['codequipo'] : NULL;  	  		
 
-  	  		if ($this->model->updateProducto(['codigo'=>$codigo, 'fecha'=>$fecha, 'estatus'=>$estatus, 'codequipo'=>$codequipo])) {
+  	  		if ($this->model->productos->update(['codigo'=>$codigo, 'fecha'=>$fecha, 'estatus'=>$estatus, 'codequipo'=>$codequipo])) {
   	  			
   	  			$this->view->mensaje = 'Actualizacion de producto exitosa';
 
@@ -20,13 +20,11 @@
 
   	  			}else{	
 
-  	  				$equipo = $this->model->getEquipos($param[0]);
-  	  				$this->view->equipo = $equipo[0];
+  	  				$equipo = $this->model->productos->get($param[0]);
+
+              $this->view->equipo = $equipo[0];
 
   	  				if (sizeof($equipo)) {
-
-  	  					$tipo = $this->model->getCodigoEquipos();
-  	  					$this->view->tipo = $tipo;
   	  					$this->view->mensaje = 'Rellene lo campos';
   	  					$this->view->render('ensamble/actualizarProducto');
 

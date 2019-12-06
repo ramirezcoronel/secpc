@@ -1,6 +1,6 @@
 <?php 
 
-	 if ( $this->model->deleteEquipo($param[0]) ) {
+	 if ( $this->model->equipos->delete($param[0]) ) {
       $this->view->mensaje = 'Equipo Eliminado';
     } else {
       $this->view->mensaje = 'Ha ocurrido un Error';

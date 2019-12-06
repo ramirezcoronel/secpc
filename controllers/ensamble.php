@@ -6,7 +6,7 @@ class Ensamble extends Controller{
 	}
 
 	public function render(){
-		$productos =  $this->model->getProductos();
+		$productos =  $this->model->productos->get();
 		$this->view->productos = $productos;
 
 		$this->view->render('ensamble/index');

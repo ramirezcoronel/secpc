@@ -1,6 +1,6 @@
 <?php 
 
-	if ($this->model->deleteProducto($param[0])) {
+	if ($this->model->productos->drop($param[0])) {
         
           $this->view->mensaje = 'Producto eliminado';
 

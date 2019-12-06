@@ -9,7 +9,7 @@
 	      $codequipo = ($_POST['codequipo'] !== "") ? $_POST['codequipo'] : NULL;
 	      $estatus   = 1;
 
- 			if ($this->model->insertProducto(['codigo'=>$codigo, 'fecha'=>$fecha, 'codequipo'=>$codequipo, 'estatus'=>$estatus])) {
+ 			if ($this->model->productos->insert(['codigo'=>$codigo, 'fecha'=>$fecha, 'codequipo'=>$codequipo, 'estatus'=>$estatus])) {
  				
  					$this->view->mensaje = 'Producto agregado exitosamente';
  			}else{
@@ -22,7 +22,7 @@
 
  			}
 
- 			$equipos = $this->model->getEquipos();
+ 			$equipos = $this->model->equipos->get();
  			$this->view->equipos = $equipos;
  			$this->view->render('ensamble/agregarProducto');
 

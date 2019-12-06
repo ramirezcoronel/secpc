@@ -5,7 +5,7 @@
       $nomTipoEquipo = ($_POST['nomTipoEquipo'] !== "") ? $_POST['nomTipoEquipo'] : NULL;
       $estatusTipoEquipo = 1;
   
-      if ($this->model->insertTipos(['codtipoequipo'=>$codTipoEquipo, 'nomtipoequipo'=>$nomTipoEquipo, 'estatustipoequipo'=>$estatusTipoEquipo])){
+      if ($this->model->tiposequipos->insert(['codtipoequipo'=>$codTipoEquipo, 'nomtipoequipo'=>$nomTipoEquipo, 'estatustipoequipo'=>$estatusTipoEquipo])){
 
         $this->view->mensaje = 'Tipo de equipo agregado exitosamente!.';
 

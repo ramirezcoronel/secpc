@@ -10,15 +10,15 @@
         $nomequipo = ($_POST['nomequipo'] !== "") ? $_POST['nomequipo'] : NULL;
         $estatusequipo = 1;
 
-        if ($this->model->insert(['codtipoequipo'=>$codtipoequipo, 'codequipo'=>$codequipo, 'nomequipo'=>$nomequipo, 'estatusequipo'=>$estatusequipo])){
+        if ($this->model->equipos->insert(['codtipoequipo'=>$codtipoequipo, 'codequipo'=>$codequipo, 'nomequipo'=>$nomequipo, 'estatusequipo'=>$estatusequipo])){
 
           $this->view->mensaje = 'Equipo Agregado exitosamente!.';
 
-          $equipos = $this->model->getEquipos($codequipo);
+          $equipos = $this->model->equipos->get($codequipo);
           $this->view->equipo = $equipos[0];
 
           
-          $partes = $this->model->getPartes();
+          $partes = $this->model->partes->get();
           $this->view->partes = $partes;
           
           $this->view->equipos = $equipos;
@@ -40,15 +40,15 @@
         $estatusparteequipo = 1;
 
     
-        if ($this->model->insertPartesEquipo(['codequipo'=>$codequipo, 'codpartes'=>$codpartes, 'cantidadparteequipo'=>$cantidadparteequipo, 'estatusparteequipo'=>$estatusparteequipo])){
+        if ($this->model->partesequipos->insert(['codequipo'=>$codequipo, 'codpartes'=>$codpartes, 'cantidadparteequipo'=>$cantidadparteequipo, 'estatusparteequipo'=>$estatusparteequipo])){
 
           $this->view->mensaje = 'Partes agregadas a equipo exitosamente!.';
 
-          $equipos = $this->model->getEquipos($codequipo);
+          $equipos = $this->model->equipos->get($codequipo);
           $this->view->equipo = $equipos[0];
 
           
-          $partes = $this->model->getPartes();
+          $partes = $this->model->partes->get();
           $this->view->partes = $partes;
           
           $this->view->equipos = $equipos;
@@ -61,7 +61,7 @@
       }
 
 
-      $tipos = $this->model->get();
+      $tipos = $this->model->tiposequipos->get();
       $this->view->tipos = $tipos;
 
       $this->view->render('equipos/agregar');

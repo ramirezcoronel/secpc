@@ -7,7 +7,7 @@
 
         $data = array('codtipoequipo'=>$codtipoequipo, 'nomequipo'=>$nomequipo);
 
-        if ($this->model->updateTipoEquipo($data)){
+        if ($this->model->tiposequipos->update($data)){
 
           $this->view->mensaje = 'Actualizado Exitosamente';
 
@@ -19,12 +19,12 @@
 
       }else{
           
-        $equipo = $this->model->get($param[0]);
+        $equipo = $this->model->equipos->get($param[0]);
 
         $this->view->equipo = $equipo[0];
 
         if ( sizeof($equipo) ) {
-        $tipos = $this->model->get();
+        $tipos = $this->model->tiposequipos->get();
         $this->view->tipos = $tipos;
         $this->view->mensaje = 'Rellene los campos';
         $this->view->render('equipos/actualizarEquipo');
