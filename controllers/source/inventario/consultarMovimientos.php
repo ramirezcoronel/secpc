@@ -1,5 +1,5 @@
 <?php 
-	$movimientos = $this->model->getMovimientos();
+	$movimientos = $this->model->movimientos->get();
 		$this->view->movimientos = $movimientos;
 		$this->view->render('inventario/consultarMovimientos');
  ?>

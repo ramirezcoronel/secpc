@@ -10,15 +10,12 @@
 	      $fecha = ($_POST['fecha'] !== "") ? $_POST['fecha'] : NULL;
 	      $estatus = ($_POST['estatus'] !== "") ? $_POST['estatus'] : NULL;
 
-	      
-
-	      	  
-	      if ($this->model->insertMovimiento(['num'=>$num, 'tipo'=>$tipo, 'hora'=>$hora, 'fecha'=>$fecha, 'estatus'=>$estatus])){
+	      if ($this->model->movimientos->insert(['num'=>$num, 'tipo'=>$tipo, 'hora'=>$hora, 'fecha'=>$fecha, 'estatus'=>$estatus])){
 	        $this->view->mensaje = 'Movimiento Agregado exitosamente!.';
 
-	        $movimiento = $this->model->getMovimiento(['num'=>$num ]);
+			$movimiento = $this->model->movimientos->get(['num'=>$num ]);
 
-	        $this->view->movimiento = $movimiento;
+	        $this->view->movimiento = $movimiento[0];
 	        $this->view->visible = true;
 
 	      }else{
@@ -38,12 +35,12 @@
 	      $estatus = 1;
 
 	  
-	      if ($this->model->insertInventario(['codparte'=>$codparte, 'nummovimiento'=>$num, 'cantidadparte'=>$cantidadparte, 'estatus'=>$estatus, 'numserialfabricante'=>$numserialfabricante])){
+	      if ($this->model->movimientos->insertInventario(['codparte'=>$codparte, 'nummovimiento'=>$num, 'cantidadparte'=>$cantidadparte, 'estatus'=>$estatus, 'numserialfabricante'=>$numserialfabricante])){
 
-	        if ( $this->model->updateParte(['codpartes'=>$codparte, 'cantidadparte'=>$cantidadparte], $tipo)) {
+	        if ( $this->model->partes->update(['codpartes'=>$codparte, 'cantidadparte'=>$cantidadparte], $tipo)) {
 	        	$this->view->mensaje = 'Agregado exitosamente';
 
-	        	$movimiento = $this->model->getMovimientos($num);
+	        	$movimiento = $this->model->movimientos->get(['num'=>$num ]);
 
 		        $this->view->movimiento = $movimiento[0];
 		        $this->view->visible = true;
@@ -56,9 +53,9 @@
 	    }
 
 
-	    $partes = $this->model->getPartes();
+	    $partes = $this->model->partes->get();
     	$this->view->partes = $partes;
 
-		$this->view->render('inventario/agregar');
+		$this->view->render('inventario/agregarMovimiento');
 
  ?>

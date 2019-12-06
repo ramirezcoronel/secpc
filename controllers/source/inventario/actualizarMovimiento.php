@@ -7,7 +7,7 @@
 	      $fecha = ($_POST['fecha'] !== "") ? $_POST['fecha'] : NULL;
 
 
-	      if ($this->model->updateMovimiento(['num'=>$num, 'tipo'=>$tipo, 'hora'=>$hora, 'fecha'=>$fecha])){
+	      if ($this->model->movimientos->update(['num'=>$num, 'tipo'=>$tipo, 'hora'=>$hora, 'fecha'=>$fecha])){
 
 	      	$this->view->mensaje = 'Actualizado Exitosamente';
 
@@ -21,7 +21,7 @@
 
 	    }else{
          
-	    	$movimiento = $this->model->getMovimientos($param[0]);
+	    	$movimiento = $this->model->movimientos->get($param[0]);
 	        $this->view->movimiento = $movimiento[0];
 
 

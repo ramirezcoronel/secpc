@@ -8,7 +8,7 @@
 	      $puntoreorden = ($_POST['puntoreorden'] !== "") ? $_POST['puntoreorden'] : NULL;
 	      $estatus = 1;
 	  
-	      if ($this->model->insertPartes(['idmodelo'=>$idmodelo, 'serializable'=>$serializable, 'codpartes'=>$codpartes, 'stockmaximo'=>$stockmaximo, 'stockminimo'=>$stockminimo, 'puntoreorden'=>$puntoreorden, 'estatus'=>$estatus])){
+	      if ($this->model->partes->insert(['idmodelo'=>$idmodelo, 'serializable'=>$serializable, 'codpartes'=>$codpartes, 'stockmaximo'=>$stockmaximo, 'stockminimo'=>$stockminimo, 'puntoreorden'=>$puntoreorden, 'estatus'=>$estatus])){
 	        $this->view->mensaje = 'Partes agregadas exitosamente!.';
 	      }else{
 	        $this->view->mensaje = 'Ha ocurrido un error.';
@@ -17,7 +17,7 @@
 	      $this->view->mensaje = 'Rellene los campos';
 	    }
 
-	    $modelos = $this->model->getModelos();
+	    $modelos = $this->model->modelos->get();
 	    $this->view->modelos = $modelos;
 
 		$this->view->render('inventario/agregarPartes');

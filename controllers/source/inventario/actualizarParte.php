@@ -9,7 +9,7 @@
 	      $puntoreorden = ($_POST['puntoreorden'] !== "") ? $_POST['puntoreorden'] : NULL;
 	      $estatus = 1;
 
-	      if ($this->model->updateParte(['idmodelo'=>$idmodelo, 'serializable'=>$serializable, 'codpartes'=>$codpartes, 'stockmaximo'=>$stockmaximo, 'stockminimo'=>$stockminimo, 'puntoreorden'=>$puntoreorden])){
+	      if ($this->model->partes->update(['idmodelo'=>$idmodelo, 'serializable'=>$serializable, 'codpartes'=>$codpartes, 'stockmaximo'=>$stockmaximo, 'stockminimo'=>$stockminimo, 'puntoreorden'=>$puntoreorden])){
 
 	      	$this->view->mensaje = 'Actualizado Exitosamente';
 
@@ -23,10 +23,10 @@
 
 	    }else{
           
-	      $parte = $this->model->getPartes($param[0]);
+	      $parte = $this->model->partes->get($param[0]);
 	      $this->view->parte = $parte[0];
 
-	       $modelos = $this->model->getModelos();
+	       $modelos = $this->model->modelos->get();
 	       $this->view->modelos = $modelos;
 
 	      if ( sizeof($parte) ) {

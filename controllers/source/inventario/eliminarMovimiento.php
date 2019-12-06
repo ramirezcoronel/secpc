@@ -1,6 +1,6 @@
 <?php 
 
-	if ( $this->model->deleteMovimiento($param[0]) ) {
+	if ( $this->model->movimientos->drop($param[0]) ) {
 			$this->view->mensaje = 'Movimiento Eliminado';
 		} else {
 			$this->view->mensaje = 'Ha ocurrido un Error';

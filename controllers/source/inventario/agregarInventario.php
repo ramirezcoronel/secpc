@@ -6,13 +6,13 @@
 	      $numserialfabricante = ($_POST['numserialfabricante'] !== "") ? $_POST['numserialfabricante'] : NULL;
 	      $estatus = ($_POST['estatus'] !== "") ? $_POST['estatus'] : NULL;
 
-	      $movimiento = $this->model->getMovimientos(['num' => $nummovimiento]);
+	      $movimiento = $this->model->movimientos->get(['num' => $nummovimiento]);
 	      $tipo = $movimiento->getTipo();
 
 	  
-	      if ($this->model->insertInventario(['codparte'=>$codparte, 'nummovimiento'=>$nummovimiento, 'cantidadparte'=>$cantidadparte, 'estatus'=>$estatus, 'numserialfabricante'=>$numserialfabricante])){
+	      if ($this->model->movimientos->insertInventario(['codparte'=>$codparte, 'nummovimiento'=>$nummovimiento, 'cantidadparte'=>$cantidadparte, 'estatus'=>$estatus, 'numserialfabricante'=>$numserialfabricante])){
 
-	        if ( $this->model->updateParte(['codparte'=>$codparte, 'cantidadparte'=>$cantidadparte, 'tipo' => $tipo])) {
+	        if ( $this->model->partes->update(['codparte'=>$codparte, 'cantidadparte'=>$cantidadparte, 'tipo' => $tipo])) {
 	        	$this->view->mensaje = 'Agregado exitosamente';
 	        }
 
@@ -24,11 +24,11 @@
 	      $this->view->mensaje = 'Rellene los campos';
 	    }
 
-	    $partes = $this->model->getPartes();
+	    $partes = $this->model->partes->get();
     	$this->view->partes = $partes;
 
 
-    	$movimientos = $this->model->getMovimientos();
+    	$movimientos = $this->model->movimientos->get();
     	$this->view->movimientos = $movimientos;
 
 
