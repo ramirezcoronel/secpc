@@ -28,7 +28,7 @@
     }
     function cambiar($password){
        try {
-        $query = $this->db->connect()->prepare(' UPDATE usuariosusuario SET contrasenausuario = :password WHERE nombreusuario = nombre;');
+        $query = $this->db->connect()->prepare(' UPDATE usuariossistema SET passUsuario = :password WHERE nombreusuario = nombre;');
         
         $query->execute(['contrasena' => $password, 'nombre' => $_SESSION['restaurarUsuario']]);
 
