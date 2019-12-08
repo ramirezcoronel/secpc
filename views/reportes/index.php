@@ -28,12 +28,12 @@
      </div>
 
       <div class="form__box esquinas">
-         <h2>Reportes de modelos</h2>
+         <h2>Reportes de inventario</h2>
          <div>
          </div>
         </div>
      <div class="margin-bottom">
-      <a href="<?php echo constant('URL')?>reportes/output" class="boton">Reporte de modelos</a>
+      <a href="<?php echo constant('URL')?>reportes/inventario" class="boton">Reporte de inventario</a>
      </div>
 
 
