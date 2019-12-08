@@ -8,7 +8,7 @@
 	      $tipo = ($_POST['tipo'] !== "") ? $_POST['tipo'] : NULL;
 	      $hora = ($_POST['hora'] !== "") ? $_POST['hora'] : NULL;
 	      $fecha = ($_POST['fecha'] !== "") ? $_POST['fecha'] : NULL;
-	      $estatus = ($_POST['estatus'] !== "") ? $_POST['estatus'] : NULL;
+	      $estatus = 1;
 
 	      if ($this->model->movimientos->insert(['num'=>$num, 'tipo'=>$tipo, 'hora'=>$hora, 'fecha'=>$fecha, 'estatus'=>$estatus])){
 	        $this->view->mensaje = 'Movimiento Agregado exitosamente!.';

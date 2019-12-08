@@ -36,6 +36,7 @@
                 $item = new ModelosClass();
                 
                 $item->setId($row['idmodelo']);
+                $item->setMarca($row['idmarca']);
                 $item->setNombre($row['nommodelo']);
                 $item->setEstatus($row['estatusmodelo']);
       

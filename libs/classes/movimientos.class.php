@@ -22,6 +22,9 @@
        public function getHora() {
         return $this->hora;
       }
+      public function getEstatus() {
+        return $this->estatus;
+      }
 
       
 
@@ -39,6 +42,9 @@
        public function setHora($hora) {
          $this->hora = $hora;
       }
+      public function setEstatus($estatus) {
+        $this->estatus = $estatus;
+     }
   }
 
 ?>

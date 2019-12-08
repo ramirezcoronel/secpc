@@ -53,6 +53,7 @@
           $item->setTipo($row['tipo']);
           $item->setFecha($row['fecha']);
           $item->setHora($row['hora']);
+          $item->setEstatus($row['estatus']);
 
           array_push($items, $item);
         }

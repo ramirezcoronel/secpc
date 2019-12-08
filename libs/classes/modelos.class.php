@@ -17,7 +17,7 @@
       public function getEstatus() {
         return $this->estatusmodelo;
       }
-      public function get() {
+      public function getMarca() {
         return $this->idmarca;
       }
       
