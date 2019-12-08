@@ -19,11 +19,22 @@
       }
     }
       
-    function get () {
+    function get ( $id = null) {
       $items = [];
       try {
-        $query = $this->db->connect()->query('SELECT * FROM usuariossistema');
-  
+
+        if ( isset($id) ) {
+          
+          $query = $this->db->connect()->prepare('SELECT * FROM usuariossistema WHERE idusuario = :id');
+
+          $query->execute(['id'=>$id]);
+
+        } else {
+          
+          $query = $this->db->connect()->query('SELECT * FROM usuariossistema');
+
+        }
+
         while($row = $query->fetch()){
           $item = new UsuariosClass();
           
@@ -41,33 +52,6 @@
         return $items;
       } catch (PDOException $e) {
         return [];
-      }
-    }
-  
-    function search($data) {
-    
-      try {
-        $query = $this->db->connect()->prepare('SELECT * FROM usuariossistema WHERE cedulausuario = :cedulausuario');
-        $query->execute(['cedulausuario'=>$data]);
-  
-        while($row = $query->fetch()){
-          $item = new UsuariosClass();
-          
-  
-          $item->setId($row['idusuario']);
-          $item->setCedula($row['cedulausuario']);
-          $item->setNombre($row['nombreusuario']);
-          $item->setApellido($row['apellidousuario']);
-          $item->setUsername($row['username']);
-          $item->setPass($row['passusuario']);
-          $item->setEstatus($row['estatususuario']);
-          $item->setRol($row['rolusuario']);
-  
-        }
-        return (isset($item)) ? $item : NULL;
-      } catch (PDOException $e) {
-        return NULL;
-        echo 'mal';
       }
     }
   

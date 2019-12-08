@@ -19,7 +19,7 @@
         <div class="centrar">
           <table class="tabla tabla-secundaria">
             <caption class="agrandar">Usuarios</caption>
-            <tr> <th>ID</th> <th>C.I.</th> <th>Nombre</th> <th>Apellido</th><th>Username</th><th>Contraseña</th><th>Estatus</th><th>Rol</th> 
+            <tr> <th>ID</th> <th>C.I.</th> <th>Nombre</th> <th>Apellido</th><th>Username</th><th>Contraseña</th><th>Estatus</th><th>Rol</th> <th>Modificar</th> 
             <?php 
               foreach($this->usuarios as $row){
                 $usuario = new UsuariosClass();
@@ -34,7 +34,7 @@
               <td><?php echo $usuario->getPass(); ?></td>
               <td><?php echo $usuario->getEstatus(); ?></td>
               <td><?php echo $usuario->getRol(); ?></td>
-
+              <td><a href="<?php echo constant('URL')?>usuarios/modificarUsuario/<?php echo $usuario->getId();?>">Modificar</a></td>  
             </tr>
             <?php } ?>
           </table>

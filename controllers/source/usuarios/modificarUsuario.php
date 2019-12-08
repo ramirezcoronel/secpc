@@ -18,27 +18,19 @@
       }
       $this->view->render('usuarios/modificar.mensaje');
 
-    } else if ( isset($_POST['modificar']) ) {
-
-      $cedula     = ($_POST['cedula'] !== "") ? $_POST['cedula'] : NULL;
-
-      $usuarios = $this->model->usuarios->search($cedula);
-
+    } else {
+      
+      $usuarios = $this->model->usuarios->get($param[0]);
 
       if (isset($usuarios)){
 
-        $this->view->usuarios = $usuarios;
+        $this->view->usuarios = $usuarios[0];
 
-        $this->view->render('usuarios/modificar'); 
-     } else {
-      $this->view->mensaje = 'Usuario No ENcontrado';
-      $this->view->render('usuarios/modificar.mensaje');
-     }
-
-      
-    } else {
-      $this->view->mensaje = 'Ingrese Cedula de Usuario A Modificar';
-      $this->view->render('usuarios/modificar.consulta');
+        $this->view->render('usuarios/actualizar'); 
+      } else {
+        $this->view->mensaje = 'Usuario No ENcontrado';
+        $this->view->render('usuarios/modificar.mensaje');
+      }
     }
 
 ?>
