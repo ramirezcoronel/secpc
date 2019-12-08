@@ -1,7 +1,7 @@
 <?php
  
   require 'libs/classes/partes.class.php';
-    require 'libs/classes/modelos.class.php';
+  require 'libs/classes/modelos.class.php';
 
 
 
