@@ -15,14 +15,9 @@
     <?php require 'views/menu.php'; ?> <!-- MENU -->
     <main>
         <div class="text-header">
-            <h2> <?php echo $this->mensaje ?> </h2>
+            <h2> <?php echo $this->mensaje ?>  <a class="mensaje-button" href="<?php echo constant('URL')?>usuarios/" class="boton">Volver</a></h2>
             
         </div>
-        <form method="POST" class="form"> 
-          <div class="centrar">
-            <a href="<?php echo constant('URL')?>usuarios/" class="boton">Volver</a>
-          </div>
-      </form>
     </main>
   </div>
 </body>

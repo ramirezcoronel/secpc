@@ -24,3 +24,10 @@
     height: 0;
   }
 }
+
+
+.mensaje-button:hover{
+  background: #333;
+  box-shadow: 0 0 5px #333;
+  transition: all ease 0.2s;
+}

@@ -19,6 +19,7 @@
   text-align: center;
   border: 2px solid #333;
   height: 30px;
+  padding: 0 10px;
 }
 
 .tabla tr td:first-child {

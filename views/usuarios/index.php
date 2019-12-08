@@ -34,8 +34,8 @@
               <td><?php echo $usuario->getPass(); ?></td>
               <td><?php echo $usuario->getEstatus(); ?></td>
               <td><?php echo $usuario->getRol(); ?></td>
-              <td><a href="<?php echo constant('URL')?>usuarios/modificarUsuario/<?php echo $usuario->getId();?>">Modificar</a></td>  
-              <td><a href="<?php echo constant('URL')?>usuarios/eliminarUsuario/<?php echo $usuario->getId();?>">Eliminar</a></td>  
+              <td><a class="botonForm" href="<?php echo constant('URL')?>usuarios/modificarUsuario/<?php echo $usuario->getId();?>">Modificar</a></td>  
+              <td><a class="botonForm" href="<?php echo constant('URL')?>usuarios/eliminarUsuario/<?php echo $usuario->getId();?>">Eliminar</a></td>  
             </tr>
             <?php } ?>
           </table>

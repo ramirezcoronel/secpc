@@ -67,3 +67,11 @@ input.pequeño {
   display: inline-block;
   margin-bottom: 0;
 }
+
+
+.mensaje-button {
+  padding: 5px 10px;
+  border-radius: 5px 5px;
+  margin-left: 20px;
+  border: 2px solid #fff;
+}
