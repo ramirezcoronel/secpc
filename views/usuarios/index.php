@@ -19,7 +19,7 @@
         <div class="centrar">
           <table class="tabla tabla-secundaria">
             <caption class="agrandar">Usuarios</caption>
-            <tr> <th>ID</th> <th>C.I.</th> <th>Nombre</th> <th>Apellido</th><th>Username</th><th>Contraseña</th><th>Estatus</th><th>Rol</th> <th>Modificar</th> 
+            <tr> <th>ID</th> <th>C.I.</th> <th>Nombre</th> <th>Apellido</th><th>Username</th><th>Contraseña</th><th>Estatus</th><th>Rol</th> <th>Modificar</th> <th>Eliminar</th> 
             <?php 
               foreach($this->usuarios as $row){
                 $usuario = new UsuariosClass();
@@ -35,6 +35,7 @@
               <td><?php echo $usuario->getEstatus(); ?></td>
               <td><?php echo $usuario->getRol(); ?></td>
               <td><a href="<?php echo constant('URL')?>usuarios/modificarUsuario/<?php echo $usuario->getId();?>">Modificar</a></td>  
+              <td><a href="<?php echo constant('URL')?>usuarios/eliminarUsuario/<?php echo $usuario->getId();?>">Eliminar</a></td>  
             </tr>
             <?php } ?>
           </table>
@@ -43,9 +44,7 @@
       
       <div class="centrar">
         <a href="<?php echo constant('URL')?>usuarios/registrarUsuario" class="boton margin-lados">Agregar Usuario</a>
-        <a href="<?php echo constant('URL')?>usuarios/modificarUsuario" class="boton margin-lados">Modificar Usuario</a>
-        <a href="<?php echo constant('URL')?>usuarios/eliminarUsuarios" class="boton margin-lados">Eliminar Usuario</a>
-      </div>
+        </div>
   
       </form>
     </main>

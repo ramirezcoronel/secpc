@@ -18,15 +18,12 @@
             <h2> <?php echo $this->mensaje ?> </h2>
             
         </div>
-        <form action="<?php echo constant('URL')?>usuarios/modificarUsuario" method="POST" class="form">
-        
-        <div class="centrar">
-          <a href="<?php echo constant('URL')?>usuarios/" class="boton">Volver</a>
-        </div>
-        
+        <form method="POST" class="form"> 
+          <div class="centrar">
+            <a href="<?php echo constant('URL')?>usuarios/" class="boton">Volver</a>
+          </div>
       </form>
     </main>
   </div>
-
 </body>
 </html>

@@ -61,12 +61,7 @@
           <div>
             <label for="cedula">Pregunta de seguridad(Cedula:)</label>
             <input type="text" name="cedula" id="nombre" placeholder="Ingrese su cedula" value="<?php echo $this->usuarios->getCedula();?>" required readonly>
-              
           </div>  
-          <div>
-            <label for="estatus">Estatus:</label>
-            <input type="number" name="estatus" id="estatus" value="<?php echo $this->usuarios->getEstatus();?>">
-         </div>
         </div>
         
         <div class="centrar">

@@ -62,11 +62,7 @@
             <label for="cedula">Pregunta de seguridad(Cedula:)</label>
             <input type="text" name="cedula" id="nombre" placeholder="Ingrese su cedula" required>
               
-          </div>  
-          <div>
-            <label for="estatus">Estatus:</label>
-            <input type="number" name="estatus" id="estatus">
-         </div>
+          </div> 
         </div>
         
         <div class="centrar">

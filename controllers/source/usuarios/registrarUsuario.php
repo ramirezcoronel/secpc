@@ -7,7 +7,7 @@
       $rol        = ($_POST['rol'] !== "") ? $_POST['rol'] : NULL;
       $cedula     = ($_POST['cedula'] !== "") ? $_POST['cedula'] : NULL;
       $pass     = ($_POST['pass'] !== "") ? $_POST['pass'] : NULL;
-      $estatus     = ($_POST['estatus'] !== "") ? $_POST['estatus'] : NULL;
+      $estatus     = 1;
   
       if ($this->model->usuarios->insert(['nombreUsuario'=>$nombre, 'apellidoUsuario'=>$apellido, 'passUsuario'=>$pass, 'rolUsuario'=>$rol, 'cedulaUsuario'=>$cedula, 'estatusUsuario'=>$estatus, 'username'=>$username])){
         $this->view->mensaje = 'Usuario agregado exitosamente!.';

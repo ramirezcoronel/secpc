@@ -8,7 +8,6 @@
       $rol        = ($_POST['rol'] !== "") ? $_POST['rol'] : NULL;
       $cedula     = ($_POST['cedula'] !== "") ? $_POST['cedula'] : NULL;
       $pass     = ($_POST['pass'] !== "") ? $_POST['pass'] : NULL;
-      $estatus     = ($_POST['estatus'] !== "") ? $_POST['estatus'] : NULL;
 
       if ($this->model->usuarios->update(['nombreUsuario'=>$nombre, 'apellidoUsuario'=>$apellido, 'passUsuario'=>$pass, 'rolUsuario'=>$rol, 'estatusUsuario'=>$estatus, 'username'=>$username, 'cedulaUsuario'=>$cedula])){
         $this->view->mensaje = 'Usuario Modificado exitosamente!.';
@@ -16,7 +15,7 @@
       }else{
         $this->view->mensaje = 'Ha ocurrido un error.';
       }
-      $this->view->render('usuarios/modificar.mensaje');
+      $this->view->render('usuarios/mensaje');
 
     } else {
       
@@ -29,7 +28,7 @@
         $this->view->render('usuarios/actualizar'); 
       } else {
         $this->view->mensaje = 'Usuario No ENcontrado';
-        $this->view->render('usuarios/modificar.mensaje');
+        $this->view->render('usuarios/mensaje');
       }
     }
 
