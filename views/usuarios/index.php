@@ -15,18 +15,22 @@
   <div class="container">
     <?php require 'views/menu.php'; ?> <!-- MENU -->
     <main>
-    <form  action="gestionar_usuarios.php" method="POST" class="form">
+    <div class="form">
       <div class="form__box">
         <div class="centrar">
           <table class="tabla tabla-secundaria">
             <caption class="agrandar">Usuarios</caption>
             <tr> <th>ID</th> <th>C.I.</th> <th>Nombre</th> <th>Apellido</th><th>Username</th><th>Contraseña</th><th>Estatus</th><th>Rol</th> <th>Modificar</th> <th>Eliminar</th> 
+            <tbody id="tbody-usuarios">
+
+            
             <?php 
               foreach($this->usuarios as $row){
                 $usuario = new UsuariosClass();
                 $usuario = $row;
             ?>
-            </tr>
+            </tr >
+            <tr id="fila-<?php echo $usuario->getId(); ?>">
               <td><?php echo $usuario->getId(); ?></td>
               <td><?php echo $usuario->getCedula(); ?></td>
               <td><?php echo $usuario->getNombre(); ?></td>
@@ -36,9 +40,10 @@
               <td><?php echo $usuario->getEstatus(); ?></td>
               <td><?php echo $usuario->getRol(); ?></td>
               <td><a class="botonForm" href="<?php echo constant('URL')?>usuarios/modificarUsuario/<?php echo $usuario->getId();?>">Modificar</a></td>  
-              <td><a class="botonForm eliminar" href="<?php echo constant('URL')?>usuarios/eliminarUsuario/<?php echo $usuario->getId();?>">Eliminar</a></td>  
+              <td><button class="botonForm eliminar" data-id="<?php echo $usuario->getId(); ?>">Eliminar</button></td>  
             </tr>
             <?php } ?>
+            </tbody>
           </table>
         </div>
       </div>
@@ -47,7 +52,8 @@
         <a href="<?php echo constant('URL')?>usuarios/registrarUsuario" class="boton margin-lados">Agregar Usuario</a>
         </div>
   
-      </form>
+              </div>
+              
     </main>
   </div>
 

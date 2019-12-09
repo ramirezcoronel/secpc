@@ -1,10 +1,10 @@
 <?php
 	if ( $this->model->usuarios->drop($param[0]) ) {
-		$this->view->mensaje = 'Usuario Eliminado';
+		$mensaje = 'Usuario Eliminado';
 	} else {
-		$this->view->mensaje = 'Ha ocurrido un Error';
+		$mensaje = 'Ha ocurrido un Error';
 
 	}
 
-	$this->view->render('usuarios/mensaje');
+	echo $mensaje;
 ?>

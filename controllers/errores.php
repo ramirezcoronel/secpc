@@ -1,5 +1,3 @@
-<!-- ARCHIVO PARA MANEJAR ERRORES DE DIRECCION -->
-
 <?php
   class Errores extends Controller {
 
