@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>SECPC | Usuarios</title>
     <link rel="stylesheet" href="<?php echo constant('URL')?>public/css/main.css">
+    <script src="<?php echo constant('URL')?>public/js/jquery-3.4.1.min.js"></script>
 </head>
 <body>
   <!-- Uso esta clase por el fondo rojo -->
@@ -35,7 +36,7 @@
               <td><?php echo $usuario->getEstatus(); ?></td>
               <td><?php echo $usuario->getRol(); ?></td>
               <td><a class="botonForm" href="<?php echo constant('URL')?>usuarios/modificarUsuario/<?php echo $usuario->getId();?>">Modificar</a></td>  
-              <td><a class="botonForm" href="<?php echo constant('URL')?>usuarios/eliminarUsuario/<?php echo $usuario->getId();?>">Eliminar</a></td>  
+              <td><a class="botonForm eliminar" href="<?php echo constant('URL')?>usuarios/eliminarUsuario/<?php echo $usuario->getId();?>">Eliminar</a></td>  
             </tr>
             <?php } ?>
           </table>
@@ -50,6 +51,7 @@
     </main>
   </div>
 
+  <script src="<?php echo constant('URL')?>public/js/usuarios/eliminar.js"></script>
 </body>
 </html>
 
