@@ -1,4 +1,12 @@
+//Esto es tipo config pero para javascript
+
+const data = {
+  controlador: 'usuarios',
+  metodo: 'eliminarUsuario'
+}
+
 document.addEventListener("DOMContentLoaded", function() {
+
 
    const boton = document.querySelectorAll('.eliminar')
 
@@ -8,15 +16,13 @@ document.addEventListener("DOMContentLoaded", function() {
            let id = boton.dataset.id;
             if ( respuesta ) {
                 //solicitud AJAX
-                let url = 'http://localhost/secpc/usuarios/eliminarUsuario/' + id
+                let url = 'http://localhost/secpc/'+ data['controlador'] +'/'+ data['metodo'] +'/' + id
 
                 httpRequest(url, function() {
                     console.log(this.responseText);
-                    const tbody = document.querySelector("#tbody-usuarios")
-                    let filatag = "#fila-" + id
-                    const fila = document.querySelector(filatag)
-                    console.log(tbody);
-                    console.log(filatag);
+
+                    const tbody = document.querySelector("#tbody-"+ data['controlador'])
+                    const fila = document.querySelector("#fila-" + id)
 
                     tbody.removeChild(fila);
 

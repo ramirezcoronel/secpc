@@ -1,22 +1,28 @@
+//Esto es tipo config pero para javascript
+
+const data = {
+  controlador: 'equipos',
+  metodo: 'eliminarTipoEquipo'
+}
+
 document.addEventListener("DOMContentLoaded", function() {
+
 
    const boton = document.querySelectorAll('.eliminar')
 
    boton.forEach(boton => {
        boton.addEventListener('click', (e)=>{
-           let respuesta = confirm('¿Esta seguro de eliminar este tipo de equipo?')
-           let codigo = boton.dataset.codigo;
+           let respuesta = confirm('¿Esta seguro de eliminar este usuario?')
+           let id = boton.dataset.id;
             if ( respuesta ) {
                 //solicitud AJAX
-                let url = 'http://localhost/secpc/equipos/eliminarTipoEquipo/' + codigo
+                let url = 'http://localhost/secpc/'+ data['controlador'] +'/'+ data['metodo'] +'/' + id
 
                 httpRequest(url, function() {
                     console.log(this.responseText);
-                    const tbody = document.querySelector("#tbody-tipos")
-                    let filatag = "#fila-" + codigo
-                    const fila = document.querySelector(filatag)
-                    console.log(tbody);
-                    console.log(filatag);
+
+                    const tbody = document.querySelector("#tbody-"+ data['controlador'])
+                    const fila = document.querySelector("#fila-" + id)
 
                     tbody.removeChild(fila);
 

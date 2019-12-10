@@ -23,7 +23,7 @@
 
             <caption class="agrandar">Tipos</caption>
             <tr> <th>Codigo</th> <th>Nombre</th>  <th>Modificar</th><th>Eliminar</th>
-              <tbody id="tbody-tipos">
+              <tbody id="tbody-equipos">
                 
               
             <?php 
@@ -37,7 +37,7 @@
               <td><?php echo $tipo->getCodigo(); ?></td>
               <td><?php echo $tipo->getNombre(); ?></td>
               <td><a class="botonForm" href="<?php echo constant('URL')?>equipos/actualizarTipoEquipo/<?php echo $tipo->getCodigo() ?>">Modificar</a></td>
-              <td><button class="botonForm eliminar" data-codigo="<?php echo $tipo->getCodigo(); ?>">Eliminar</button></td>  
+              <td><button class="botonForm eliminar" data-id="<?php echo $tipo->getCodigo(); ?>">Eliminar</button></td>  
             </tr>
             <?php } ?>
             </tbody>
