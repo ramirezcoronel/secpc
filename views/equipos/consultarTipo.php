@@ -17,7 +17,7 @@
     <main>
     <div class="text-header"><h2>Gestionar Tipos de Equipo</h2></div>
     <div class="form">
-      <div class="form__box">
+      <div id="form" data-eliminar="eliminarTipoEquipo" class="form__box">
         <div class="centrar">
           <table class="tabla tabla-secundaria">
 
@@ -54,7 +54,7 @@
     </main>
   </div>
 
- <script src="<?php echo constant('URL')?>public/js/tiposequipos/eliminar.js"></script>
+ <script src="<?php echo constant('URL')?>public/js/AJAX/eliminar.js"></script>
 </body>
 </html>
 

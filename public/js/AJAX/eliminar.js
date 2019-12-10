@@ -1,8 +1,9 @@
-//Esto es tipo config pero para javascript
+//obtengo el controlador a travez de la URL
+let controller = window.location.pathname.slice(1).split('/').filter((path) => path !== 'secpc' )[0]
 
 const data = {
-  controlador: 'usuarios',
-  metodo: 'eliminarUsuario'
+  controlador: controller,
+  metodo: form.dataset.eliminar //obtengo la funcion de eliminar a travez de las etiquetas data
 }
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -20,9 +21,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
                 httpRequest(url, function() {
                     console.log(this.responseText);
+                    console.log(this);
+
 
                     const tbody = document.querySelector("#tbody-"+ data['controlador'])
                     const fila = document.querySelector("#fila-" + id)
+
 
                     tbody.removeChild(fila);
 

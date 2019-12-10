@@ -16,8 +16,8 @@
     <?php require 'views/menu.php'; ?> <!-- MENU -->
     <main>
     <div class="form">
-      <div class="form__box">
-        <div class="centrar">
+      <div id="form" data-eliminar="eliminarUsuario" class="form__box">
+        <div  class="centrar">
           <table class="tabla tabla-secundaria">
             <caption class="agrandar">Usuarios</caption>
             <tr> <th>ID</th> <th>C.I.</th> <th>Nombre</th> <th>Apellido</th><th>Username</th><th>Contraseña</th><th>Estatus</th><th>Rol</th> <th>Modificar</th> <th>Eliminar</th> 
@@ -57,7 +57,7 @@
     </main>
   </div>
 
-  <script src="<?php echo constant('URL')?>public/js/usuarios/eliminar.js"></script>
+  <script src="<?php echo constant('URL')?>public/js/AJAX/eliminar.js"></script>
 </body>
 </html>
 
