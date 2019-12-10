@@ -5,15 +5,15 @@ document.addEventListener("DOMContentLoaded", function() {
    boton.forEach(boton => {
        boton.addEventListener('click', (e)=>{
            let respuesta = confirm('¿Esta seguro de eliminar este tipo de equipo?')
-           let id = boton.dataset.id;
+           let codigo = boton.dataset.codigo;
             if ( respuesta ) {
                 //solicitud AJAX
-                let url = 'http://localhost/secpc/equipos/eliminarUsuario/' + id
+                let url = 'http://localhost/secpc/equipos/eliminarTipoEquipo/' + codigo
 
                 httpRequest(url, function() {
                     console.log(this.responseText);
-                    const tbody = document.querySelector("#tbody-usuarios")
-                    let filatag = "#fila-" + id
+                    const tbody = document.querySelector("#tbody-tipos")
+                    let filatag = "#fila-" + codigo
                     const fila = document.querySelector(filatag)
                     console.log(tbody);
                     console.log(filatag);

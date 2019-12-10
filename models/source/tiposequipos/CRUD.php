@@ -57,5 +57,18 @@
           return false;
         }
     }
+
+     public function drop ($codtipoequipo) {
+      try{
+          $query = $this->db->connect()->prepare('DELETE FROM tiposequipos WHERE codtipoequipo = :codtipoequipo');
+
+          $query->execute(['codtipoequipo'=>$codtipoequipo]);
+          
+          return true;
+        } catch(PDOException $e){
+          echo $e->getMessage();
+          return false;
+        }
+    }
   }
 ?>
