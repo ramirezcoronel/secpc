@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>SECPC | Tipos Equipos</title>
     <link rel="stylesheet" href="<?php echo constant('URL')?>public/css/main.css">
+    <script src="<?php echo constant('URL')?>public/js/jquery-3.4.1.min.js"></script>
 </head>
 <body>
   <!-- Uso esta clase por el fondo rojo -->
@@ -15,13 +16,16 @@
     <?php require 'views/menu.php'; ?> <!-- MENU -->
     <main>
     <div class="text-header"><h2>Gestionar Tipos de Equipo</h2></div>
-    <form  action="gestionar_usuarios.php" method="POST" class="form">
+    <div class="form">
       <div class="form__box">
         <div class="centrar">
           <table class="tabla tabla-secundaria">
 
             <caption class="agrandar">Tipos</caption>
             <tr> <th>Codigo</th> <th>Nombre</th>  <th>Modificar</th><th>Eliminar</th>
+              <tbody id="tbody-tipos">
+                
+              
             <?php 
               foreach($this->tipos as $row){
                 $tipo = new TiposClass();
@@ -29,12 +33,14 @@
 
             ?>
             </tr>
+            <tr id="fila-<?php echo $tipo->getCodigo(); ?>">
               <td><?php echo $tipo->getCodigo(); ?></td>
               <td><?php echo $tipo->getNombre(); ?></td>
-              <td><a class="botonForm" href="<?php echo constant('URL')?>equipos/actualizarEquipo/<?php echo $tipo->getCodigo() ?>">Modificar</a></td>
-              <td><a class="botonForm" href="<?php echo constant('URL')?>equipos/eliminarEquipo/<?php echo $tipo->getCodigo() ?>">Eliminar</a></td>
+              <td><a class="botonForm" href="<?php echo constant('URL')?>equipos/actualizarTipoEquipo/<?php echo $tipo->getCodigo() ?>">Modificar</a></td>
+              <td><button class="botonForm eliminar" data-codigo="<?php echo $tipo->getCodigo(); ?>">Eliminar</button></td>  
             </tr>
             <?php } ?>
+            </tbody>
           </table>
         </div>
       </div>
@@ -44,10 +50,11 @@
         <a href="<?php echo constant('URL')?>equipos" class="boton margin-lados">Volver</a>
       </div>
   
-      </form>
+      </div>
     </main>
   </div>
 
+ <script src="<?php echo constant('URL')?>public/js/tiposequipos/eliminar.js"></script>
 </body>
 </html>
 

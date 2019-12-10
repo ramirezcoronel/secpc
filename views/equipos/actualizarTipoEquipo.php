@@ -23,11 +23,11 @@
         <div class="form__box esquinas">
           <div class="margin-lados">
             <label for="codTipoEquipo">Codigo de Tipo de Equipo:</label>
-            <input type="text" name="codTipoEquipo" id="codTipoEquipo" value="<?php echo $this->equipo->getCodigo();?>" readonly/>
+            <input type="text" name="codTipoEquipo" id="codTipoEquipo" value="<?php echo $this->tipo->getCodigo();?>" readonly/>
           </div>
           <div class="margin-lados">
             <label for="nombre">Nombre de Tipo de Equipo:</label>
-            <input type="text" name="nomTipoEquipo" id="nombre" value="<?php echo $this->equipo->getNombre();?>" readonly/>
+            <input type="text" name="nomTipoEquipo" id="nombre" value="<?php echo $this->tipo->getNombre();?>" />
           </div>
         </div>
 

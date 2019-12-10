@@ -2,8 +2,10 @@
 
 	if(isset($_POST['actualizar'])){
         //Inputs
-        $codtipoequipo    = ($_POST['codtipoequipo'] !== "") ? $_POST['codtipoequipo'] : NULL;
-        $nomequipo = ($_POST['nomequipo'] !== "") ? $_POST['nomequipo'] : NULL;
+        $codtipoequipo    = ($_POST['codTipoEquipo'] !== "") ? $_POST['codTipoEquipo'] : NULL;
+        $nomequipo = ($_POST['nomTipoEquipo'] !== "") ? $_POST['nomTipoEquipo'] : NULL;
+
+
 
         $data = array('codtipoequipo'=>$codtipoequipo, 'nomequipo'=>$nomequipo);
 
@@ -19,15 +21,13 @@
 
       }else{
           
-        $equipo = $this->model->equipos->get($param[0]);
+        $tipos = $this->model->tiposequipos->get($param[0]);
+        
 
-        $this->view->equipo = $equipo[0];
-
-        if ( sizeof($equipo) ) {
-        $tipos = $this->model->tiposequipos->get();
-        $this->view->tipos = $tipos;
+        if ( sizeof($tipos) ) {
+        $this->view->tipo = $tipos[0];
         $this->view->mensaje = 'Rellene los campos';
-        $this->view->render('equipos/actualizarEquipo');
+        $this->view->render('equipos/actualizarTipoEquipo');
 
       } else {
         $this->view->mensaje = 'Ha ocurrido un error';

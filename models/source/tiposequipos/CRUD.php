@@ -49,7 +49,7 @@
       try{
           $query = $this->db->connect()->prepare('UPDATE tiposequipos SET nomtipoequipo = :nomtipoequipo WHERE codtipoequipo = :codtipoequipo');
 
-          $query->execute(['codtipoequipo'=>$data['codtipoequipo'],  'nomequipo'=>$data['nomequipo']]);
+          $query->execute(['codtipoequipo'=>$data['codtipoequipo'],  'nomtipoequipo'=>$data['nomequipo']]);
 
           return true;
         } catch(PDOException $e){

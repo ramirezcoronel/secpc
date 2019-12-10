@@ -123,6 +123,33 @@ CREATE TABLE renglonesmovimientos (
     ON UPDATE CASCADE
     ON DELETE CASCADE);
 
+CREATE TABLE pruebas (
+  codprueba character varying(12),
+  nomprueba character varying(25),
+  desprueba character varying(100),
+  durprueba integer,
+  estatusprueba character varying(1),
+  
+
+  CONSTRAINT pk_codprueba PRIMARY KEY (codprueba),
+  CONSTRAINT nomprueba_unica UNIQUE (nomprueba));
+
+CREATE TABLE pruebaProducto (
+  numPruebaProducto character varying(12),
+  fechaPruebaProducto date,
+  horaPruebaProducto time,
+  resultPruebaProducto character varying(1),
+  obserbPruebaProducto character varying(250),
+  estatusPruebaProducto character varying(1),
+  codPruebaProducto character varying(12),
+  codProductoPrueba character varying(50),
+
+  CONSTRAINT pk_numPruebaProducto PRIMARY KEY (numPruebaProducto),
+  CONSTRAINT fk_codPruebaProducto FOREIGN KEY (codPruebaProducto) 
+    REFERENCES public.pruebas (codprueba) MATCH SIMPLE 
+    ON UPDATE CASCADE
+    ON DELETE CASCADE);
+
 INSERT INTO usuariosSistema (cedulaUsuario, nombreUsuario, apellidoUsuario, username,
               passUsuario, estatusUsuario, rolUsuario) VALUES
               ('28566432', 'Carlos', 'Ramirez', 'admin', 'admin', '1', 'admin');
@@ -150,3 +177,16 @@ INSERT INTO usuariosSistema (cedulaUsuario, nombreUsuario, apellidoUsuario, user
 INSERT INTO usuariosSistema (cedulaUsuario, nombreUsuario, apellidoUsuario, username,
               passUsuario, estatusUsuario, rolUsuario) VALUES
               ('27835645', 'Miguel', 'Messi', 'miguel', 'miguel', '1', 'tester');
+
+
+INSERT INTO tiposequipos ("codtipoequipo","nomtipoequipo","estatustipoequipo")
+          VALUES ('ETR102','MiniLaptop','1');
+
+INSERT INTO tiposequipos ("codtipoequipo","nomtipoequipo","estatustipoequipo")
+          VALUES ('ETR104','Laptop','1');
+
+INSERT INTO tiposequipos ("codtipoequipo","nomtipoequipo","estatustipoequipo")
+          VALUES ('ETR106','Tablet','1');
+
+INSERT INTO tiposequipos ("codtipoequipo","nomtipoequipo","estatustipoequipo")
+          VALUES ('ETR107','PC','1');
