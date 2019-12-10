@@ -21,6 +21,13 @@ class restaurar extends Controller {
 
     } 
 
+    public function load ($metodo, $param = null) {
+
+    $ruta = 'source/restaurar/'.$metodo.'.php';
+
+    require_once $ruta;
+  }
+
 
     public function recuperar () {
 
@@ -42,14 +49,13 @@ class restaurar extends Controller {
       }
     }
 
-    
-    public function actualizar () {
-
-
-    
-    if(isset($_POST['btn'])){
+    public function actualizar() {
+       if(isset($_POST['btn'])){
       $password1    = ($_POST['password1'] !== "") ? $_POST['password1'] : NULL ;
       if($this->model->cambiar($password1)){
+
+        session_unset();
+        session_destroy();
 
         $this->view->mensaje = 'Cambio de contraseña efectuado con exito.';
         $this->view->render('login/index');
@@ -62,7 +68,6 @@ class restaurar extends Controller {
 
 
       }
-
     }
   }
 

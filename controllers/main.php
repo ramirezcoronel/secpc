@@ -12,6 +12,13 @@
       $this->view->render('main/index');
     }
 
+    public function load ($metodo, $param = null) {
+
+		$ruta = 'source/main/'.$metodo.'.php';
+
+		require_once $ruta;
+	}
+
   }
 
 ?>

@@ -14,16 +14,13 @@
 
       <div class="login" >
         <?php
-
         if (isset($this->mensaje) ) {
           ?>
           <h2 id="mensaje"> <?php echo $this->mensaje; ?> </h2>
           <?php
-        }
-        
+        } ?>
 
-        ?>
-        <form class="login__form"method="POST">
+        <form action="<?php echo constant('URL')?>login" class="login__form"method="POST">
           <div class="user-img"></div>
          
           <input

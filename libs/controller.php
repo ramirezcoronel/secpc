@@ -34,12 +34,6 @@
       }
     }
 
-    public function cerrarSession() {
-      session_unset();
-      session_destroy();
-      header('location:'. constant('URL'));
-    }
-
   }
 
 ?>
