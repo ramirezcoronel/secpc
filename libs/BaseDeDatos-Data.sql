@@ -40,10 +40,10 @@ INSERT INTO tiposequipos ("codtipoequipo","nomtipoequipo","estatustipoequipo")
           VALUES ('ETR107','PC','1');
 
 INSERT INTO equipos ("codequipo","nomequipo","estatusequipo", "codtipoequipo")
-          VALUES ('XHEKWU','Roja','1', 'ETR104');
+          VALUES ('XHEKWU','LetraRoja','1', 'ETR104');
 
 INSERT INTO equipos ("codequipo","nomequipo","estatusequipo", "codtipoequipo")
-          VALUES ('XHEKWU','Roja','1', 'ETR104');
+VALUES ('EDFWES','Roja','1', 'ETR104');
 INSERT INTO equipos ("codequipo","nomequipo","estatusequipo", "codtipoequipo")
   VALUES ('DHJEE','Azul','1', 'ETR104');
 INSERT INTO equipos ("codequipo","nomequipo","estatusequipo", "codtipoequipo")
@@ -62,3 +62,35 @@ INSERT INTO marca ("id","nombre","estatus")
             VALUES ('S4M','SAMSUNG','1');
 INSERT INTO marca ("id","nombre","estatus")
             VALUES ('INT','INTEL','1');
+
+INSERT INTO modelos ("idmodelo","nommodelo","estatusmodelo", "idmarca")
+  VALUES ('T0RNI','Tornillos','1', 'INT');
+
+INSERT INTO modelos ("idmodelo","nommodelo","estatusmodelo", "idmarca")
+  VALUES ('HDD','HARD DISK','1', 'S4M');
+
+INSERT INTO modelos ("idmodelo","nommodelo","estatusmodelo", "idmarca")
+  VALUES ('P4NT','Pantalla','1', 'APP');
+
+INSERT INTO modelos ("idmodelo","nommodelo","estatusmodelo", "idmarca")
+  VALUES ('M0US','Mouse','1', 'INT');
+
+INSERT INTO modelos ("idmodelo","nommodelo","estatusmodelo", "idmarca")
+VALUES ('R4M','RAM','1', 'HP');
+
+
+
+INSERT INTO partes ("codpartes","serializable","stockactual","stockmaximo","stockminimo","puntoreorden","estatus","idmodelo")
+					VALUES ('CEHR','1','0','200','100','120','1','T0RNI');
+
+INSERT INTO partes ("codpartes","serializable","stockactual","stockmaximo","stockminimo","puntoreorden","estatus","idmodelo")
+					VALUES ('JEHR','1','0','200','100','120','1','R4M');
+
+INSERT INTO partes ("codpartes","serializable","stockactual","stockmaximo","stockminimo","puntoreorden","estatus","idmodelo")
+					VALUES ('SEE','1','0','200','100','120','1','M0US');
+
+INSERT INTO partes ("codpartes","serializable","stockactual","stockmaximo","stockminimo","puntoreorden","estatus","idmodelo")
+					VALUES ('SDE','1','0','200','100','120','1','HDD');
+
+INSERT INTO partes ("codpartes","serializable","stockactual","stockmaximo","stockminimo","puntoreorden","estatus","idmodelo")
+					VALUES ('ELD','1','0','200','100','120','1','P4NT');
