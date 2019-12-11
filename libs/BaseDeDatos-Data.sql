@@ -38,3 +38,27 @@ INSERT INTO tiposequipos ("codtipoequipo","nomtipoequipo","estatustipoequipo")
 
 INSERT INTO tiposequipos ("codtipoequipo","nomtipoequipo","estatustipoequipo")
           VALUES ('ETR107','PC','1');
+
+INSERT INTO equipos ("codequipo","nomequipo","estatusequipo", "codtipoequipo")
+          VALUES ('XHEKWU','Roja','1', 'ETR104');
+
+INSERT INTO equipos ("codequipo","nomequipo","estatusequipo", "codtipoequipo")
+          VALUES ('XHEKWU','Roja','1', 'ETR104');
+INSERT INTO equipos ("codequipo","nomequipo","estatusequipo", "codtipoequipo")
+  VALUES ('DHJEE','Azul','1', 'ETR104');
+INSERT INTO equipos ("codequipo","nomequipo","estatusequipo", "codtipoequipo")
+  VALUES ('KDJEU','Verde','1', 'ETR104');
+INSERT INTO equipos ("codequipo","nomequipo","estatusequipo", "codtipoequipo")
+  VALUES ('JDBEWK','Morada','1', 'ETR104');
+
+
+INSERT INTO marca ("id","nombre","estatus")
+            VALUES ('HP','HP','1');
+INSERT INTO marca ("id","nombre","estatus")
+            VALUES ('S1R4','SIRAGON','1');
+INSERT INTO marca ("id","nombre","estatus")
+            VALUES ('APP','APPLE','1');
+INSERT INTO marca ("id","nombre","estatus")
+            VALUES ('S4M','SAMSUNG','1');
+INSERT INTO marca ("id","nombre","estatus")
+            VALUES ('INT','INTEL','1');

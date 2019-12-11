@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 	 if ( $this->model->equipos->delete($param[0]) ) {
       $this->view->mensaje = 'Equipo Eliminado';
@@ -6,7 +6,5 @@
       $this->view->mensaje = 'Ha ocurrido un Error';
 
     }
-
-    $this->view->render('equipos/mensaje');
 
 ?>
