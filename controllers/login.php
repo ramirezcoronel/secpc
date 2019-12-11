@@ -1,7 +1,6 @@
 <?php
 class Login extends Controller {
-
-
+  
     public function __construct() {
         parent::__construct();
 
@@ -12,14 +11,11 @@ class Login extends Controller {
 
           $this->loadModel('login');
 
-          var_dump($this);
-
           if($this->verificacion( $usuario, $contrasena )) {
             header('location:'. constant('URL'));
-            echo constant('URL');
           }
-        } 
-        
+        }
+
     }
 
     public function render () {
@@ -28,19 +24,19 @@ class Login extends Controller {
 
     //Chequear si existe el usuario;
     public function verificacion( $username, $passUsuario ) {
-      
       if ( $this->model->usuarioExiste($username, $passUsuario) ) {
         echo 'correcto';
         $this->setUsuarioActual( $_POST['usuario'] );
         return true;
       } else {
          $this->view->mensaje = 'Datos incorrectos.';
-        return false; 
+        return false;
       }
     }
 
     //asignar valores a la variable de sesion;
     public function setUsuarioActual($usuario) {
+
         $_SESSION['usuario'] = $usuario;
 
       }

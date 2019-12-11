@@ -24,13 +24,13 @@
       $query->execute(['username' => $username]);
 
       foreach($query as $usuarioActual) {
-        
-        $this->nombreusuario = $usuarioActual['nombreusuario'];
-        $this->apellidousuario = $usuarioActual['apellidousuario'];
-        $this->username = $usuarioActual['username'];
-        $this->cedulausuario = $usuarioActual['cedulausuario'];
-        $this->estatususuario = $usuarioActual['estatususuario'];
-        $this->rolusuario = $usuarioActual['rolusuario'];
+
+        $this->view->nombreusuario = $usuarioActual['nombreusuario'];
+        $this->view->apellidousuario = $usuarioActual['apellidousuario'];
+        $this->view->username = $usuarioActual['username'];
+        $this->view->cedulausuario = $usuarioActual['cedulausuario'];
+        $this->view->estatususuario = $usuarioActual['estatususuario'];
+        $this->view->rolusuario = $usuarioActual['rolusuario'];
       }
     }
 

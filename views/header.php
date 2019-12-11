@@ -12,14 +12,10 @@
         <!-- titulo del header -->
         <div class="header__texto">
           <p class="header__titulo"><a href="<?php echo constant('URL')?>">Inicio</a></p>
-          <p><?php echo $_SESSION['usuario']; ?></p>
+          <p><?php echo $this->nombreusuario.' - '. $this->rolusuario; ?></p>
         </div>
         <div class="header__logo"></div>
         <div class="header__uptaeb"></div>
   </header>
 </body>
 </html>
-
-
-
-   
