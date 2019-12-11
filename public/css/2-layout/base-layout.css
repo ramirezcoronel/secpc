@@ -36,6 +36,7 @@ main {
   line-height: 60px;
   font-family: helvetica, sans-serif;
   width: 100%;
+  margin-bottom: 10px;
 }
 .centrar {
   display: flex;
@@ -46,7 +47,7 @@ main {
 .esquinas {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start; 
+  align-items: flex-start;
 }
 .horizontal {
   display: -webkit-flex;
@@ -60,8 +61,8 @@ main {
   -o-flex-direction: row;
   flex-direction: row;
   justify-content: center;
-  -ms-align-items: center;
-  align-items: center;
+  -ms-align-items: flex-start;
+  align-items: flex-start;
 }
 textarea {
   font-size: 1em;

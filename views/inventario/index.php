@@ -10,61 +10,41 @@
 </head>
 <body>
   <!-- Uso esta clase por el fondo rojo -->
-  <?php require 'views/header.php'; ?> <!-- MENU -->
+  <?php require 'views/header.php'; ?> <!-- HEADER -->
   <div class="container">
     <?php require 'views/menu.php'; ?> <!-- MENU -->
     <main>
       <div class="text-header margin-bottom">
-        <h2> <?php echo $this->mensaje ?> </h2>      
+        <h2> <?php echo $this->mensaje ?> </h2>
       </div>
       <div class="horizontal">
+
+        <div class="cards">
+          <div class="cards-header">
+            <h2>Partes</h2>
+          </div>
+          <div class="cards-content esquinas ">
+             <a href="<?php echo constant('URL')?>inventario/consultarMarca"><h2>Gestionar Marcas</h2></a>
+          </div>
+          <div class="cards-content esquinas">
+            <a href="<?php echo constant('URL')?>inventario/consultarModelos"><h2>Gestionar Modelos</h2></a>
+          </div>
+          <div class="cards-content esquinas">
+            <a href="<?php echo constant('URL')?>inventario/consultarPartes"><h2>Gestionar Partes</h2></a>
+          </div>
+        </div>
+
+        <div class="cards">
+          <div class="cards-header">
+            <h2>Movimientos</h2>
+          </div>
+         <div class="cards-content">
+           <a href="<?php echo constant('URL')?>inventario/consultarMovimientos"><h2>Gestionar Movimientos</h2></a>
+          </div>
+        </div>
         
-    <form  method="POST" class="form margin-lados">
-      <div class="text-header margin-bottom">
-        <h2>Partes</h2>
-      </div>
-      <div class="form__box esquinas ">
-         <h2>Gestionar Marcas</h2>
-        <div>
-        </div>
-      </div>
-      <div class="margin-bottom">
-        <a href="<?php echo constant('URL')?>inventario/consultarMarca" class="boton margin-lados">Gestionar</a>
-      </div>
-      <div class="form__box esquinas">
-         <h2>Gestionar Modelos</h2>
-        <div >
-        </div>
-      </div>
-      <div class="margin-bottom">
-        <a href="<?php echo constant('URL')?>inventario/consultarModelos" class="boton margin-lados">Agregar</a>
-      </div>
-      <div class="form__box esquinas">
-         <h2>Gestionar Partes</h2>
-         <div>
-         </div>
-        </div>
-     <div class="margin-bottom">
-       <a href="<?php echo constant('URL')?>inventario/consultarPartes" class="boton margin-lados">Consultar</a>
-     </div>
-
-       
-      </form>
-
-      <form action="POST" class="form margin-lados"> 
-        <div class="text-header margin-bottom">
-          <h2>Movimientos</h2>
-        </div>
-       <div class="form__box esquinas">
-          <h2>Gestionar Movimientos</h2>
-        </div>
-        <div class="margin-bottom">
-          <a href="<?php echo constant('URL')?>inventario/consultarMovimientos" class="boton margin-lados">Gestionar</a>
-        </div>
-      </form>
       </div>
     </main>
   </div>
-
 </body>
 </html>
