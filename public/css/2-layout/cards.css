@@ -37,6 +37,7 @@
 .cards-content h2 {
   padding: 10px 20px;
   margin: 0;
+  font-size: 1.3em;
 }
 
 .cards-content:hover {

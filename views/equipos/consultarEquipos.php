@@ -16,13 +16,17 @@
     <?php require 'views/menu.php'; ?> <!-- MENU -->
     <main>
     <div class="text-header"><h2>Gestionar Equipos</h2></div>
-    <div  id="form" data-eliminar="eliminarEquipo" class="form">
-      <div class="form__box">
-        <div class="centrar">
-          <table class="tabla tabla-secundaria">
-
-            <caption class="agrandar">Equipo</caption>
-            <tr> <th>Codigo</th> <th>Nombre</th> <th>Estatus</th> <th>Codigo Tipo de Equipo</th> <th>Modificar</th><th>Eliminar</th>
+    <div  id="form" data-eliminar="eliminarEquipo" class="tabla">
+      <div>
+          <table >
+            <caption>Equipos</caption>
+            <tr>
+              <th>Codigo</th>
+              <th>Nombre</th>
+              <th>Estatus</th>
+              <th>Codigo Tipo de Equipo</th>
+              <th>Modificar</th>
+              <th>Eliminar</th>
             <tbody id="tbody-equipos">
 
               <?php
@@ -37,20 +41,18 @@
                 <td><?php echo $equipo->getNombre(); ?></td>
                 <td><?php echo $equipo->getEstatus(); ?></td>
                 <td><?php echo $equipo->getCodTipo(); ?></td>
-                <td><a class="botonForm" href="<?php echo constant('URL')?>equipos/actualizarEquipo/<?php echo $equipo->getCodigo() ?>">Modificar</a></td>
-                <td><button class="botonForm eliminar" data-id="<?php echo $equipo->getCodigo(); ?>">Eliminar</button></td>
+                <td><a class="crud" href="<?php echo constant('URL')?>equipos/actualizarEquipo/<?php echo $equipo->getCodigo() ?>">Modificar</a></td>
+                <td><button class="crud eliminar" data-id="<?php echo $equipo->getCodigo(); ?>">Eliminar</button></td>
               </tr>
               <?php } ?>
 
             </tbody>
           </table>
-        </div>
       </div>
-
-      <div class="centrar">
+      <div class="bottom">
         <a href="<?php echo constant('URL')?>equipos/agregar" class="boton margin-lados">Agregar</a>
         <a href="<?php echo constant('URL')?>equipos" class="boton margin-lados">Volver</a>
-      </div
+      </div>
     </div>
     </main>
   </div>

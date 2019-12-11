@@ -5,7 +5,7 @@
     <link rel="shortcut icon" href="<?php echo constant('URL')?>public/img/logo3.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>SECPC | Usuarios</title>
+    <title>SECPC | Equipos</title>
     <link rel="stylesheet" href="<?php echo constant('URL')?>public/css/main.css">
 </head>
 <body>
@@ -15,32 +15,29 @@
     <?php require 'views/menu.php'; ?> <!-- MENU -->
     <main>
       <div class="text-header">
-        <h2> <?php echo $this->mensaje ?> </h2>      
+        <h2> <?php echo $this->mensaje ?> </h2>
       </div>
       <div class="horizontal">
-        <form  method="POST" class="form margin-lados">
-      <div class="form__box esquinas">
-         <h2>Gestionar Tipo de Equipo</h2>
+        <div class="cards">
+          <div class="cards-header">
+             <h2>Tipos de equipos</h2>
+            </div>
+          <div class="cards-content">
+            <a href="<?php echo constant('URL')?>equipos/consultarTipoEquipo" > <h2>Gestionar Tipos</h2> </a>
         </div>
-      <div class="centrar">
-        <a href="<?php echo constant('URL')?>equipos/consultarTipoEquipo" class="boton margin-lados">Gestionar Tipos</a>
       </div>
-     
-      </form>
-      <form class="form">
-         <div class="form__box esquinas margin-lados">
-         <h2>Gestionar Equipo</h2>
+      <div class="cards">
+         <div class="cards-header">
+         <h2>Equipos</h2>
         </div>
-      <div class="centrar">
-        <a href="<?php echo constant('URL')?>equipos/consultarEquipos" class="boton margin-lados">Gestionar Equipos</a>
-       
+      <div class="cards-content">
+        <a href="<?php echo constant('URL')?>equipos/consultarEquipos"> <h2>Gestionar Equipos</h2> </a>
       </div>
-      </form>
+     </div>
       </div>
-    
+
     </main>
   </div>
 
 </body>
 </html>
-
