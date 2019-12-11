@@ -5,7 +5,7 @@
     <link rel="shortcut icon" href="<?php echo constant('URL')?>public/img/logo3.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>SECPC | Usuarios</title>
+    <title>SECPC | inventario</title>
     <link rel="stylesheet" href="<?php echo constant('URL')?>public/css/main.css">
 </head>
 <body>
@@ -42,7 +42,7 @@
            <a href="<?php echo constant('URL')?>inventario/consultarMovimientos"><h2>Gestionar Movimientos</h2></a>
           </div>
         </div>
-        
+
       </div>
     </main>
   </div>
