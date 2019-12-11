@@ -18,15 +18,10 @@
     <div class="text-header"><h2>Gestionar Equipos</h2></div>
     <div  id="form" data-eliminar="eliminarEquipo" class="tabla">
       <div>
-          <table >
-            <caption>Equipos</caption>
-            <tr>
-              <th>Codigo</th>
-              <th>Nombre</th>
-              <th>Estatus</th>
-              <th>Codigo Tipo de Equipo</th>
-              <th>Modificar</th>
-              <th>Eliminar</th>
+          <table>
+
+            <caption >Equipo</caption>
+            <tr> <th>Codigo</th> <th>Nombre</th> <th>Estatus</th> <th>Codigo Tipo de Equipo</th> <th>Modificar</th><th>Eliminar</th>
             <tbody id="tbody-equipos">
 
               <?php
@@ -49,9 +44,10 @@
             </tbody>
           </table>
       </div>
+
       <div class="bottom">
-        <a href="<?php echo constant('URL')?>equipos/agregar" class="boton margin-lados">Agregar</a>
-        <a href="<?php echo constant('URL')?>equipos" class="boton margin-lados">Volver</a>
+        <a href="<?php echo constant('URL')?>equipos/agregar" >Agregar</a>
+        <a href="<?php echo constant('URL')?>equipos">Volver</a>
       </div>
     </div>
     </main>

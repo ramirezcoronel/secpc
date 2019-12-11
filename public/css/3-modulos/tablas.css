@@ -71,4 +71,8 @@
   text-decoration: none;
   color: #fff;
   background: #e64c3c;
+  transition: all ease .5s;
+}
+.tabla .bottom a:hover{
+  background: #f55645;
 }
