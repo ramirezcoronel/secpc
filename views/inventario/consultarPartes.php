@@ -17,11 +17,10 @@
     <?php require 'views/menu.php'; ?> <!-- MENU -->
     <main>
     <div class="text-header margin-bottom"><h2>Gestionar Partes</h2></div>
-    <div id="form" data-eliminar="eliminarPartes" class="form">
-      <div class="form__box">
-        <div class="centrar">
-          <table class="tabla tabla-secundaria">
-            <caption class="agrandar margin-bottom">Partes</caption>
+    <div id="form" data-eliminar="eliminarPartes" class="tabla">
+      <div>
+          <table>
+            <caption>Partes</caption>
             <tr> <th>Cod. Parte</th> <th>Serializable</th>  <th>Stock Actual</th> <th>Stock Max.</th> <th>Stock Min.</th> <th>Pto. Reorden</th> <th>id modelo</th> <th>Estatus</th> <th>Modificar</th> <th>Eliminar</th>
             <tbody id="tbody-inventario">
               <?php
@@ -39,17 +38,16 @@
                 <td><?php echo $parte->getPuntoReorden(); ?></td>
                 <td><?php echo $parte->getIdModelo(); ?></td>
                 <td><?php echo $parte->getEstatus(); ?></td>
-                <td><a class="botonForm" href="<?php echo constant('URL')?>inventario/actualizarParte/<?php echo $parte->getCodigo() ?>">Modificar</a></td>
-                <td><button class="botonForm eliminar" data-id="<?php echo $parte->getCodigo(); ?>">Eliminar</button></td>
+                <td><a class="crud" href="<?php echo constant('URL')?>inventario/actualizarParte/<?php echo $parte->getCodigo() ?>">Modificar</a></td>
+                <td><button class="crud eliminar" data-id="<?php echo $parte->getCodigo(); ?>">Eliminar</button></td>
               </tr>
               <?php } ?>
             </tbody>
           </table>
-        </div>
       </div>
-      <div class="centrar">
-        <a href="<?php echo constant('URL')?>inventario/agregarPartes" class="boton margin-lados">Agregar</a>
-        <a href="<?php echo constant('URL')?>inventario/" class="boton margin-lados">Volver</a>
+      <div class="bottom">
+        <a href="<?php echo constant('URL')?>inventario/agregarPartes">Agregar</a>
+        <a href="<?php echo constant('URL')?>inventario/">Volver</a>
       </div>
 
     </div>
