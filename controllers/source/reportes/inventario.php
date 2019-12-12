@@ -5,6 +5,7 @@
 		require 'plantilla.php';
 		$pdf = new PDF();
 		$pdf->AddPage();
+		$pdf->SetLeftMargin($pdf->GetPageWidth() / 2 - 55);
 		$pdf->SetFont('Helvetica','B',15);//Tipo de letra, negrita, tamaño
 		$pdf->Ln(10);//salto de linea
 
@@ -16,10 +17,11 @@
 
 		//MODELOS
 
-		$pdf->Cell(0, 10,  'MODELOS',0, 0,'C', 0);
+		$pdf->Cell(110, 10,  'MODELOS',1, 0,'C', 0);
 		$pdf->Ln(10);
 
 		$pdf->SetFont('Arial','B',12);//Tipo de letra, negrita, tamaño
+
 		$pdf->Cell(30, 10,  'Id',1, 0,'C', 0);
 		$pdf->Cell(30, 10, 'Nombre',1, 0,'C', 0);
 		$pdf->Cell(20, 10, 'Estatus',1, 0,'C', 0);
@@ -37,12 +39,16 @@
 		    $pdf->Ln(10);//salto de linea
 
 		}
+
 		$pdf->AddPage();
+
 
 		//MARCAS
 		$pdf->Ln(10);
+
+		$pdf->SetLeftMargin($pdf->GetPageWidth() / 2 - (80) / 2);
 		$pdf->SetFont('Helvetica','B',15);//Tipo de letra, negrita, tamaño
-		$pdf->Cell(0, 10,  'MARCAS',0, 0,'C', 0);
+		$pdf->Cell(80, 10,  'MARCAS',0, 0,'C', 0);
 		$pdf->Ln(10);
 
 		$pdf->SetFont('Arial','B',12);//Tipo de letra, negrita, tamaño
@@ -61,12 +67,15 @@
 		    $pdf->Ln(10);//salto de linea
 
 		}
+		$pdf->SetLeftMargin(0);
 		$pdf->AddPage();
 
 		//PARTES
+
+		$pdf->SetLeftMargin($pdf->GetPageWidth() / 2 - (191) / 2);
 		$pdf->Ln(10);
 		$pdf->SetFont('Helvetica','B',15);//Tipo de letra, negrita, tamaño
-		$pdf->Cell(0, 10,  'PARTES',0, 0,'C', 0);
+		$pdf->Cell(191, 10,'PARTES',1, 0,'C', 0);
 		$pdf->Ln(10);
 
 		$pdf->SetFont('Arial','B',12);//Tipo de letra, negrita, tamaño
@@ -95,13 +104,15 @@
 		    $pdf->Ln(10);//salto de linea
 
 		}
-
+		$pdf->SetLeftMargin(0);
 		$pdf->AddPage();
 
-		//PARTES
+		//MOVIMIENTOS
+		$pdf->SetLeftMargin($pdf->GetPageWidth() / 2 - (121) / 2);
 		$pdf->Ln(10);
+
 		$pdf->SetFont('Helvetica','B',15);//Tipo de letra, negrita, tamaño
-		$pdf->Cell(0, 10,  'MOVIMIENTOS',0, 0,'C', 0);
+		$pdf->Cell(121, 10,  'MOVIMIENTOS',1, 0,'C', 0);
 		$pdf->Ln(10);
 
 		$pdf->SetFont('Arial','B',12);//Tipo de letra, negrita, tamaño
@@ -111,6 +122,8 @@
 		$pdf->Cell(26, 10, 'Hora',1, 0,'C', 0);
 		$pdf->Cell(28, 10, 'Estatus',1, 0,'C', 0);
 		$pdf->Ln(10);
+
+
 
 		$pdf->SetFont('Arial','',12);//Tipo de letra, negrita, tamaño
 		foreach ($movimientos as $row) {
