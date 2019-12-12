@@ -22,8 +22,8 @@
           <table>
 
             <caption>Modelos</caption>
-            <tr> <th>ID</th> <th>Nombre</th> <th>Estatus</th> <th>Modificar</th> <th>Eliminar</th>
             <tbody id="tbody-inventario">
+            <tr> <th>ID</th> <th>Nombre</th> <th>Estatus</th> <th>Modificar</th> <th>Eliminar</th>
               <?php
                 foreach($this->modelos as $row){
                   $modelo = new ModelosClass();

@@ -20,24 +20,22 @@
       <div>
           <table>
             <caption>Tipos de Equipo</caption>
+            <tbody id="tbody-equipos">
             <tr> <th>Codigo</th> <th>Nombre</th>  <th>Modificar</th><th>Eliminar</th>
-              <tbody id="tbody-equipos">
-
-
             <?php
-              foreach($this->tipos as $row){
-                $tipo = new TiposClass();
-                $tipo = $row;
-
-            ?>
+              foreach ($this->tipos as $row) {
+                  $tipo = new TiposClass();
+                  $tipo = $row; ?>
             </tr>
+
             <tr id="fila-<?php echo $tipo->getCodigo(); ?>">
               <td><?php echo $tipo->getCodigo(); ?></td>
               <td><?php echo $tipo->getNombre(); ?></td>
               <td><a class="crud" href="<?php echo constant('URL')?>equipos/actualizarTipoEquipo/<?php echo $tipo->getCodigo() ?>">Modificar</a></td>
               <td><button class="crud eliminar" data-id="<?php echo $tipo->getCodigo(); ?>">Eliminar</button></td>
             </tr>
-            <?php } ?>
+            <?php
+              } ?>
             </tbody>
           </table>
       </div>

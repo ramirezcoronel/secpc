@@ -76,3 +76,9 @@
 .tabla .bottom a:hover{
   background: #f55645;
 }
+
+
+.tabla .vacio {
+  padding: 10px 0;
+  text-align: center;
+}
