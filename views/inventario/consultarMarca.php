@@ -17,11 +17,10 @@
     <?php require 'views/menu.php'; ?> <!-- MENU -->
     <main>
     <div class="text-header"><h2>Gestionar Marcas</h2></div>
-    <div id="form" data-eliminar="eliminarMarca" class="form">
-      <div class="form__box">
-        <div class="centrar">
-          <table class="tabla tabla-secundaria">
-            <caption class="agrandar">Marcas</caption>
+    <div id="form" data-eliminar="eliminarMarca" class="tabla">
+      <div>
+          <table>
+            <caption>Marcas</caption>
             <tr> <th>ID</th> <th>Nombre</th> <th>Estatus</th> <th>Modificar</th> <th>Eliminar</th>
           <tbody id="tbody-inventario">
             <?php
@@ -34,16 +33,15 @@
               <td><?php echo $marca->getId(); ?></td>
               <td><?php echo $marca->getNombre(); ?></td>
               <td><?php echo $marca->getEstatus(); ?></td>
-              <td><a class="botonForm" href="<?php echo constant('URL')?>inventario/actualizarMarca/<?php echo $marca->getId() ?>">Modificar</a></td>
-              <td><button class="botonForm eliminar" data-id="<?php echo $marca->getId(); ?>">Eliminar</button></td>
+              <td><a class="crud" href="<?php echo constant('URL')?>inventario/actualizarMarca/<?php echo $marca->getId() ?>">Modificar</a></td>
+              <td><button class="crud eliminar" data-id="<?php echo $marca->getId(); ?>">Eliminar</button></td>
             </tr>
             <?php } ?>
           </tbody>
           </table>
-        </div>
       </div>
 
-      <div class="centrar">
+      <div class="bottom">
         <a href="<?php echo constant('URL')?>inventario/agregarMarca" class="boton margin-lados">Agregar</a>
         <a href="<?php echo constant('URL')?>inventario" class="boton margin-lados">Volver</a>
       </div>
