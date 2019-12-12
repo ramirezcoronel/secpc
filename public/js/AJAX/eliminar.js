@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
    boton.forEach(boton => {
        boton.addEventListener('click', (e)=>{
-           let respuesta = confirm('¿Esta seguro de eliminar este usuario?')
+           let respuesta = confirm('¿Esta seguro de eliminar esta entidad?')
            let id = boton.dataset.id;
             if ( respuesta ) {
                 //solicitud AJAX
