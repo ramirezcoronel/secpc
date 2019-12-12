@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 	ob_start();
 
@@ -15,7 +15,7 @@
 
 
 		//MODELOS
-		
+
 		$pdf->Cell(0, 10,  'MODELOS',0, 0,'C', 0);
 		$pdf->Ln(10);
 
@@ -29,14 +29,15 @@
 
 		$pdf->SetFont('Arial','',12);//Tipo de letra, negrita, tamaño
 		foreach ($modelos as $row) {
-			
+
 			$pdf->Cell(30,10, $row->getId(), 1, 0,'C', 0);
 			$pdf->Cell(30,10, $row->getNombre(), 1, 0,'C', 0);
 			$pdf->Cell(20,10, $row->getEstatus(), 1, 0,'C', 0);
 			$pdf->Cell(30,10, $row->getMarca(), 1, 0,'C', 0);
 		    $pdf->Ln(10);//salto de linea
-			
+
 		}
+		$pdf->AddPage();
 
 		//MARCAS
 		$pdf->Ln(10);
@@ -53,13 +54,14 @@
 
 		$pdf->SetFont('Arial','',12);//Tipo de letra, negrita, tamaño
 		foreach ($marcas as $row) {
-			
+
 			$pdf->Cell(30,10, $row->getId(), 1, 0,'C', 0);
 			$pdf->Cell(30,10, $row->getNombre(), 1, 0,'C', 0);
 			$pdf->Cell(20,10, $row->getEstatus(), 1, 0,'C', 0);
 		    $pdf->Ln(10);//salto de linea
-			
+
 		}
+		$pdf->AddPage();
 
 		//PARTES
 		$pdf->Ln(10);
@@ -81,7 +83,7 @@
 
 		$pdf->SetFont('Arial','',12);//Tipo de letra, negrita, tamaño
 		foreach ($partes as $row) {
-			
+
 			$pdf->Cell(23,10, $row->getCodigo(), 1, 0,'C', 0);
 			$pdf->Cell(14,10, $row->getSerializable(), 1, 0,'C', 0);
 			$pdf->Cell(16,10, $row->getEstatus(), 1, 0,'C', 0);
@@ -91,8 +93,10 @@
 			$pdf->Cell(31,10, $row->getPuntoReorden(), 1, 0,'C', 0);
 			$pdf->Cell(25,10, $row->getIdModelo(), 1, 0,'C', 0);
 		    $pdf->Ln(10);//salto de linea
-			
+
 		}
+
+		$pdf->AddPage();
 
 		//PARTES
 		$pdf->Ln(10);
@@ -110,16 +114,16 @@
 
 		$pdf->SetFont('Arial','',12);//Tipo de letra, negrita, tamaño
 		foreach ($movimientos as $row) {
-			
+
 			$pdf->Cell(23,10, $row->getNumero(), 1, 0,'C', 0);
 			$pdf->Cell(14,10, $row->getTipo(), 1, 0,'C', 0);
 			$pdf->Cell(30,10, $row->getFecha(), 1, 0,'C', 0);
 			$pdf->Cell(26,10, $row->getHora(), 1, 0,'C', 0);
 			$pdf->Cell(28,10, $row->getEstatus(), 1, 0,'C', 0);
 		    $pdf->Ln(10);//salto de linea
-			
+
 		}
 
 		$pdf->Output();
-		ob_end_flush(); 
+		ob_end_flush();
 ?>
