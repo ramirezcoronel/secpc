@@ -25,6 +25,25 @@
   }
 }
 
+@keyframes aparecer {
+  0% {
+    height: auto;
+    visibility: hidden;
+    opacity: 0;
+    transform: scale(0.5,0.5);
+  }
+  20% {
+    visibility: hidden;
+    opacity: 0;
+    height: auto;
+  }
+  100% {
+    visibility: visible;
+    opacity: 1;
+    height: auto;
+    transform: scale(1,1);
+  }
+}
 
 .mensaje-button:hover{
   background: #333;

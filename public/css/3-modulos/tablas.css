@@ -10,7 +10,8 @@
   border-radius: 10px;
   overflow: hidden;
   margin: 0 10px;
-  transition: all ease .5s;
+  animation-name: aparecer;
+  animation-duration: 1s;
 }
 .tabla caption {
   font-size: 1.5em;
@@ -21,6 +22,7 @@
 .tabla table {
   padding: 10px;
   border-collapse: collapse;
+
 }
 
 .tabla td,
@@ -81,4 +83,5 @@
 .tabla .vacio {
   padding: 10px 0;
   text-align: center;
+  border-bottom: 1px solid rgba(255,255,255,.5);
 }

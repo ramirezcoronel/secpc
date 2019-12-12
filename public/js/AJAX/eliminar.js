@@ -49,8 +49,8 @@ function checkFilas () {
   const boton = document.querySelectorAll('.eliminar')
 
   if ( !boton[0] ) {
-    let p = document.createElement("p")
-    let text = document.createTextNode("No hay entradas")
+    let p = document.createElement("p"),
+    text = document.createTextNode("No hay entradas")
     const tbody = document.querySelector("#tbody-" + data['controlador'])
     const box = document.querySelector(".bottom")
 
