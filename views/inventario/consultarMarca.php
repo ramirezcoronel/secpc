@@ -42,8 +42,8 @@
       </div>
 
       <div class="bottom">
-        <a href="<?php echo constant('URL')?>inventario/agregarMarca" class="boton margin-lados">Agregar</a>
-        <a href="<?php echo constant('URL')?>inventario" class="boton margin-lados">Volver</a>
+        <a href="<?php echo constant('URL')?>inventario/agregarMarca">Agregar</a>
+        <a href="<?php echo constant('URL')?>inventario">Volver</a>
       </div>
 
     </div>
