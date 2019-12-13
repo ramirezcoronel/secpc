@@ -16,10 +16,13 @@
     <main>
         <div class="text-header">
             <h2> <?php echo $this->mensaje ?> </h2>
-            
+
         </div>
         <form action="<?php echo constant('URL')?>usuarios/registrarUsuario" method="POST" class="form">
-        <div class="form__box esquinas">
+          <div class="form-header">
+            <p>Agregar Usuario</p>
+          </div>
+        <div class="form__box">
          <div>
             <label for="nombre">Nombre:</label>
             <input type="text" name="nombre" id="nombre">
@@ -28,8 +31,6 @@
             <label for="apellido">Apellido:</label>
             <input type="text" name="apellido" id="apellido">
          </div>
-        </div>
-        <div class="form__box esquinas">
          <div>
             <label for="username">Username:</label>
             <input type="text" name="username" id="username">
@@ -44,31 +45,25 @@
                 <option value="tester">Tester</option>
             </select>
          </div>
-        </div>
-        <div class="form__box esquinas">
-            <div class="margin-lados">
+            <div>
                 <label for="pass">Contraseña:</label>
                 <input type="password" name="pass" id="pass" required>
             </div>
-            <div class="margin-lados">
+            <div>
                 <label for="pass">Confirmar contraseña:</label>
                 <input type="password" name="pass-confirmar" id="pass" required>
             </div>
-        </div>
-        <div class="form__box">
-        </div>
-        <div class="form__box esquinas">
           <div>
             <label for="cedula">Pregunta de seguridad(Cedula:)</label>
             <input type="text" name="cedula" id="nombre" placeholder="Ingrese su cedula" required>
-              
-          </div> 
+
+          </div>
         </div>
-        
-        <div class="centrar">
-          <button type="submit" name="agregar" class="boton" value="agregar">Agregar Usuario</button>
+
+        <div class="bottom">
+          <button type="submit" name="agregar"  value="agregar">Submit</button>
         </div>
-        
+
       </form>
     </main>
   </div>

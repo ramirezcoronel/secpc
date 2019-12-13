@@ -26,7 +26,7 @@
 .user-img {
   width: 70px;
   height: 70px;
-  /* 
+  /*
       El valor AUTO para la propiedad margin ayuda a centrar el elemento,
       en este caso asigne a todos lados menos hacia abajo, porque hacia
       abajo si quiero un margin.
@@ -38,7 +38,7 @@
 .user-img1 {
   width: 70px;
   height: 70px;
-  /* 
+  /*
       El valor AUTO para la propiedad margin ayuda a centrar el elemento,
       en este caso asigne a todos lados menos hacia abajo, porque hacia
       abajo si quiero un margin.
@@ -49,7 +49,7 @@
 }
 
 
-/* 
+/*
     En la expresion de abajo digo lo siguiente:
     - Quiero que tomes todos los inputs, cuyo valores
     sean los que estan dentro de los Corchetes.
@@ -57,15 +57,15 @@
     2do: los inputs que tengan el atributo TYPE=PASSWORD
   */
 
-form input[name="usuario"],
-input[type="password"] {
+.login input[name="usuario"],
+.login input[type="password"] {
   font-size: 1em;
   border-bottom: 3px solid #e64c3c;
   margin-bottom: 20px;
 }
-/* 
+/*
     Estos estilos se repiten en cada input,
-    asi que cree una clase aparte para reutilizarlo 
+    asi que cree una clase aparte para reutilizarlo
     en los 2 inputs de entrada y en el BOTON
   */
 .login__form__input {
@@ -99,13 +99,13 @@ input[type="password"] {
                       CAJON AL LADO DE FORMULARIO
    *************************************************************/
 
-/* 
-  Agrego lo siguiente porque quiero que esten uno del lado del otro 
+/*
+  Agrego lo siguiente porque quiero que esten uno del lado del otro
   y con la propiedad inline-block es posible.
   */
 .login__form,
-.login__sistema, 
-.restaurar__form, 
+.login__sistema,
+.restaurar__form,
 .restaurar__sistema{
   display: inline-block;
 }
