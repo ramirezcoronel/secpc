@@ -20,25 +20,27 @@
           <?php
         } ?>
 
-        <form action="<?php echo constant('URL')?>login" class="login__form"method="POST">
+        <form id="login" action="<?php echo constant('URL')?>login" class="login__form"method="POST">
           <div class="user-img"></div>
-         
+
           <input
-            class="login__form__input"
+            class="login__form__input input"
             type="text"
             name="usuario"
             placeholder="Usuario"
-            id="usuario"
+            data-id="Campo de nombre de usuario"
+            id="usuario "
           />
           <input
-            class="login__form__input"
+            class="login__form__input input"
             type="password"
             name="contrasena"
             placeholder="********"
+            data-id="Campo de Contraseña"
             id="contraseña"
           />
-          <button type="submit" name="ingresar" class="login__form__input login__form__submit" value="ingresar">Iniciar Sesion</button>
-          <p class="login__form__reset"> 
+          <button type="submit" name="ingresar" class="login__form__input submit login__form__submit" value="ingresar">Iniciar Sesion</button>
+          <p class="login__form__reset">
             <a href="<?php echo constant('URL')?>restaurar">restaurar mi contraseña</a>
           </p>
         </form>
@@ -51,8 +53,8 @@
           </p>
         </div>
       </div>
-
-      
     </main>
+
+    <script src="<?php echo constant('URL')?>public/js/validacion/login.js"></script>
   </body>
 </html>
