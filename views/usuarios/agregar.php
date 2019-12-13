@@ -61,7 +61,9 @@
         </div>
 
         <div class="bottom">
-          <button type="submit" name="agregar"  value="agregar">Submit</button>
+          <button type="submit" name="agregar"  value="agregar">Agregar</button>
+          <a href="<?php echo constant('URL')?>usuarios" >Volver</a>
+
         </div>
 
       </form>

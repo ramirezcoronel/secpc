@@ -43,7 +43,8 @@
           </table>
       </div>
       <div class="bottom">
-        <a href="<?php echo constant('URL')?>usuarios/registrarUsuario">Agregar Usuario</a>
+        <a href="<?php echo constant('URL')?>usuarios/registrarUsuario">Agregar</a>
+          <a href="<?php echo constant('URL')?>">Volver</a>
       </div>
       </div>
     </main>

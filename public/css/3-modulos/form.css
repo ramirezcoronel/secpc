@@ -17,13 +17,14 @@
 }
 .form-header p {
   margin: 0;
+  font-weight: bold;
 }
 
 .form__box {
   display: flex;
   justify-content: space-around;
   margin-bottom: 10px;
-  font-size: 1.1em;
+  font-size: 1em;
   flex-wrap: wrap;
 
 }
@@ -45,7 +46,7 @@
 .form__box input,
 .form__box select{
   padding: 5px;
-  font-size: 1.1em;
+  font-size: 1em;
 }
 
 .form .bottom {
@@ -54,7 +55,8 @@
   text-align: right;
   background: rgba(3, 3, 3, 0.2);
 }
-.form .bottom button{
+.form .bottom button,
+.form .bottom a{
   padding: 10px;
   border: none;
   border-radius: 5px;
