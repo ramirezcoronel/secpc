@@ -67,6 +67,11 @@
   background: #e64c3c;
   transition: all ease .5s;
 }
+
+.form .bottom a:hover,
+.form .bottom button:hover{
+  background: #f55645;
+}
 /* JAVASCRIPT */
 .desaparecer {
   display: none;
