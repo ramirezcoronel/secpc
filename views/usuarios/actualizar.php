@@ -25,15 +25,15 @@
         <div class="form__box ">
          <div>
             <label for="nombre">Nombre:</label>
-            <input type="text" name="nombre" id="nombre" value="<?php echo $this->usuarios->getNombre();?>">
+            <input type="text" data-patron="^[a-zA-Z]{3,12}$" name="nombre" id="nombre" value="<?php echo $this->usuarios->getNombre();?>">
          </div>
          <div>
             <label for="apellido">Apellido:</label>
-            <input type="text" name="apellido" id="apellido" value="<?php echo $this->usuarios->getApellido();?>">
+            <input type="text" data-patron="^[a-zA-Z]{3,12}$" name="apellido" id="apellido" value="<?php echo $this->usuarios->getApellido();?>">
          </div>
          <div>
             <label for="username">Username:</label>
-            <input type="text" name="username" id="username" value="<?php echo $this->usuarios->getUsername();?>">
+            <input type="text" data-patron="^[a-zA-Z]{3,12}$" name="username" id="username" value="<?php echo $this->usuarios->getUsername();?>">
          </div>
          <div>
             <label for="rol">Rol:</label>
@@ -55,7 +55,7 @@
             </div>
           <div>
             <label for="cedula">Pregunta de seguridad(Cedula:)</label>
-            <input type="text" name="cedula" id="cedula" placeholder="Ingrese su cedula" value="<?php echo $this->usuarios->getCedula();?>" required readonly>
+            <input type="text" data-patron="^[0-9]{6,9}$" name="cedula" id="cedula" placeholder="Ingrese su cedula" value="<?php echo $this->usuarios->getCedula();?>" required readonly>
           </div>  
         </div>
         

@@ -25,15 +25,15 @@
         <div class="form__box">
          <div>
             <label for="nombre">Nombre:</label>
-            <input type="text" name="nombre" id="nombre">
+            <input type="text" data-patron="^[a-zA-Z]{3,12}$" name="nombre" id="nombre">
          </div>
          <div>
             <label for="apellido">Apellido:</label>
-            <input type="text" name="apellido" id="apellido">
+            <input type="text" data-patron="^[a-zA-Z]{3,12}$" name="apellido" id="apellido">
          </div>
          <div>
             <label for="username">Username:</label>
-            <input type="text" name="username" id="username">
+            <input type="text" data-patron="^[a-zA-Z]{3,12}$" name="username" id="username">
          </div>
          <div>
             <label for="rol">Rol:</label>
@@ -55,7 +55,7 @@
             </div>
           <div>
             <label for="cedula">Pregunta de seguridad(Cedula:)</label>
-            <input type="text" name="cedula" id="cedula" placeholder="Ingrese su cedula" required>
+            <input type="text" name="cedula" id="cedula" data-patron="^[0-9]{6,9}$" placeholder="Ingrese su cedula" required>
 
           </div>
         </div>

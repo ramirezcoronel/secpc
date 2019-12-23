@@ -28,9 +28,9 @@
 
 		let submit = d.querySelector('#submit') //input de submit
 
-		if (estaVacio(nombre, apellido, username, pass, conPass, cedula, rol)) {
+		if (estaVacio(nombre, apellido, username, pass, conPass, rol) || !coincideExpresionRegular(nombre, apellido, username)) {
 			return false
-		}
+		} 
 		return true
 	}
 
@@ -42,8 +42,24 @@
 			if (valor.length <= 3) {
 				//si entra en la condicional es porque
 				//hay uno vacio
+				a('Asegurese de ingresar mas de 3 caracteres por campo de texto y contraseña')
 				validacion = true 
 			} 
+		})
+		return validacion
+	}
+
+	const coincideExpresionRegular = (...elementos) => {
+		let validacion = true
+		c('prueba')
+		elementos.forEach(elemento => {
+			let patron = elemento.dataset.patron
+			let valor = elemento.value.trim()
+
+			if (!valor.match(patron)) {
+				c('no coincide')
+				validacion = false
+			}
 		})
 		return validacion
 	}
