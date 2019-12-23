@@ -23,12 +23,14 @@
 		let username = d.querySelector('#username') //input de username
 		let pass = d.querySelector('#pass') //input de pass
 		let conPass = d.querySelector('#conPass') //input de confirmar pass
+		let cedula = d.querySelector('#cedula') //input de confirmar cedula
 
 		let submit = d.querySelector('#submit') //input de submit
 
-		c(estaVacio(nombre, apellido, username, pass, conPass))
-		
-		
+		if (estaVacio(nombre, apellido, username, pass, conPass, cedula)) {
+			return false
+		}
+		return true
 	}
 
 	const estaVacio = (...elementos) => {
@@ -39,7 +41,6 @@
 			if (valor.length <= 3) {
 				//si entra en la condicional es porque
 				//hay uno vacio
-				c(elemento)
 				validacion = true 
 			} 
 		})
