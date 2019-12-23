@@ -51,7 +51,7 @@
             </div>
             <div>
                 <label for="pass">Confirmar contraseña:</label>
-                <input type="password" name="pass-confirmar" id="pass-c" required>
+                <input type="password" name="pass-confirmar" id="conPass" required>
             </div>
           <div>
             <label for="cedula">Pregunta de seguridad(Cedula:)</label>
