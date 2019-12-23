@@ -50,23 +50,23 @@
                 <input type="password" name="pass" id="pass" value="<?php echo $this->usuarios->getPass();?>" required>
             </div>
             <div class="margin-lados">
-                <label for="pass">Confirmar contraseña:</label>
-                <input type="password" name="pass-confirmar" id="pass" required>
+                <label for="conPass">Confirmar contraseña:</label>
+                <input type="password" name="pass-confirmar" id="conPass" required>
             </div>
           <div>
             <label for="cedula">Pregunta de seguridad(Cedula:)</label>
-            <input type="text" name="cedula" id="nombre" placeholder="Ingrese su cedula" value="<?php echo $this->usuarios->getCedula();?>" required readonly>
+            <input type="text" name="cedula" id="cedula" placeholder="Ingrese su cedula" value="<?php echo $this->usuarios->getCedula();?>" required readonly>
           </div>  
         </div>
         
         <div class="bottom">
-          <button type="submit" name="modificarUsuario" class="boton" value="modificarUsuario">Modificar Usuario</button>
-          <a href="<?php echo constant('URL')?>usuarios/" class="boton">Cancelar</a>
+          <button type="submit" id="submit" name="modificarUsuario" value="modificarUsuario">Modificar Usuario</button>
+          <a href="<?php echo constant('URL')?>usuarios/">Cancelar</a>
         </div>
         
       </form>
     </main>
   </div>
-   <script src="<?php echo constant('URL')?>public/js/usuarios/agregar.js"></script>
+   <script src="<?php echo constant('URL')?>public/js/usuarios/actualizar.js"></script>
 </body>
 </html>
