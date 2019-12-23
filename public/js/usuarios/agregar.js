@@ -25,9 +25,11 @@
 		let conPass = d.querySelector('#conPass') //input de confirmar pass
 		let cedula = d.querySelector('#cedula') //input de confirmar cedula
 
+		let rol = d.querySelector('#rol') //input de confirmar rol
+
 		let submit = d.querySelector('#submit') //input de submit
 
-		if (estaVacio(nombre, apellido, username, pass, conPass, cedula)) {
+		if (estaVacio(nombre, apellido, username, pass, conPass, cedula, rol)) {
 			return false
 		}
 		return true
