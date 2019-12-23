@@ -51,11 +51,11 @@
             </div>
             <div>
                 <label for="pass">Confirmar contraseña:</label>
-                <input type="password" name="pass-confirmar" id="pass" required>
+                <input type="password" name="pass-confirmar" id="pass-c" required>
             </div>
           <div>
             <label for="cedula">Pregunta de seguridad(Cedula:)</label>
-            <input type="text" name="cedula" id="nombre" placeholder="Ingrese su cedula" required>
+            <input type="text" name="cedula" id="cedula" placeholder="Ingrese su cedula" required>
 
           </div>
         </div>
@@ -69,6 +69,6 @@
       </form>
     </main>
   </div>
-
+   <script src="<?php echo constant('URL')?>public/js/usuarios/agregar.js"></script>
 </body>
 </html>
