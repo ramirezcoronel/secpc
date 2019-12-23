@@ -19,7 +19,10 @@
             
         </div>
         <form action="<?php echo constant('URL')?>usuarios/modificarUsuario" method="POST" class="form">
-        <div class="form__box esquinas">
+          <div class="form-header">
+            <p>Actualizar Usuario</p>
+          </div>
+        <div class="form__box ">
          <div>
             <label for="nombre">Nombre:</label>
             <input type="text" name="nombre" id="nombre" value="<?php echo $this->usuarios->getNombre();?>">
@@ -28,8 +31,6 @@
             <label for="apellido">Apellido:</label>
             <input type="text" name="apellido" id="apellido" value="<?php echo $this->usuarios->getApellido();?>">
          </div>
-        </div>
-        <div class="form__box esquinas">
          <div>
             <label for="username">Username:</label>
             <input type="text" name="username" id="username" value="<?php echo $this->usuarios->getUsername();?>">
@@ -44,8 +45,6 @@
                 <option value="tester">Tester</option>
             </select>
          </div>
-        </div>
-        <div class="form__box esquinas">
             <div class="margin-lados">
                 <label for="pass">Contraseña:</label>
                 <input type="password" name="pass" id="pass" value="<?php echo $this->usuarios->getPass();?>" required>
@@ -54,17 +53,13 @@
                 <label for="pass">Confirmar contraseña:</label>
                 <input type="password" name="pass-confirmar" id="pass" required>
             </div>
-        </div>
-        <div class="form__box">
-        </div>
-        <div class="form__box esquinas">
           <div>
             <label for="cedula">Pregunta de seguridad(Cedula:)</label>
             <input type="text" name="cedula" id="nombre" placeholder="Ingrese su cedula" value="<?php echo $this->usuarios->getCedula();?>" required readonly>
           </div>  
         </div>
         
-        <div class="centrar">
+        <div class="bottom">
           <button type="submit" name="modificarUsuario" class="boton" value="modificarUsuario">Modificar Usuario</button>
           <a href="<?php echo constant('URL')?>usuarios/" class="boton">Cancelar</a>
         </div>
@@ -72,6 +67,6 @@
       </form>
     </main>
   </div>
-
+   <script src="<?php echo constant('URL')?>public/js/usuarios/agregar.js"></script>
 </body>
 </html>
