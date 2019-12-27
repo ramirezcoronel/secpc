@@ -49,6 +49,25 @@
   font-size: 1em;
 }
 
+.radio-buttons {
+  display: flex;
+  height: 100%;
+  background: rgba(3, 3, 3, 0.2);
+  justify-content: center;
+}
+
+.radio-buttons span {
+  display: block;
+  flex-basis: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  color: #fff;
+  text-transform: uppercase;
+}
+
+
 .form .bottom {
   padding: 15px;
   color: #fff;
@@ -81,6 +100,7 @@
   display: inline-block;
   margin-bottom: 0;
 }
+
 
 
 .mensaje-button {

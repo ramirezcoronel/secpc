@@ -19,21 +19,23 @@
             
         </div>
         <form action="<?php echo constant('URL')?>inventario/agregarMarca" method="POST" class="form">
-        <div class="form__box esquinas">
-         <div class="margin-lados">
-            <label for="id">Id del modelo:</label>
+
+           <div class="form-header"> <p>Agregar Marca</p> </div>
+           
+        <div class="form__box">
+         <div>
+            <label for="id">Id de la marca:</label>
             <input type="text" name="id" id="id">
          </div>
-         <div class="margin-lados">
-            <label for="nombre">Nombre de Modelo:</label>
+         <div>
+            <label for="nombre">Nombre de la marca:</label>
             <input type="text" name="nombre" id="nombre">
          </div>
         </div>
-        <div class="form__box esquinas">
          
-        <div class="centrar">
-          <button type="submit" name="agregar" class="boton" value="agregar">Agregar Marca</button>
-          <a href="<?php echo constant('URL')?>inventario" class="boton margin-lados">Volver</a>
+        <div class="bottom">
+          <button type="submit" name="agregar" value="agregar">Agregar Marca</button>
+          <a href="<?php echo constant('URL')?>inventario">Volver</a>
         </div>
         
       </form>
