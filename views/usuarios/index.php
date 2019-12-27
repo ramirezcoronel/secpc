@@ -36,7 +36,9 @@
                 <td><?php echo $usuario->getRol(); ?></td>
                 <td><?php echo $usuario->getId(); ?></td>
                 <td><a class="crud" href="<?php echo constant('URL')?>usuarios/modificarUsuario/<?php echo $usuario->getId();?>">Modificar</a></td>
-                <td><button class="crud eliminar" data-id="<?php echo $usuario->getId(); ?>">Eliminar</button></td>
+                <td>
+                  <button class="crud eliminar" data-id="<?php echo $usuario->getId(); ?>" <?php if ( $usuario->getId() == '1' ) {?> disabled="disabled" <?php }?>>Eliminar</button>
+                </td>
               </tr>
               <?php } ?>
             </tbody>
