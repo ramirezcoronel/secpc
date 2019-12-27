@@ -21,8 +21,11 @@
           <?php if ( isset($this->movimiento) ){ ?>
 
              <form action="<?php echo constant('URL')?>inventario/agregarMovimiento" method="POST" class="form margin-lados margin-bottom">
-        <div class="form__box esquinas">
-         <div class="margin-lados">
+
+           <div class="form-header"> <p>Agregar Movimiento</p> </div>
+          
+        <div class="form__box">
+         <div>
             <label for="num">Nº del Movimiento:</label>
             <input type="text" name="num" id="num" value="<?php echo $this->movimiento->getNumero();?>" readonly>
          </div>
@@ -30,10 +33,6 @@
              <label for="tipo">Tipo de Movimiento:</label>
              <input type="text" name="tipo" value="<?php echo $this->movimiento->getTipo();?>" readonly>
            </div>
-        </div>
-
-
-         <div class="form__box esquinas margin-bottom">
           <div class="margin-lados">
              <label for="hora">Hora de movimiento:</label>
              <input type="text" id="hora" name="hora" min="09:00" max="18:00" value="<?php echo $this->movimiento->getHora();?> " required readonly>
@@ -48,7 +47,10 @@
     <?php } else {?>
 
         <form action="<?php echo constant('URL')?>inventario/agregarMovimiento" method="POST" class="form margin-lados">
-        <div class="form__box esquinas">
+
+           <div class="form-header"> <p>Agregar Movimiento</p> </div>
+          
+        <div class="form__box">
          <div class="margin-lados">
             <label for="num">Nº del Movimiento:</label>
             <input type="text" name="num" id="num">
@@ -61,10 +63,7 @@
                <option value="2">Salida</option>
              </select>
            </div>
-        </div>
 
-
-         <div class="form__box esquinas">
           <div class="margin-lados">
              <label for="hora">Hora de movimiento:</label>
              <input type="time" id="hora" name="hora" min="09:00" max="18:00" required>
@@ -76,13 +75,11 @@
         </div>
 
          
-        <div class="centrar">
-          <button type="submit" name="agregar" class="boton" value="agregar">Agregar Movimiento</button>
-          <a href="<?php echo constant('URL')?>inventario" class="boton margin-lados">Volver</a>
+        <div class="bottom">
+          <button type="submit" name="agregar"  value="agregar">Agregar Movimiento</button>
+          <a href="<?php echo constant('URL')?>inventario">Volver</a>
         </div>
         
-
-
     <?php }?>
       
       <!-- DESDE AQUI ESTA EL FORMULARIO PARA AGREGAR PARTES -->
@@ -114,9 +111,9 @@
             <input type="text" name="numserialfabricante" id="numserialfabricante" />
           </div>
         </div>
-        <div class="centrar">
-          <button type="submit" name="agregarParte" class="boton">Agregar Inventario</button>
-          <a href="<?php echo constant('URL')?>inventario/" class="boton">Listo!</a>
+        <div class="bottom">
+          <a href="<?php echo constant('URL')?>inventario/" >Listo!</a>
+          <button type="submit" name="agregarParte" >Agregar Inventario</button>
 
         </div>
         

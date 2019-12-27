@@ -21,9 +21,7 @@
         <form action="<?php echo constant('URL')?>inventario/agregarPartes" method="POST" class="form">
 
            <div class="form-header"> <p>Agregar Parte</p> </div>
-           
-
-
+          
         <div class="form__box">
           <div>
             <label for="modelo">Modelo de Parte</label>
