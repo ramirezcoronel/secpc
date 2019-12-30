@@ -10,7 +10,7 @@
    <p><?php echo $this->error;?></p>
         </div>
   <div class="bottom">
-    <button class="botom">Ok</button>
+    <button id="close-modal" class="botom">Ok</button>
   </div>
 </div>  
 </div>

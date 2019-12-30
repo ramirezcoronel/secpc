@@ -14,7 +14,10 @@
   <div class="container">
     <?php require 'views/menu.php'; ?> <!-- MENU -->
     <main>
+      <div class="modal-container">
         <?php require_once 'views/errores/mensaje.php'?>
+        
+      </div>
         <form action="<?php echo constant('URL')?>usuarios/registrarUsuario" method="POST" class="form">
           <div class="form-header">
             <p>Agregar Usuario</p>
@@ -67,5 +70,6 @@
     </main>
   </div>
    <script src="<?php echo constant('URL')?>public/js/usuarios/agregar.js"></script>
+   <script src="<?php echo constant('URL')?>public/js/modal/modal.js"></script>
 </body>
 </html>
