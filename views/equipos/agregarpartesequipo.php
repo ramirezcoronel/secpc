@@ -14,6 +14,10 @@
   <div class="container">
     <?php require 'views/menu.php'; ?> <!-- MENU -->
     <main>
+      <div class="modal-container">
+        <?php require_once 'views/errores/mensaje.php'?>
+        
+      </div>
         <div class="text-header">
             <h2> <?php echo $this->mensaje ?> </h2>
             
