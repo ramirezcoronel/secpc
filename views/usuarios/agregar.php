@@ -14,10 +14,7 @@
   <div class="container">
     <?php require 'views/menu.php'; ?> <!-- MENU -->
     <main>
-        <div class="text-header">
-            <h2> <?php echo $this->mensaje ?> </h2>
-
-        </div>
+        <?php require_once 'views/errores/mensaje.php'?>
         <form action="<?php echo constant('URL')?>usuarios/registrarUsuario" method="POST" class="form">
           <div class="form-header">
             <p>Agregar Usuario</p>

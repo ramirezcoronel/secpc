@@ -2,6 +2,8 @@
 
   class usuariosCRUD extends Model{
 
+    public $error;
+
     function __construct() {
       parent::__construct();
     }
@@ -14,7 +16,7 @@
 
         return true;
       } catch(PDOException $e){
-
+        $this->error = $e->getMessage();
         return false;
       }
     }
@@ -90,6 +92,10 @@
       }
 
 
+    }
+
+    public function getError () {
+      return $this->error;
     }
   }
 

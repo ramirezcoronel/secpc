@@ -11,5 +11,6 @@
 @import "3-modulos/form.css";
 @import "3-modulos/tablas.css";
 @import "3-modulos/cambiar_contrasena.css";
+@import "3-modulos/modal.css";
 /* estados */
 @import "4-estados/animaciones.css";

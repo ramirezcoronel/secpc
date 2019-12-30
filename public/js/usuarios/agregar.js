@@ -4,12 +4,13 @@
 
 		submit.addEventListener('click', (e)=>{
 
-			e.preventDefault() //prevenir que se envie el formulario
+			
 
 			if (validacionEstaBien()) { //function principal de validacion
 				c('validacion correcta!')
 			}else{
 				c('validacion incorrecta')
+				e.preventDefault() //prevenir que se envie el formulario
 			}
 		})
 
