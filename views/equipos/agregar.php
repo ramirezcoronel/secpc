@@ -73,7 +73,7 @@
 
           <div class="bottom">
           <a href="<?php echo constant('URL')?>equipos/consultarEquipos" >Volver</a>
-          <button type="submit" name="agregar" >Agregar Tipo de Equipo</button>
+          <button type="submit" name="agregar" >Agregar Equipo</button>
 
         </div>
         
