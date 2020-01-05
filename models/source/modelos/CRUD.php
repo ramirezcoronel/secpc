@@ -15,7 +15,7 @@
               
               return true;
             } catch(PDOException $e){
-              echo $e->getMessage();
+              $this->error = $e->getMessage();
               return false;
             }
           }
@@ -72,6 +72,9 @@
                 echo $e->getMessage();
                 return false;
               }
+          }
+          public function getError () {
+            return $this->error;
           }
       
     }

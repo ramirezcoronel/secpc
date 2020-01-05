@@ -12,6 +12,7 @@
 	        $this->view->mensaje = 'Partes agregadas exitosamente!.';
 	      }else{
 	        $this->view->mensaje = 'Ha ocurrido un error.';
+	        $this->view->error = $this->model->partes->getError();
 	      }
 	    }else{
 	      $this->view->mensaje = 'Rellene los campos';

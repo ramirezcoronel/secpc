@@ -67,10 +67,6 @@
             <label for="puntoreorden">Punto de Reorden:</label>
             <input type="number" name="puntoreorden" id="puntoreorden">
          </div>
-         <div class="margin-lados">
-            <label for="estatus">Estatus del Modelo:</label>
-            <input type="text" name="estatus" id="estatus">
-         </div>
 
         </div>
          
@@ -82,6 +78,7 @@
       </form>
     </main>
   </div>
+     <script src="<?php echo constant('URL')?>public/js/modal/modal.js"></script>
 
 </body>
 </html>

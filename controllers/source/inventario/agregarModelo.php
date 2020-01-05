@@ -12,6 +12,7 @@
 	    $this->view->mensaje = 'Modelo agregado exitosamente!.';
 	  }else{
 	    $this->view->mensaje = 'Ha ocurrido un error.';
+	    $this->view->error = $this->model->modelos->getError();
 	  }
 	}else{
 	  $this->view->mensaje = 'Rellene los campos';

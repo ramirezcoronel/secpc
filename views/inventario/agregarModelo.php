@@ -59,6 +59,7 @@
       </form>
     </main>
   </div>
+     <script src="<?php echo constant('URL')?>public/js/modal/modal.js"></script>
 
 </body>
 </html>
