@@ -15,7 +15,7 @@
     <?php require 'views/menu.php'; ?> <!-- MENU -->
     <main>
       <div class="modal-container">
-        <?php require_once 'views/errores/mensaje.php'?>
+        <?php include 'views/errores/mensaje.php'?>
         
       </div>
         <div class="text-header">
@@ -72,6 +72,6 @@
     </main>
   </div>
    <script src="<?php echo constant('URL')?>public/js/usuarios/actualizar.js"></script>
-   <script src="<?php echo constant('URL')?>public/js/model/model.js"></script>
+   <script src="<?php echo constant('URL')?>public/js/modal/modal.js"></script>
 </body>
 </html>

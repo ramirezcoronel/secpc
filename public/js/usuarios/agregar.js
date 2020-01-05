@@ -45,7 +45,12 @@
 				//si entra en la condicional es porque
 				//hay uno vacio
 				validacion = true 
-			} 
+				elemento.parentNode.style.border = '2px solid #e93624'
+				elemento.parentNode.style.borderRadius = '5px'
+			} else {
+				elemento.parentNode.style.border = '0px solid #fff'
+				elemento.parentNode.style.borderRadius = '5px'
+			}
 		})
 		return validacion
 	}

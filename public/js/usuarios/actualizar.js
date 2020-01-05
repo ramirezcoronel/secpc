@@ -4,12 +4,11 @@
 
 		submit.addEventListener('click', (e)=>{
 
-			e.preventDefault() //prevenir que se envie el formulario
-
 			if (validacionEstaBien()) { //function principal de validacion
 				c('validacion correcta!')
 			}else{
 				c('validacion incorrecta')
+				e.preventDefault() //prevenir que se envie el formulario
 			}
 		})
 
@@ -44,6 +43,7 @@
 				//hay uno vacio
 				a('Asegurese de ingresar mas de 3 caracteres por campo de texto y contraseña')
 				validacion = true 
+				elemento.style.border = "thick solid red"
 			} 
 		})
 		return validacion
@@ -57,7 +57,7 @@
 			let valor = elemento.value.trim()
 
 			if (!valor.match(patron)) {
-				c('no coincide')
+				c('no coincide' + elemento)
 				validacion = false
 			}
 		})

@@ -3,7 +3,6 @@
 
 		let boton = d.getElementById('close-modal')
 
-
 		boton.addEventListener('click', ()=>{
 			let container = d.querySelector('.modal-container')
 			let modal = d.querySelector('.modal-back')
@@ -11,3 +10,4 @@
 		})
 	})
 })(console.log, document)
+
