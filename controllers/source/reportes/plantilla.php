@@ -10,9 +10,11 @@ class PDF extends FPDF {
 		$this->setY(0);
 		$this->setX(0);
 		$this->SetFont('Helvetica','B',20);//Tipo de letra, negrita, tamaño
-		$this->setFillColor(60,60,60);
+		$this->setFillColor(51,51,51);
 		$this->SetTextColor(255,255,255);
-		$this->Cell($this->GetPageWidth(),15,'INVENTARIO',0,0,'C', TRUE);
+		$this->Cell($this->GetPageWidth(),20,'INVENTARIO',0,0,'C', TRUE);
+		$this->Image(constant('URL').'/public/img/1.jpg', 0,0,50);
+		$this->Image(constant('URL').'/public/img/UPTAEB.png', $this->GetPageWidth() - 25 ,0,23,19);
 		$this->Ln(10);
 	}
 }

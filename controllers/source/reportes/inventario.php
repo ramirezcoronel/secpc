@@ -16,7 +16,6 @@
 
 
 		//MODELOS
-
 		$pdf->Cell(110, 10,  'MODELOS',1, 0,'C', 0);
 		$pdf->Ln(10);
 
