@@ -36,7 +36,7 @@
                   $tipo = new ModelosClass();
                   $tipo = $row;
              ?>
-            <option value="<?php echo $tipo->getId()?>"><?php echo $tipo->getNombre(); ?></option>
+            <option value="<?php echo $tipo->getId()?>"><?php echo $tipo->getNombre().' - '.$tipo->getId(); ?></option>
               <?php } ?>
             </select>
             

@@ -37,7 +37,7 @@
                       $marca = new MarcasClass();
                       $marca = $row;
                  ?>
-                <option value="<?php echo $marca->getId()?>"><?php echo $marca->getNombre(); ?></option>
+                <option value="<?php echo $marca->getId()?>"><?php echo $marca->getNombre().' - '.$marca->getId(); ?></option>
                   <?php } ?>
                 </select>
                 

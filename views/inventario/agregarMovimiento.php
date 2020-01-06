@@ -99,7 +99,7 @@
                     $parte = new PartesClass();
                     $parte = $row;
                 ?>
-              <option value="<?php echo $parte->getCodigo()?>"><?php echo $parte->getCodigo(); ?></option>
+              <option value="<?php echo $parte->getCodigo()?>"><?php echo $parte->getIdModelo().''. $parte->getCodigo(); ?></option>
             <?php } ?>
               </select>
            </div>

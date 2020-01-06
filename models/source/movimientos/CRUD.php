@@ -26,7 +26,7 @@
           
           return true;
         } catch(PDOException $e){
-          echo $e->getMessage();
+          $this->error = $e->getMessage();
           return false;
         }
       }
