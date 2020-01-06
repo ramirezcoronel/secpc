@@ -12,7 +12,7 @@
       }else{
 
         $this->view->mensaje = 'Ha ocurrido un error.';
-
+        $this->view->error = $this->model->tiposequipos->getError();
       }
     }else{
 

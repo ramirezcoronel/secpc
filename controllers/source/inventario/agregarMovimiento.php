@@ -20,6 +20,8 @@
 
 	      }else{
 	        $this->view->mensaje = 'Ha ocurrido un error.';
+	        $this->view->error = $this->model->movimientos->getError();
+
 	      }
 	    }else{
 	      $this->view->mensaje = 'Rellene los campos';

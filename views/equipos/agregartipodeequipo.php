@@ -30,23 +30,22 @@
         <div class="form__box">
           <div class="margin-lados">
             <label for="codTipoEquipo">Codigo de Tipo de Equipo:</label>
-            <input type="text" name="codTipoEquipo" id="codTipoEquipo" />
+            <input type="text" data-patron="[A-Z]{3}\-[0-9]{3}" name="codTipoEquipo" id="codTipoEquipo" />
           </div>
           <div class="margin-lados">
             <label for="nombre">Nombre de Tipo de Equipo:</label>
-            <input type="text" name="nomTipoEquipo" id="nombre" />
+            <input type="text" data-patron="^[a-zA-Z]{3,12}$" name="nomTipoEquipo" id="nombre" />
           </div>
         </div>
 
         <div class="bottom">
-          <button type="submit" name="agregar">Agregar</button>
+          <button type="submit" name="agregar" id="submit">Agregar</button>
           <a href="<?php echo constant('URL')?>equipos/consultarTipoEquipo" >Volver</a>
         </div>
-        
-        
       </form>
     </main>
   </div>
-
+  <script src="<?php echo constant('URL')?>public/js/tiposDeEquipos/agregar.js"></script>
+  <script src="<?php echo constant('URL')?>public/js/modal/modal.js"></script>
 </body>
 </html>

@@ -13,7 +13,7 @@
           $query->execute(['codparte'=>$data['codparte'], 'nummovimiento'=>$data['nummovimiento'],'cantidadparte'=>$data['cantidadparte'],'numserialfabricante'=>$data['numserialfabricante'],'estatus'=>$data['estatus']]);
           return true;
         } catch(PDOException $e){
-          echo $e->getMessage();
+          $this->error = $e->getMessage();
           return false;
         }
       }      
@@ -88,6 +88,9 @@
           echo $e->getMessage();
           return false;
         }
+    }
+    public function getError () {
+      return $this->error;
     }
     }
 
