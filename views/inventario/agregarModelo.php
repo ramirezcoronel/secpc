@@ -44,11 +44,11 @@
               </div>
          <div class="margin-lados">
             <label for="idmodelo">Id del modelo:</label>
-            <input type="text" data-patron="[A-Z]{3}\-[0-9]{3}" name="idmodelo" id="idmodelo">
+            <input type="text" data-patron="[A-Z]{3}\-[0-9]{3}" name="idmodelo" id="idmodelo" placeholder="AAA-111">
          </div>
          <div class="margin-lados">
             <label for="nommodelo">Nombre de Modelo:</label>
-            <input type="text" data-patron="^[a-zA-Z]{3,12}$" name="nommodelo" id="nommodelo">
+            <input type="text" data-patron="^[a-zA-Z]{3,12}$" name="nommodelo" id="nommodelo" placeholder="...">
          </div>
         </div>
         

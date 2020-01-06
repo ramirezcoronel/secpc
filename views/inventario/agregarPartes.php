@@ -53,19 +53,19 @@
           </div>
           <div>
             <label for="codpartes">Codigo de Partes:</label>
-            <input type="text" data-patron="[A-Z]{3}\-[0-9]{3}" name="codpartes" id="codpartes">
+            <input type="text" data-patron="[A-Z]{3}\-[0-9]{3}" name="codpartes" id="codpartes" placeholder="AAA-111">
           </div>
          <div>
             <label for="stockmaximo">Stock Maximo:</label>
-            <input type="number" name="stockmaximo" id="stockmaximo">
+            <input type="number" name="stockmaximo" id="stockmaximo" placeholder="...">
          </div>
          <div>
             <label for="stockminimo">Stock Minimo:</label>
-            <input type="number" name="stockminimo" id="stockminimo">
+            <input type="number" name="stockminimo" id="stockminimo" placeholder="...">
          </div>
          <div class="margin-lados">
             <label for="puntoreorden">Punto de Reorden:</label>
-            <input type="number" name="puntoreorden" id="puntoreorden">
+            <input type="number" name="puntoreorden" id="puntoreorden" placeholder="...">
          </div>
 
         </div>

@@ -31,7 +31,11 @@
               </tr>
               <tr id="fila-<?php echo $parte->getCodigo(); ?>">
                 <td><?php echo $parte->getCodigo(); ?></td>
-                <td><?php echo $parte->getSerializable(); ?></td>
+                <td><?php if ($parte->getSerializable()){
+                  echo 'SI';
+                } else {
+                  echo 'NO';
+                }?></td>
                 <td><?php echo $parte->getStockActual(); ?></td>
                 <td><?php echo $parte->getStockMaximo(); ?></td>
                 <td><?php echo $parte->getStockMinimo(); ?></td>

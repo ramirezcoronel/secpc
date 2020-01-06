@@ -57,7 +57,7 @@
         <div class="form__box">
          <div class="margin-lados">
             <label for="num">Nº del Movimiento:</label>
-            <input type="number" name="num" id="num">
+            <input type="number" name="num" id="num" placeholder="...">
          </div>
           <div class="margin-lados">
              <label for="tipo">Tipo de Movimiento:</label>
@@ -99,7 +99,7 @@
                     $parte = new PartesClass();
                     $parte = $row;
                 ?>
-              <option value="<?php echo $parte->getCodigo()?>"><?php echo $parte->getIdModelo().''. $parte->getCodigo(); ?></option>
+              <option value="<?php echo $parte->getCodigo()?>"><?php echo $parte->getIdModelo().' - '. $parte->getCodigo(); ?></option>
             <?php } ?>
               </select>
            </div>

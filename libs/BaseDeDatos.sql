@@ -12,7 +12,7 @@ CREATE TABLE usuariosSistema (
   CONSTRAINT ci_unica UNIQUE (cedulaUsuario));
 
 CREATE TABLE tiposEquipos (
-  codTipoEquipo character varying(6),
+  codTipoEquipo character varying(7),
   nomTipoEquipo character varying(25),
   estatusTipoEquipo character varying(1),
   
@@ -21,10 +21,10 @@ CREATE TABLE tiposEquipos (
   CONSTRAINT nomTipo_unica UNIQUE (nomTipoEquipo));
 
 CREATE TABLE equipos (
-  codEquipo character varying(6),
+  codEquipo character varying(7),
   nomEquipo character varying(150),
   estatusEquipo character varying(1),
-  codTipoEquipo character varying(6),
+  codTipoEquipo character varying(7),
 
   CONSTRAINT pk_codEquipo PRIMARY KEY (codEquipo),
   CONSTRAINT nomEquipo_unica UNIQUE (nomEquipo),
@@ -36,7 +36,7 @@ CREATE TABLE equipos (
 CREATE TABLE productos (
   codigo character varying(50),
   fecha date,
-  codEquipo character varying(6),
+  codEquipo character varying(7),
   estatus character varying(1),
 
   CONSTRAINT pk_codigo PRIMARY KEY (codigo),
@@ -82,11 +82,11 @@ CREATE TABLE partes (
     ON DELETE CASCADE);
 
 CREATE TABLE partesEquipos (
-  codEquipo character varying(6),
+  codEquipo character varying(7),
   codPartes character varying(12),
   cantidadParteEquipo integer,
   estatusParteEquipo character varying(1),
-  codEquipoPartes character varying(6),
+  codEquipoPartes character varying(7),
 
   CONSTRAINT fk_codEquipo FOREIGN KEY (codEquipo) 
     REFERENCES public.equipos (codEquipo) MATCH SIMPLE 

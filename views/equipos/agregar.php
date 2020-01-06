@@ -67,11 +67,11 @@
             </div>
             <div>
               <label for="codequipo">codigo de Equipo:</label>
-              <input type="text" name="codequipo" data-patron="[A-Z]{3}\-[0-9]{3}" id="codequipo" />
+              <input type="text" name="codequipo" data-patron="[A-Z]{3}\-[0-9]{3}" id="codequipo" placeholder="AAA-111" />
             </div>
             <div>
               <label for="nomequipo">Nombre de Equipo:</label>
-              <input type="text" data-patron="^[a-zA-Z]{4,12}$" name="nomequipo" id="nomequipo" />
+              <input type="text" data-patron="^[a-zA-Z]{4,12}$" name="nomequipo" id="nomequipo" placeholder="..." />
             </div>
           </div>
 
@@ -102,13 +102,13 @@
                 $parte = new PartesClass();
                 $parte = $row;
             ?>
-              <option value="<?php echo $parte->getCodigo()?>"><?php echo $parte->getCodigo(); ?></option>
+              <option value="<?php echo $parte->getCodigo()?>"><?php echo $parte->getIdModelo().' - '. $parte->getCodigo(); ?></option>
             <?php } ?>
               </select>
            </div>
           <div>
             <label for="cantidadparteequipo">Cantidad:</label>
-            <input type="number" name="cantidadparteequipo" id="cantidadparteequipo" />
+            <input type="number" name="cantidadparteequipo" id="cantidadparteequipo" placeholder="..." />
           </div>
         </div>
 

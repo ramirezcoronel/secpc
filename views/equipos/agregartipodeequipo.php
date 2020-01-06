@@ -30,11 +30,11 @@
         <div class="form__box">
           <div class="margin-lados">
             <label for="codTipoEquipo">Codigo de Tipo de Equipo:</label>
-            <input type="text" data-patron="[A-Z]{3}\-[0-9]{3}" name="codTipoEquipo" id="codTipoEquipo" />
+            <input type="text" data-patron="[A-Z]{3}\-[0-9]{3}" name="codTipoEquipo" id="codTipoEquipo" placeholder="AAA-111" />
           </div>
           <div class="margin-lados">
             <label for="nombre">Nombre de Tipo de Equipo:</label>
-            <input type="text" data-patron="^[a-zA-Z]{3,12}$" name="nomTipoEquipo" id="nombre" />
+            <input type="text" data-patron="^[a-zA-Z]{3,12}$" name="nomTipoEquipo" id="nombre" placeholder="..." />
           </div>
         </div>
 
