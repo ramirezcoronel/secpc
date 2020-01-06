@@ -61,7 +61,7 @@
                 $tipo = new TiposClass();
                 $tipo = $row;
             ?>
-              <option value="<?php echo $tipo->getCodigo()?>"><?php echo $tipo->getNombre(); ?></option>
+              <option value="<?php echo $tipo->getCodigo()?>"><?php echo $tipo->getNombre().' - '.$tipo->getCodigo(); ?></option>
             <?php } ?>
               </select>
             </div>
