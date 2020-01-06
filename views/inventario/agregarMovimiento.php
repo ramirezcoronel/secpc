@@ -80,7 +80,7 @@
 
          
         <div class="bottom">
-          <button type="submit" name="agregar"  value="agregar">Agregar Movimiento</button>
+          <button type="submit" id="submit" name="agregar"  value="agregar">Agregar Movimiento</button>
           <a href="<?php echo constant('URL')?>inventario">Volver</a>
         </div>
         
@@ -117,7 +117,7 @@
         </div>
         <div class="bottom">
           <a href="<?php echo constant('URL')?>inventario/" >Listo!</a>
-          <button type="submit" name="agregarParte" >Agregar Inventario</button>
+          <button type="submit" id="submit" name="agregarParte" >Agregar Inventario</button>
 
         </div>
         

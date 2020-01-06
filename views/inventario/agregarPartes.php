@@ -53,7 +53,7 @@
           </div>
           <div>
             <label for="codpartes">Codigo de Partes:</label>
-            <input type="text" name="codpartes" id="codpartes">
+            <input type="text" data-patron="[A-Z]{3}\-[0-9]{3}" name="codpartes" id="codpartes">
           </div>
          <div>
             <label for="stockmaximo">Stock Maximo:</label>
@@ -72,12 +72,13 @@
          
         <div class="bottom">
           <a href="<?php echo constant('URL')?>inventario">Volver</a>
-          <button type="submit" name="agregar" value="agregar">Agregar Partes</button>
+          <button type="submit" id="submit" name="agregar" value="agregar">Agregar</button>
         </div>
         
       </form>
     </main>
   </div>
+  <script src="<?php echo constant('URL')?>public/js/inventario/agregarPartes.js"></script>
      <script src="<?php echo constant('URL')?>public/js/modal/modal.js"></script>
 
 </body>

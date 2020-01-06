@@ -44,21 +44,22 @@
               </div>
          <div class="margin-lados">
             <label for="idmodelo">Id del modelo:</label>
-            <input type="text" name="idmodelo" id="idmodelo">
+            <input type="text" data-patron="[A-Z]{3}\-[0-9]{3}" name="idmodelo" id="idmodelo">
          </div>
          <div class="margin-lados">
             <label for="nommodelo">Nombre de Modelo:</label>
-            <input type="text" name="nommodelo" id="nommodelo">
+            <input type="text" data-patron="^[a-zA-Z]{3,12}$" name="nommodelo" id="nommodelo">
          </div>
         </div>
         
         <div class="bottom">
-          <button type="submit" name="agregar" class="boton" value="agregar">Agregar Modelo</button>
+          <button type="submit" id="submit" name="agregar"value="agregar">Agregar</button>
           <a href="<?php echo constant('URL')?>inventario/consultarModelos" >Volver</a>
         </div>
       </form>
     </main>
   </div>
+  <script src="<?php echo constant('URL')?>public/js/inventario/agregarModelos.js"></script>
      <script src="<?php echo constant('URL')?>public/js/modal/modal.js"></script>
 
 </body>
