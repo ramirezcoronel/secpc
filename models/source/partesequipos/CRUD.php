@@ -15,11 +15,15 @@
           
           return true;
         } catch(PDOException $e){
-          
+          $this->error = $e->getMessage();
           return false;
         }
 
 
       }
+
+    public function getError () {
+      return $this->error;
+    }
   }
 ?>

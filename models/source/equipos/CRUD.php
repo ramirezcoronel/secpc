@@ -31,7 +31,7 @@
         }
         return $items;
       } catch (PDOException $e) {
-        echo $e->getMessage();
+        $this->error = $e->getMessage();
         return [];
       }
     }
@@ -63,7 +63,7 @@
         }
         return $items;
       } catch (PDOException $e) {
-        echo $e->getMessage();
+        $this->error = $e->getMessage();
         return [];
       }
     }
@@ -81,7 +81,7 @@
         return true;
       } catch(PDOException $e){
 
-      echo $e->getMessage();
+      $this->error = $e->getMessage();
         return false;
       }
 
@@ -99,7 +99,7 @@
 
 			return true;
 		} catch(PDOException $e){
-			echo $e->getMessage();
+			$this->error = $e->getMessage();
 			return false;
 		}
 	}
@@ -116,9 +116,12 @@
           
           return true;
         } catch(PDOException $e){
-          echo $e->getMessage();
+          $this->error = $e->getMessage();
           return false;
         }
+    }
+    public function getError () {
+      return $this->error;
     }
   }
 ?>

@@ -27,6 +27,7 @@
 
         }else{
           $this->view->mensaje = 'Ha ocurrido un error.';
+          $this->view->error = $this->model->equipos->getError();
         }
       }else{
         $this->view->mensaje = 'Rellene los campos';
@@ -57,6 +58,7 @@
 
         }else{
           $this->view->mensaje = 'Ha ocurrido un error.';
+          $this->view->error = $this->model->partesequipos->getError();
         }
       }
 

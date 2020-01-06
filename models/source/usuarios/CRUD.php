@@ -90,8 +90,6 @@
       } catch (PDOException $e) {
         return false;
       }
-
-
     }
 
     public function getError () {

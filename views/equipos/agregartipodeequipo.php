@@ -45,7 +45,7 @@
       </form>
     </main>
   </div>
-  <script src="<?php echo constant('URL')?>public/js/tiposDeEquipos/agregar.js"></script>
+  <script src="<?php echo constant('URL')?>public/js/equipos/agregarTipo.js"></script>
   <script src="<?php echo constant('URL')?>public/js/modal/modal.js"></script>
 </body>
 </html>
