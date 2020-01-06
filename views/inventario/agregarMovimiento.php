@@ -52,12 +52,12 @@
 
         <form action="<?php echo constant('URL')?>inventario/agregarMovimiento" method="POST" class="form margin-lados">
 
-           <div class="form-header"> <p>Agregar Movimiento</p> </div>
+           <div class="form-header" id="validacion" data-validacion="movimiento"> <p>Agregar Movimiento</p> </div>
           
         <div class="form__box">
          <div class="margin-lados">
             <label for="num">Nº del Movimiento:</label>
-            <input type="text" name="num" id="num">
+            <input type="number" name="num" id="num">
          </div>
           <div class="margin-lados">
              <label for="tipo">Tipo de Movimiento:</label>
@@ -90,7 +90,7 @@
       <?php if ($this->visible) {?>
         <h2 class="text-header margin-bottom">Datos de parte a agregar:</h2>
         <div class="form__box centrar">
-           <div class="margin-lados">
+           <div class="margin-lados"id="validacion" data-validacion="parte">
               <label for="codparte">Partes: </label>
               <select name="codparte" class="select" id="codparte">
                 <option value="0">Seleccione</option>
@@ -105,7 +105,7 @@
            </div>
           <div class="margin-lados">
             <label for="cantidadparte">Cantidad:</label>
-            <input type="text" name="cantidadparte" id="cantidadparte" />
+            <input type="number" name="cantidadparte" id="cantidadparte" />
           </div>
         </div>
 
@@ -118,15 +118,12 @@
         <div class="bottom">
           <a href="<?php echo constant('URL')?>inventario/" >Listo!</a>
           <button type="submit" id="submit" name="agregarParte" >Agregar Inventario</button>
-
-        </div>
-        
-        
+        </div>  
       </form>
     <?php }?>
-
     </main>
   </div>
-
+  <script src="<?php echo constant('URL')?>public/js/inventario/agregarMovimiento.js"></script>
+  <script src="<?php echo constant('URL')?>public/js/modal/modal.js"></script>
 </body>
 </html>
