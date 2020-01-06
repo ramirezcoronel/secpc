@@ -23,11 +23,12 @@
 		if ( validacion === 'parte') {
 
 			let cantidadParte = d.querySelector('#cantidadparteequipo')
+			let codequipopartes = d.querySelector('#codequipopartes')
 			let select = d.querySelector('#select') //input de apellido 
 
 			let submit = d.querySelector('#submit') //input de submit
 
-			if (estaVacio(cantidadParte, select)) {
+			if (estaVacio(cantidadParte, select, codequipopartes) || !coincideExpresionRegular(codequipopartes)) {
 				return false
 			} 
 			return true	

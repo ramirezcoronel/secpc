@@ -9,9 +9,9 @@
     function insert ($data) {
     
         try{
-          $query = $this->db->connect()->prepare('INSERT INTO partesequipos (codequipo, codpartes, cantidadparteequipo, estatusparteequipo) VALUES(:codequipo, :codpartes, :cantidadparteequipo,:estatusparteequipo)');
+          $query = $this->db->connect()->prepare('INSERT INTO partesequipos (codequipo, codpartes, cantidadparteequipo, estatusparteequipo, codequipopartes) VALUES(:codequipo, :codpartes, :cantidadparteequipo,:estatusparteequipo, :codequipopartes)');
 
-          $query->execute(['codequipo'=>$data['codequipo'], 'codpartes'=>$data['codpartes'],  'cantidadparteequipo'=>$data['cantidadparteequipo'], 'estatusparteequipo'=>$data['estatusparteequipo']]);
+          $query->execute(['codequipo'=>$data['codequipo'], 'codpartes'=>$data['codpartes'],  'cantidadparteequipo'=>$data['cantidadparteequipo'], 'estatusparteequipo'=>$data['estatusparteequipo'], 'codequipopartes'=>$data['codequipopartes']]);
           
           return true;
         } catch(PDOException $e){

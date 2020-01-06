@@ -37,11 +37,11 @@
           //codigo una vez ingresen una parte
         $codequipo    = ($_POST['codequipo'] !== "") ? $_POST['codequipo'] : NULL;
         $codpartes = ($_POST['codpartes'] !== "") ? $_POST['codpartes'] : NULL;
+        $codequipopartes = ($_POST['codequipopartes'] !== "") ? $_POST['codequipopartes'] : NULL;
         $cantidadparteequipo = ($_POST['cantidadparteequipo'] !== "") ? $_POST['cantidadparteequipo'] : NULL;
         $estatusparteequipo = 1;
-
     
-        if ($this->model->partesequipos->insert(['codequipo'=>$codequipo, 'codpartes'=>$codpartes, 'cantidadparteequipo'=>$cantidadparteequipo, 'estatusparteequipo'=>$estatusparteequipo])){
+        if ($this->model->partesequipos->insert(['codequipo'=>$codequipo, 'codpartes'=>$codpartes, 'cantidadparteequipo'=>$cantidadparteequipo, 'estatusparteequipo'=>$estatusparteequipo, 'codequipopartes'=>$codequipopartes ])){
 
           $this->view->mensaje = 'Partes agregadas a equipo exitosamente!.';
 

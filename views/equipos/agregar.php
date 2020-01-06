@@ -110,6 +110,10 @@
             <label for="cantidadparteequipo">Cantidad:</label>
             <input type="number" name="cantidadparteequipo" id="cantidadparteequipo" placeholder="..." />
           </div>
+          <div>
+            <label for="codequipopartes">Codigo Parte a Equipo:</label>
+            <input type="text" name="codequipopartes" data-patron="[A-Z]{3}\-[0-9]{3}" id="codequipopartes" placeholder="AAA-111" />
+          </div>
         </div>
 
         <div class="bottom">
