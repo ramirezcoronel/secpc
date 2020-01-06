@@ -3,9 +3,6 @@
 	d.addEventListener('DOMContentLoaded',()=>{
 
 		submit.addEventListener('click', (e)=>{
-
-			
-
 			if (validacionEstaBien()) { //function principal de validacion
 				c('validacion correcta!')
 			}else{
@@ -13,8 +10,6 @@
 				e.preventDefault() //prevenir que se envie el formulario
 			}
 		})
-
-
 	})
 
 	const validacionEstaBien = ()=> {

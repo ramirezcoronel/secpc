@@ -15,6 +15,9 @@
   <div class="container">
     <?php require 'views/menu.php'; ?> <!-- MENU -->
     <main>
+      <div class="text-header">
+            <h2>SECPC</h2> 
+        </div>
     <div class="tabla" id="form" data-eliminar="eliminarUsuario">
       <div>
           <table>
