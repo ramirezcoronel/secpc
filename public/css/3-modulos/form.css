@@ -49,6 +49,14 @@
   font-size: 1em;
 }
 
+.form__box input:read-only {
+  background: #ccc;
+  border-color: #ccc;
+}
+.form__box input {
+  text-align: center;
+}
+
 .radio-buttons {
   display: flex;
   height: 100%;

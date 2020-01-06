@@ -33,13 +33,20 @@
 			//tomar inputs y botones
 			let codparte            = d.querySelector('#codparte') //input de nombre
 			let cantidadparte       = d.querySelector('#cantidadparte') //input de apellido
-			let numserialfabricante = d.querySelector('#numserialfabricante') //input de apellido 
+			let numserialfabricante = d.querySelector('#numserialfabricante')
 
 			let submit = d.querySelector('#submit') //input de submit
+			let esSerializable = codparte.options[parte.selectedIndex].dataset.serial
+			if ( esSerializable === '1' ) {
+				if (estaVacio(codparte, cantidadparte, numserialfabricante)) {
+					return false
+				} 
+			} else {
+				if (estaVacio(codparte, cantidadparte)) {
+					return false
+				} 
+			}
 
-			if (estaVacio(codparte, cantidadparte)) {
-				return false
-			} 
 			return true
 		}
 	}
@@ -78,5 +85,31 @@
 		})
 		return validacion
 	}
+
+	/******************************************
+		SCRIPT PARA APARECER Y DESAPARECER
+	******************************************/
+	let parte       = d.querySelector('#codparte')
+	let cantidadBox = d.querySelector('#cantidadparte') //input de apellido
+	let serialBox   = d.querySelector('#numserialfabricante') //input de apellido 
+	
+	parte.addEventListener('click', ()=>{
+		let serial = parte.options[parte.selectedIndex].dataset.serial
+
+		if (serial === '1') {
+			serialBox.readOnly = false;
+			serialBox.parentNode.style.display = 'flex';
+			cantidadBox.readOnly = true;
+			cantidadBox.value = '1';
+		}else{
+			serialBox.readOnly = true;
+			serialBox.value = '';
+			serialBox.parentNode.style.display = 'none';
+			cantidadBox.readOnly = false;
+			cantidadBox.value = '';
+		}
+	})
+
+
 
 })(console.log, document, alert)

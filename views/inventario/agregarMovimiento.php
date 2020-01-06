@@ -99,7 +99,7 @@
                     $parte = new PartesClass();
                     $parte = $row;
                 ?>
-              <option value="<?php echo $parte->getCodigo()?>"><?php echo $parte->getIdModelo().' - '. $parte->getCodigo(); ?></option>
+              <option value="<?php echo $parte->getCodigo()?>" data-serial="<?php echo $parte->getSerializable()?>"><?php echo $parte->getIdModelo().' - '. $parte->getCodigo(); ?></option>
             <?php } ?>
               </select>
            </div>
@@ -111,7 +111,7 @@
 
         <div class="form__box centrar">
           <div class="margin-lados">
-            <label for="numserialfabricante">Serial fabricante (si necesario):</label>
+            <label for="numserialfabricante">Serial fabricante:</label>
             <input type="text" name="numserialfabricante" id="numserialfabricante" />
           </div>
         </div>
