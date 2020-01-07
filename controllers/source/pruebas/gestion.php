@@ -1,6 +1,6 @@
 <?php 
 
-	$this->view->mensaje = 'Gestionar';
+	$this->view->mensaje = 'Gestionar Pruebas';
     $stressing = $this->model->get();
     $this->view->stressing = $stressing;
     

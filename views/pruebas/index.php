@@ -17,31 +17,25 @@
       <div class="text-header">
         <h2> <?php echo $this->mensaje ?> </h2>      
       </div>
-<form  method="POST" class="form">
-<div class="form__box">
-<div class="centrar">  
-<table> 
-    <td>
-      <img src="<?php echo constant('URL')?>public/img/stressingAgregar.png" alt="Agregar tipos de pruebas" />
-    </td>
-    <td>
-      <img src="<?php echo constant('URL')?>public/img/stressingPrueba.png" alt="Stressing" /> 
-    </td>
-    <tr>
-      <td>
-      <div class="centrar"><a href="<?php echo constant('URL')?>pruebas/gestion" class="boton margin-lados" >Gestionar Prueba</a></div>
-     </td>
-     <td>
-       <div class="centrar"><a href="<?php echo constant('URL')?>pruebas/prueba" value="prueba" class="boton margin-lados" >Realizar Prueba</a></div>
-     </td>
-    </tr>
-</table>
-</div>
-</div> 
-</form>
 
-  
-
+    <div class="horizontal">
+        <div class="cards">
+          <div class="cards-header">
+             <h2>Pruebas</h2>
+            </div>
+          <div class="cards-content">
+            <a href="<?php echo constant('URL')?>pruebas/gestion"> <h2>Gestionar Prueba</h2></a>
+        </div>
+      </div>
+      <div class="cards">
+         <div class="cards-header">
+         <h2>Realizar Pruebas</h2>
+        </div>
+      <div class="cards-content">
+        <a href="<?php echo constant('URL')?>pruebas/prueba"> <h2>Realizar Prueba</h2></a>
+      </div>
+     </div>
+      </div>
     </main>
   </div>
  <script type="text/javascript" src="<?php echo constant('URL')?>public/js/confirmacion.js"></script>

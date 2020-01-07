@@ -17,52 +17,45 @@
       <div class="text-header">
         <h2> <?php echo $this->mensaje ?> </h2>      
       </div>
-      <form  method="POST" class="form">
-        <div class="form__box">
-          <div class="centrar">  
-            <table> 
-                <td>
-                  <img src="<?php echo constant('URL')?>public/img/stressingAgregar.png" alt="Agregar tipos de pruebas" />
-                </td>
-                <tr>
-                  <td>
-                  <div class="centrar"><a href="<?php echo constant('URL')?>pruebas/agregarPrueba" class="boton margin-lados" >Agregar Prueba</a></div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="centrar"><a href="<?php echo constant('URL')?>pruebas" class="boton margin-lados" >Atras</a></div>
-                  </td>
-                </tr>
-            </table>
-            <table class="tabla tabla-secundaria">
-              <tr>
-                <th>codigo</th>
-                <th>Nombre</th> 
-                <th>Descripcion</th>
-                <th>Duracion (minutos)</th>
-                <th>Modificar</th>
-                <th>Eliminar</th>
-                <?php foreach($this->stressing as $row){
-                  $stressing = new StressingClass();
-                  $stressing = $row;
+
+      <div class="tabla" id="form" data-eliminar="eliminarPrueba">
+      <div>
+          <table>
+            <caption>Pruebas</caption>
+            <tr> 
+              <th>codigo</th>
+              <th>Nombre</th> 
+              <th>Descripcion</th>
+              <th>Duracion (minutos)</th>
+              <th>Modificar</th>
+              <th>Eliminar</th>
+            <tbody id="tbody-pruebas">
+              <?php foreach($this->stressing as $row){
+                  $prueba = $row;
                 ?>        
               </tr>
-                <td><?php echo $stressing->getCod(); ?></td>
-                <td><?php echo $stressing->getNombre(); ?></td>
-                <td><?php echo $stressing->getDes(); ?></td>
-                <td><?php echo $stressing->getDuracin(); ?></td>
-                <td><a class="botonForm" href="<?php echo constant('URL')?>pruebas/actualizarPrueba/<?php echo $stressing->getCod()?>">Modificar</a></td>
-                <td><a id="eliminar" class="botonForm" href="<?php echo constant('URL')?>pruebas/eliminarPrueba/<?php echo $stressing->getCod()?>">Eliminar</a></td>
+              <tr id="fila-<?php echo $prueba->getCod(); ?>">
+                <td><?php echo $prueba->getCod(); ?></td>
+                <td><?php echo $prueba->getNombre(); ?></td>
+                <td><?php echo $prueba->getDes(); ?></td>
+                <td><?php echo $prueba->getDuracin(); ?></td>
+                <td><a class="crud" href="<?php echo constant('URL')?>pruebas/actualizarPrueba/<?php echo $prueba->getCod()?>">Modificar</a></td>
+                <td><button class="crud eliminar" data-id="<?php echo $prueba->getCod(); ?>">Eliminar</button></td>
               </tr>
                 <?php } ?>
-            </table>
-          </div>
-        </div> 
-      </form>
+            </tbody>
+          </table>
+      </div>
+      <div class="bottom">
+        <a href="<?php echo constant('URL')?>pruebas/agregarPrueba">Agregar</a>
+          <a href="<?php echo constant('URL')?>pruebas">Volver</a>
+      </div>
+      </div>
     </main>
   </div>
 <script type="text/javascript" src="<?php echo constant('URL')?>public/js/eliminar.js"></script>
+  <script src="<?php echo constant('URL')?>public/js/AJAX/eliminar.js"></script>
+
 </body>
 </html>
 

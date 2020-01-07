@@ -5,7 +5,7 @@ class Pruebas extends Controller{
 	}
 
 	public function render(){
-	  $this->view->mensaje = 'Prueba';
+	  $this->view->mensaje = 'Gestion de Pruebas';
 
     $stressing = $this->model->get();
     $this->view->stressing = $stressing;

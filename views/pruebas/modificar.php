@@ -5,7 +5,7 @@
     <link rel="shortcut icon" href="<?php echo constant('URL')?>public/img/logo3.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>SECPC | Stressing</title>
+    <title>SECPC | Pruebas</title>
    <link rel="stylesheet" href="<?php echo constant('URL')?>public/css/main.css">
 </head>
 <body>
@@ -28,20 +28,19 @@
            <label for="nombre">Nombre de la prueba:</label>
             <input type="text" name="nombre" id="nombre" placeholder="Ingrese el nombre" value="<?php echo $this->prueba->getNombre()  ?>">
           </div>
-        </div>
-        <div class="form__box esquinas">
+        
+        <div>
             <label for="descripcion">Descripcion:</label>
             <textarea id="descripcion" name="descripcion" placeholder="Describa el procedimiento de la prueba" maxlength="100" ><?php echo $this->prueba->getDes()  ?></textarea>
         </div>
-        <div class="form__box esquinas">
-          <div>
+        <div>
            <label for="duracion">Duracion de la prueba:</label>
             <input type="number" name="duracion" id="duracion" placeholder="Minutos" value="<?php echo $this->prueba->getDuracin()  ?>">
-          </div>
+        </div>
         </div>        
-        <div class="centrar">
-          <button type="submit" name="modificar" id="btn" class="boton" value="modificar">Modificar Prueba</button>
-         <a href="<?php echo constant('URL')?>pruebas/gestion" class="boton margin-lados" >Atras</a>
+        <div class="bottom">
+          <button type="submit" name="modificar" id="btn" value="modificar">Modificar Prueba</button>
+         <a href="<?php echo constant('URL')?>pruebas/gestion">Atras</a>
       </form>
     </main>
       <script type="text/javascript" src="<?php echo constant('URL')?>public/js/stressing_agregar.js"></script>
