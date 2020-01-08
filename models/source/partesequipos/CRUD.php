@@ -18,9 +18,38 @@
           $this->error = $e->getMessage();
           return false;
         }
-
-
       }
+
+      function get ( $id = null) {
+      $items = [];
+      try {
+
+        if ( isset($id) ) {
+
+          $query = $this->db->connect()->prepare('SELECT * FROM partesequipos WHERE codequipo = :id');
+
+          $query->execute(['id'=>$id]);
+
+        } else {
+
+          $query = $this->db->connect()->query('SELECT * FROM partesequipos');
+
+        }
+
+        while($row = $query->fetch()){
+          $item = new PartesEquiposClass();
+
+          $item->setCod($row['codequipo']);
+          $item->setCodParte($row['codpartes']);
+          $item->setCantidadPartes($row['cantidadparteequipo']);
+
+          array_push($items, $item);
+        }
+        return $items;
+      } catch (PDOException $e) {
+        return [];
+      }
+    }
 
     public function getError () {
       return $this->error;

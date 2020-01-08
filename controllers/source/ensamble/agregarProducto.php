@@ -12,9 +12,26 @@
  			if ($this->model->productos->insert(['codigo'=>$codigo, 'fecha'=>$fecha, 'codequipo'=>$codequipo, 'estatus'=>$estatus])) {
  				
  					$this->view->mensaje = 'Producto agregado exitosamente';
+
+ 					//tomar el producto
+
+ 					$producto = $this->model->productos->get($codigo);
+ 					$this->view->producto = $producto[0];
+
+
+
+ 					$this->view->visible = true;
+
+ 					 $partes = $this->model->partes->get();
+    				$this->view->partes = $partes;
+
+ 					$partesequipos = $this->model->partesequipos->get($codequipo);
+    				$this->view->partesequipos = $partesequipos;
+
  			}else{
               
  					$this->view->mensaje = 'Ha ocurrido un error al registrar un nuevo producto';
+ 					$this->view->error = $this->model->productos->getError();
 			  }
  			}else{
 
