@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>SECPC | Productos</title>
     <link rel="stylesheet" href="<?php echo constant('URL')?>public/css/main.css">
+    <script src="<?php echo constant('URL')?>public/js/jquery-3.4.1.min.js"></script>
 </head>
 <body>
   <!-- Uso esta clase por el fondo rojo -->
@@ -14,41 +15,43 @@
   <div class="container">
     <?php require 'views/menu.php'; ?> <!-- MENU -->
     <main>
-    <div class="text-header"><h2>Gestionar Productos</h2></div>
-    <form  action="gestionar_usuarios.php" method="POST" class="form">
-      <div class="form__box">
-        <div class="centrar">
-          <table class="tabla tabla-secundaria">
-
-            <caption class="agrandar">Productos</caption>
+      <div class="text-header">
+            <h2>Productos</h2> 
+        </div>
+    <div class="tabla" id="form" data-eliminar="eliminarProducto">
+      <div>
+          <table>
+            <caption>Gestionar Productos</caption>
             <tr> <th>Codigo Producto</th> <th>Fecha</th> <th>Codigo de Equipo</th> <th>Estatus</th> <th>Modificar</th><th>Eliminar</th>
-            <?php 
-              foreach($this->productos as $row){
-                $producto = new productosClass();
+            <tbody id="tbody-productos">
+              <?php
+                foreach($this->productos as $row){
                 $producto = $row;
-            ?>
-            </tr>
-              <td><?php echo $producto->getCodigo(); ?></td>
+              ?>
+              </tr >
+              <tr id="fila-<?php echo $producto->getCodigo(); ?>">
+                <td><?php echo $producto->getCodigo(); ?></td>
               <td><?php echo $producto->getFecha(); ?></td>
               <td><?php echo $producto->getCodigoEquipo(); ?></td>
               <td><?php echo $producto->getEstatus(); ?></td>
-              <td><a class="botonForm" href="<?php echo constant('URL')?>ensamble/actualizarProducto/<?php echo $producto->getCodigo() ?>">Modificar</a></td>
-              <td><a class="botonForm" href="<?php echo constant('URL')?>ensamble/eliminarProducto/<?php echo $producto->getCodigo() ?>">Eliminar</a></td>
-            </tr>
-            <?php } ?>
+                <td><a class="crud" href="<?php echo constant('URL')?>ensamble/actualizarProducto/<?php echo $producto->getCodigo() ?>">Modificar</a></td>
+                <td>
+                  <button class="crud eliminar" data-id="<?php echo $producto->getCodigo(); ?>">Eliminar</button>
+                </td>
+              </tr>
+              <?php } ?>
+            </tbody>
           </table>
-        </div>
       </div>
-      
-      <div class="centrar">
-        <a href="<?php echo constant('URL')?>ensamble/agregarProducto" class="boton margin-lados">Agregar</a>
-        <a href="<?php echo constant('URL')?>ensamble" class="boton margin-lados">Volver</a>
+      <div class="bottom">
+         <a href="<?php echo constant('URL')?>ensamble/agregarProducto">Agregar</a>
+        <a href="<?php echo constant('URL')?>ensamble">Volver</a>
       </div>
-  
-      </form>
+      </div>
     </main>
   </div>
 
+  <script src="<?php echo constant('URL')?>public/js/AJAX/eliminar.js"></script>
 </body>
 </html>
 
