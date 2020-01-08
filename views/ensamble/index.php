@@ -23,7 +23,7 @@
           <table>
             <caption>Gestionar Productos</caption>
             <tr> <th>Codigo Producto</th> <th>Fecha</th> <th>Codigo de Equipo</th> <th>Estatus</th> <th>Modificar</th><th>Eliminar</th>
-            <tbody id="tbody-productos">
+            <tbody id="tbody-ensamble">
               <?php
                 foreach($this->productos as $row){
                 $producto = $row;
