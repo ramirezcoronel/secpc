@@ -90,7 +90,7 @@
       <?php if ($this->visible) {?>
         <h2 class="text-header margin-bottom">Datos de parte a agregar:</h2>
         <div class="form__box centrar">
-           <div class="margin-lados"id="validacion" data-validacion="parte">
+           <div id="validacion" data-validacion="parte">
               <label for="codparte">Partes: </label>
               <select name="codparte" class="select" id="codparte">
                 <option value="0">Seleccione</option>
@@ -103,14 +103,11 @@
             <?php } ?>
               </select>
            </div>
-          <div class="margin-lados">
+          <div>
             <label for="cantidadparte">Cantidad:</label>
             <input type="number" name="cantidadparte" id="cantidadparte" />
           </div>
-        </div>
-
-        <div class="form__box centrar">
-          <div class="margin-lados">
+          <div>
             <label for="numserialfabricante">Serial fabricante:</label>
             <input type="text" name="numserialfabricante" id="numserialfabricante" />
           </div>
