@@ -34,4 +34,15 @@
   	  					$this->view->render('ensamble/mensaje');
   	  				}
   	  		}
+
+		/*} else if( isset($_POST['AgregarPieza']) ) {
+
+		} else {
+			$this->view->mensaje = 'Agregar Producto';
+		}
+
+		$productos = $this->model->getCodigoEquipos();
+		$this->view->productos = $productos;
+
+		*/
  ?>
