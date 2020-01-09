@@ -19,7 +19,7 @@
             
         </div>
         <form action="<?php echo constant('URL')?>inventario/actualizarModelo" method="POST" class="form">
-          <div class="form__box centrar">
+          <div class="form__box">
          <div>
               <label for="marca">Marca</label>
               <select class="select" name="idmarca" id="select">
@@ -34,21 +34,19 @@
               </select>
               
             </div>
-        </div>
-        <div class="form__box esquinas">
-         <div class="margin-lados">
+         <div>
             <label for="idmodelo">Id del modelo:</label>
             <input type="text" name="idmodelo" id="id" value="<?php echo $this->modelo->getId(); ?>" readonly>
          </div>
-         <div class="margin-lados">
+         <div>
             <label for="nommodelo">Nombre de Modelo:</label>
             <input type="text" name="nommodelo" id="nommodelo">
          </div>
         </div>
         
-        <div class="centrar">
-          <button type="submit" name="actualizar" class="boton" value="agregar">Actualizar</button>
-          <a href="<?php echo constant('URL')?>inventario" class="boton margin-lados">Volver</a>
+        <div class="bottom">
+          <button type="submit" name="actualizar" value="agregar">Actualizar</button>
+          <a href="<?php echo constant('URL')?>inventario">Volver</a>
         </div>
       </form>
     </main>

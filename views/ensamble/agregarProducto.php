@@ -25,7 +25,7 @@
         <div class="horizontal">
           <?php if ( isset($this->producto) ){ ?>
 
-        <form action="<?php echo constant('URL')?>inventario/agregar" method="POST" class="form">
+        <form action="<?php echo constant('URL')?>ensamble/agregarProducto" method="POST" class="form">
           <div class="form-header">
             <p>Agregar Partes a Producto</p>
           </div>
@@ -118,8 +118,8 @@
             <input type="number" name="cantidadparte" id="cantidadparte" />
           </div>
           <div>
-            <label for="codigoparte">Codigo:</label>
-            <input type="number" name="codigoparte" id="codigoparte" />
+            <label for="codigoEjemplar">Codigo:</label>
+            <input type="text" name="codigoEjemplar" id="codigoEjemplar" />
           </div>
           <div>
             <label for="numserialfabricante">Serial fabricante:</label>
@@ -127,7 +127,7 @@
           </div>
         </div>
         <div class="bottom">
-          <a href="<?php echo constant('URL')?>inventario/" >Listo!</a>
+          <a href="<?php echo constant('URL')?>ensamble/" >Listo!</a>
           <button type="submit" id="submit" name="agregarParte" >Agregar</button>
         </div>  
       </form>

@@ -11,10 +11,12 @@
 		if (serial === '1') {
 			serialBox.readOnly = false;
 			serialBox.parentNode.style.display = 'flex';
+			serialBox.required = true;
 			cantidadBox.readOnly = true;
 			cantidadBox.value = '1';
 		}else{
 			serialBox.readOnly = true;
+			serialBox.required = false;
 			serialBox.value = '';
 			serialBox.parentNode.style.display = 'none';
 			cantidadBox.readOnly = true;

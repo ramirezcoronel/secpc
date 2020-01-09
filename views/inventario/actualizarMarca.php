@@ -19,21 +19,21 @@
             
         </div>
         <form action="<?php echo constant('URL')?>inventario/actualizarMarca" method="POST" class="form">
-        <div class="form__box esquinas">
-         <div class="margin-lados">
+          <div class="form-header"> <p>Actualizar Marca</p> </div>
+        <div class="form__box">
+         <div>
             <label for="id">Id del modelo:</label>
             <input type="text" name="id" id="id" value="<?php echo $this->marca->getId(); ?>" readonly>
          </div>
-         <div class="margin-lados">
+         <div>
             <label for="nombre">Nombre de Modelo:</label>
             <input type="text" name="nombre" id="nombre">
          </div>
         </div>
-        <div class="form__box esquinas">
          
-        <div class="centrar">
-          <button type="submit" name="actualizar" class="boton" value="agregar">actualizar</button>
-          <a href="<?php echo constant('URL')?>inventario/consultarMarca" class="boton margin-lados">Volver</a>
+        <div class="bottom">
+          <button type="submit" name="actualizar" value="agregar">actualizar</button>
+          <a href="<?php echo constant('URL')?>inventario/consultarMarca">Volver</a>
         </div>
         
       </form>

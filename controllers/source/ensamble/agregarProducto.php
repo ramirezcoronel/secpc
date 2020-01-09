@@ -33,7 +33,58 @@
  					$this->view->mensaje = 'Ha ocurrido un error al registrar un nuevo producto';
  					$this->view->error = $this->model->productos->getError();
 			  }
- 			}else{
+			} else if( isset($_POST['agregarParte']) ){
+				$codigo      = ($_POST['num']    !== "") ? $_POST['num']    : NULL;
+				$codigoEjemplar = ($_POST['codigoEjemplar']    !== "") ? $_POST['codigoEjemplar']    : NULL;
+				$codparte    = ($_POST['codparte']    !== "") ? $_POST['codparte']    : NULL;
+				$ubicacion   = 'E';
+				$estatus     = '2';
+				$serial      = ($_POST['numserialfabricante'] !== "") ? $_POST['numserialfabricante'] : NULL;
+				$cantidad    = ($_POST['cantidadparte'] !== "") ? $_POST['cantidadparte'] : NULL;
+
+				if (!isset($serial)) {
+					for ($i=0; $i < $cantidad; $i++) { 
+						$data = array('codigo'=>$codigoEjemplar,
+									'ubicacion'=>$ubicacion,
+									'estatus'=>$estatus,
+									'codparte'=>$codparte,
+									'codproducto'=>$codigo);
+						if ($this->model->ejemplaresparte->insert($data)){
+							echo 'CORRECTO';
+						} else{
+							echo $this->model->ejemplaresparte->getError();
+						}
+					}
+				} else {
+					$data = array('codigo'=>$codigoEjemplar,
+					'serialfabri'=>$serial,
+					 'ubicacion'=>$ubicacion,
+					 'estatus'=>$estatus,
+					 'codparte'=>$codparte,
+					 'codproducto'=>$codigo);
+					if ($this->model->ejemplaresparte->insert($data)){
+						echo 'CORRECTO';
+					} else{
+						var_dump($data);
+					}
+				}
+
+
+
+				$producto = $this->model->productos->get($codigo);
+ 					$this->view->producto = $producto[0];
+
+
+
+ 					$this->view->visible = true;
+
+ 					 $partes = $this->model->partes->get();
+    				$this->view->partes = $partes;
+
+ 					$partesequipos = $this->model->partesequipos->get($codequipo);
+    				$this->view->partesequipos = $partesequipos;
+			}
+			 else{
 
  					$this->view->mensaje = 'Rellene los campos del nuevo producto';
 

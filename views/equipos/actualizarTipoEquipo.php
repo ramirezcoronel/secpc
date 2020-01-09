@@ -23,21 +23,22 @@
             
         </div>
         <form action="<?php echo constant('URL')?>equipos/actualizarTipoEquipo" method="POST" class="form">
+           <div class="form-header"> <p>Actualizar Tipo de Equipo</p> </div>
         
-        <div class="form__box esquinas">
-          <div class="margin-lados">
+        <div class="form__box">
+          <div>
             <label for="codTipoEquipo">Codigo de Tipo de Equipo:</label>
             <input type="text" name="codTipoEquipo" id="codTipoEquipo" value="<?php echo $this->tipo->getCodigo();?>" readonly/>
           </div>
-          <div class="margin-lados">
+          <div>
             <label for="nombre">Nombre de Tipo de Equipo:</label>
             <input type="text" name="nomTipoEquipo" id="nombre" value="<?php echo $this->tipo->getNombre();?>" />
           </div>
         </div>
 
-        <div class="centrar">
-          <button type="submit" name="actualizar" class="boton">Actualizar Tipo de Equipo</button>
-          <a href="<?php echo constant('URL')?>equipos/consultarTipoEquipo" class="boton">Volver</a>
+        <div class="bottom">
+          <button type="submit" name="actualizar">Actualizar Tipo de Equipo</button>
+          <a href="<?php echo constant('URL')?>equipos/consultarTipoEquipo">Volver</a>
         </div>
         
         

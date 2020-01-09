@@ -1,7 +1,7 @@
 <?php 
 
     class ejemplaresParteCRUD extends Model {
-
+      public $error;
         public function __construct() {
             parent::__construct();
         }

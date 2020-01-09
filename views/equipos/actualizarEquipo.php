@@ -23,9 +23,10 @@
         </div>
 
             <form name="formulario" method="post" action="<?php echo constant('URL')?>equipos/actualizarEquipo"  class="form" id="form">
+               <div class="form-header"> <p>Actualizar Equipo</p> </div>
 
-          <div class="form__box centrar">
-            <div class="margin-lados">
+          <div class="form__box">
+            <div>
               <label for="codtipoequipo ">Tipo Equipo</label>
               <select name="codtipoequipo" class="select" id="select">
                 <option value="0">Seleccione</option>
@@ -38,26 +39,20 @@
             <?php } ?>
               </select>
             </div>
-            <div class="margin-lados">
+            <div>
               <label for="codequipo">codigo de Equipo:</label>
               <input type="text" name="codequipo" id="codequipo" value="<?php echo $this->equipo->getCodigo()?>" readonly/>
             </div>
-            <div class="margin-lados">
+            <div>
               <label for="nomequipo">Nombre de Equipo:</label>
               <input type="text" name="nomequipo" id="nomequipo" value="<?php echo $this->equipo->getNombre()?>"/>
             </div>
           </div>
-          <div class="centrar">
-            <button type="submit" name="actualizar" class="boton">Actualizar</button>
-            <a href="<?php echo constant('URL')?>equipos/consultarEquipos" class="boton">volver</a>
+          <div class="bottom">
+            <button type="submit" name="actualizar">Actualizar</button>
+            <a href="<?php echo constant('URL')?>equipos/consultarEquipos">volver</a>
         </div>
         </form>
-
-
-      
-      <!-- DESDE AQUI ESTA EL FORMULARIO PARA AGREGAR PARTES -->
-
-     
 
     </main>
   </div>
