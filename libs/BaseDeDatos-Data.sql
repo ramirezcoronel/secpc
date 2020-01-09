@@ -53,44 +53,44 @@ INSERT INTO equipos ("codequipo","nomequipo","estatusequipo", "codtipoequipo")
 
 
 INSERT INTO marca ("id","nombre","estatus")
-            VALUES ('HP','HP','1');
+            VALUES ('MHP-001','HP','1');
 INSERT INTO marca ("id","nombre","estatus")
-            VALUES ('S1R4','SIRAGON','1');
+            VALUES ('S1R-001','SIRAGON','1');
 INSERT INTO marca ("id","nombre","estatus")
-            VALUES ('APP','APPLE','1');
+            VALUES ('APP-001','APPLE','1');
 INSERT INTO marca ("id","nombre","estatus")
-            VALUES ('S4M','SAMSUNG','1');
+            VALUES ('S4M-001','SAMSUNG','1');
 INSERT INTO marca ("id","nombre","estatus")
-            VALUES ('INT','INTEL','1');
+            VALUES ('INT-001','INTEL','1');
 
 INSERT INTO modelos ("idmodelo","nommodelo","estatusmodelo", "idmarca")
-  VALUES ('T0RNI','Tornillos','1', 'INT');
+  VALUES ('TOR-110','Tornillos','1', 'INT-001');
 
 INSERT INTO modelos ("idmodelo","nommodelo","estatusmodelo", "idmarca")
-  VALUES ('HDD','HARD DISK','1', 'S4M');
+  VALUES ('HDD-001','HARD DISK','1', 'S4M-001');
 
 INSERT INTO modelos ("idmodelo","nommodelo","estatusmodelo", "idmarca")
-  VALUES ('P4NT','Pantalla','1', 'APP');
+  VALUES ('PAN-001','Pantalla','1', 'APP-001');
 
 INSERT INTO modelos ("idmodelo","nommodelo","estatusmodelo", "idmarca")
-  VALUES ('M0US','Mouse','1', 'INT');
+  VALUES ('MOU-500','Mouse','1', 'INT-001');
 
 INSERT INTO modelos ("idmodelo","nommodelo","estatusmodelo", "idmarca")
-VALUES ('R4M','RAM','1', 'HP');
+VALUES ('RAM-001','RAM','1', 'MHP-001');
 
 
 
 INSERT INTO partes ("codpartes","serializable","stockactual","stockmaximo","stockminimo","puntoreorden","estatus","idmodelo")
-					VALUES ('CEHR','1','0','200','100','120','1','T0RNI');
+					VALUES ('CEH-001','1','0','200','100','120','1','ToR-110');
 
 INSERT INTO partes ("codpartes","serializable","stockactual","stockmaximo","stockminimo","puntoreorden","estatus","idmodelo")
-					VALUES ('JEHR','1','0','200','100','120','1','R4M');
+					VALUES ('JEH-001','1','0','200','100','120','1','RAM-001');
 
 INSERT INTO partes ("codpartes","serializable","stockactual","stockmaximo","stockminimo","puntoreorden","estatus","idmodelo")
-					VALUES ('SEE','1','0','200','100','120','1','M0US');
+					VALUES ('SEE-001','1','0','200','100','120','1','MOU-500');
 
 INSERT INTO partes ("codpartes","serializable","stockactual","stockmaximo","stockminimo","puntoreorden","estatus","idmodelo")
-					VALUES ('SDE','1','0','200','100','120','1','HDD');
+					VALUES ('SDE-001','1','0','200','100','120','1','HDD-001');
 
 INSERT INTO partes ("codpartes","serializable","stockactual","stockmaximo","stockminimo","puntoreorden","estatus","idmodelo")
-					VALUES ('ELD','1','0','200','100','120','1','P4NT');
+					VALUES ('ELD-001','1','0','200','100','120','1','PAN-001');

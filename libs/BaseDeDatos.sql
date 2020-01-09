@@ -149,3 +149,23 @@ CREATE TABLE pruebaProducto (
     REFERENCES public.pruebas (codprueba) MATCH SIMPLE 
     ON UPDATE CASCADE
     ON DELETE CASCADE);
+
+  CREATE TABLE ejemplaresParte (
+    codigo character varying(50), --PK
+    serialFabri character varying(50),
+    ubicacion character varying(1),
+    estatus character varying(1),
+    codParte character varying(12), -- FK
+    codProducto character varying(50), -- FK
+
+  CONSTRAINT pk_codigoEjemplar PRIMARY KEY (codigo),
+  CONSTRAINT fk_codParte FOREIGN KEY (codParte) 
+    REFERENCES public.partes (codPartes) MATCH SIMPLE 
+    ON UPDATE CASCADE
+    ON DELETE CASCADE,
+    
+  CONSTRAINT fk_codProducto FOREIGN KEY (codProducto) 
+    REFERENCES public.productos (codigo) MATCH SIMPLE 
+    ON UPDATE CASCADE
+    ON DELETE CASCADE
+    );
