@@ -81,7 +81,7 @@ VALUES ('RAM-001','RAM','1', 'MHP-001');
 
 
 INSERT INTO partes ("codpartes","serializable","stockactual","stockmaximo","stockminimo","puntoreorden","estatus","idmodelo")
-					VALUES ('CEH-001','1','0','200','100','120','1','ToR-110');
+					VALUES ('CEH-001','1','0','200','100','120','1','TOR-110');
 
 INSERT INTO partes ("codpartes","serializable","stockactual","stockmaximo","stockminimo","puntoreorden","estatus","idmodelo")
 					VALUES ('JEH-001','1','0','200','100','120','1','RAM-001');
