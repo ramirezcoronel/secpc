@@ -19,7 +19,8 @@
             
         </div>
         <form action="<?php echo constant('URL')?>inventario/actualizarProducto" method="POST" class="form">
-          <div class="form__box centrar">
+           <div class="form-header"> <p>Actualizar Producto</p> </div>
+          <div class="form__box">
          <div>
               <label for="marca">Marca</label>
               <select class="select" name="idmarca" id="select">
@@ -34,21 +35,19 @@
               </select>
               
             </div>
-        </div>
-        <div class="form__box esquinas">
-         <div class="margin-lados">
+         <div>
             <label for="codigo">codigo :</label>
             <input type="text" name="codigo" id="codigo" value="<?php echo $this->equipo->getCodigo(); ?>" readonly>
          </div>
-         <div class="margin-lados">
+         <div>
             <label for="fecha">fecha Produccion:</label>
             <input type="date" name="fecha" id="fecha">
          </div>
         </div>
         
-        <div class="centrar">
-          <button type="submit" name="actualizar" class="boton" value="agregar">Actualizar</button>
-          <a href="<?php echo constant('URL')?>emsamble" class="boton margin-lados">Volver</a>
+        <div class="bottom">
+          <button type="submit" name="actualizar" value="agregar">Actualizar</button>
+          <a href="<?php echo constant('URL')?>ensamble">Volver</a>
         </div>
       </form>
     </main>
