@@ -4,10 +4,12 @@
   require 'libs/classes/equipos.class.php';
   require 'libs/classes/partes.class.php';
   require 'libs/classes/partesequipos.class.php';
+  require 'libs/classes/ejemplaresparte.class.php';
 
   //PRODUCTOS
   require 'source/productos/CRUD.php';
   require 'source/partesequipos/CRUD.php';
+  require 'source/ejemplaresparte/CRUD.php';
 
   require 'source/partes/CRUD.php';
   //EQUIPOS
@@ -20,11 +22,13 @@
     public $productos;
     public $partes;
     public $partesequipos;
+    public $ejemplaresparte;
 
     function __construct() {
         parent::__construct();
         $this->equipos = new equiposCRUD();
         $this->partes = new partesCRUD();
+        $this->ejemplaresparte = new ejemplaresParteCRUD();
         $this->productos = new productosCRUD();
         $this->partesequipos = new partesequiposCRUD();
     }
