@@ -98,14 +98,28 @@
                   foreach($this->partes as $row){
                     $parte = new PartesClass();
                     $parte = $row;
+
+                    foreach($this->partesequipos as $row){
+                      $parteEquipos = new PartesEquiposClass();
+                      $parteEquipos = $row;
+
+                      if ($parte->getCodigo() == $parteEquipos->getCodPartes()){
+                        ?>
+                         <option value="<?php echo $parte->getCodigo()?>" data-cantidad="<?php echo $parteEquipos->getCantidadPartes() ?>" data-serial="<?php echo $parte->getSerializable()?>"><?php echo $parte->getIdModelo().' - '. $parte->getCodigo(); ?></option>
+                        <?php
+                      }
+                    }
+                  }
                 ?>
-              <option value="<?php echo $parte->getCodigo()?>" data-serial="<?php echo $parte->getSerializable()?>"><?php echo $parte->getIdModelo().' - '. $parte->getCodigo(); ?></option>
-            <?php } ?>
               </select>
            </div>
           <div>
             <label for="cantidadparte">Cantidad:</label>
             <input type="number" name="cantidadparte" id="cantidadparte" />
+          </div>
+          <div>
+            <label for="codigoparte">Codigo:</label>
+            <input type="number" name="codigoparte" id="codigoparte" />
           </div>
           <div>
             <label for="numserialfabricante">Serial fabricante:</label>

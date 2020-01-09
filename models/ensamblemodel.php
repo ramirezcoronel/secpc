@@ -9,7 +9,7 @@
   //PRODUCTOS
   require 'source/productos/CRUD.php';
   require 'source/partesequipos/CRUD.php';
-  require 'source/ejemplaresparte/CRUD.php';
+  require 'source/ejemplaresParte/CRUD.php';
 
   require 'source/partes/CRUD.php';
   //EQUIPOS

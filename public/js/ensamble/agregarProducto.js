@@ -6,6 +6,7 @@
 	
 	parte.addEventListener('click', ()=>{
 		let serial = parte.options[parte.selectedIndex].dataset.serial
+		let cantidad = parte.options[parte.selectedIndex].dataset.cantidad
 
 		if (serial === '1') {
 			serialBox.readOnly = false;
@@ -16,8 +17,8 @@
 			serialBox.readOnly = true;
 			serialBox.value = '';
 			serialBox.parentNode.style.display = 'none';
-			cantidadBox.readOnly = false;
-			cantidadBox.value = '';
+			cantidadBox.readOnly = true;
+			cantidadBox.value = cantidad;
 		}
 	})
 	
