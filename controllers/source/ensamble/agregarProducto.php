@@ -42,17 +42,22 @@
 
 				if (!isset($serial)) {
 					for ($i=0; $i < $cantidad; $i++) { 
-						$data = array('codigo'=>$i.'-'.$codigoEjemplar,
-									'ubicacion'=>$ubicacion,
-									'estatus'=>$estatus,
-									'codparte'=>$codparte,
-									'codproducto'=>$codigo);
+						$data = array('codigo'=>$i.'-'.$codigoEjemplar,'ubicacion'=>$ubicacion,
+									'estatus'=>$estatus,'codparte'=>$codparte,'codproducto'=>$codigo);
+
 						if ($this->model->ejemplaresparte->insert($data)){
 							$this->view->mensaje = 'Agregados Exitosamente';
 						} else{
 							$this->view->mensaje = 'Ha habido un problema';
 						}
 					}
+
+					$updateData = array('codpartes'=>$codparte, 'cantidadparte'=>$cantidad);
+
+					if ( $this->model->partes->update($updateData, "2")) {
+			        	$this->view->mensaje = 'Agregados Exitosamente';
+			        }
+
 				} else {
 					$data = array('codigo'=>$codigoEjemplar,
 					'serialfabri'=>$serial,
@@ -61,7 +66,12 @@
 					 'codparte'=>$codparte,
 					 'codproducto'=>$codigo);
 					if ($this->model->ejemplaresparte->insert($data)){
-						echo 'CORRECTO';
+						$updateData = array('codpartes'=>$codparte, 'cantidadparte'=>$cantidad);
+
+						if ( $this->model->partes->update($updateData, "2")) {
+			        		$this->view->mensaje = 'Agregados Exitosamente';
+			        	}
+
 					} else{
 						var_dump($data);
 					}
@@ -69,8 +79,6 @@
 
 				$producto = $this->model->productos->get($codigo);
  					$this->view->producto = $producto[0];
-
-
 
  					$this->view->visible = true;
 
