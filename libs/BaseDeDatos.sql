@@ -169,3 +169,19 @@ CREATE TABLE pruebaProducto (
     ON UPDATE CASCADE
     ON DELETE CASCADE
     );
+
+  CREATE TABLE soporteProducto (
+    num character varying(12), --PK
+    fallaReportada character varying(250),
+    fecha date,
+    horaInicio time,
+    horaFin time, 
+    desActividad text, 
+    estatus character varying(1), 
+    numPrueba character varying(50), -- FK
+
+  CONSTRAINT pk_numSoporteProducto PRIMARY KEY (num),
+  CONSTRAINT fk_numPruebaProductoSoporte FOREIGN KEY (numPrueba) 
+    REFERENCES public.pruebaProducto (numPruebaProducto) MATCH SIMPLE 
+    ON UPDATE CASCADE
+    ON DELETE CASCADE);
