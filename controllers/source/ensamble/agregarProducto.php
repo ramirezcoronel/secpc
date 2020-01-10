@@ -87,6 +87,9 @@
 
  					$partesequipos = $this->model->partesequipos->get($codequipo);
     				$this->view->partesequipos = $partesequipos;
+
+    				$partesensambladas = $this->model->ejemplaresparte->get($codigo);
+    				$this->view->partesensambladas = $partesensambladas;
 			}
 			 else{
 

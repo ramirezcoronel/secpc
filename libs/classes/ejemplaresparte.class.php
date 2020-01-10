@@ -8,6 +8,7 @@
       private $estatus;
       private $codparte;
       private $codproducto;
+      private $cantidad;
     
       //SETTERS
       public function setCodigo($id) {
@@ -30,6 +31,20 @@
 
       public function setCodProducto($data) {
         $this->codproducto = $data;
+      }
+
+      public function setCantidad($data) {
+        $this->cantidad = $data;
+      }
+
+      //GETTERS 
+
+       public function getCodParte() {
+        return $this->codparte;
+      }
+
+       public function getCantidad() {
+        return $this->cantidad;
       }
      
   }

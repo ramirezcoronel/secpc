@@ -60,7 +60,7 @@
             }
           }
     
-        function get ($id = null) {
+        public function get ($id = null) {
           $items = [];
           try {
             if ( isset($id) ) {

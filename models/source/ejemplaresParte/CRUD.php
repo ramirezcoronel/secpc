@@ -1,11 +1,11 @@
 <?php 
-
+// SELECT codparte, COUNT(*) FROM ejemplaresparte GROUP BY codparte;
     class ejemplaresParteCRUD extends Model {
       public $error;
         public function __construct() {
             parent::__construct();
         }
-        function insert ($data) {
+        public function insert ($data) {
             try{
               $query = $this->db->connect()->prepare('INSERT INTO ejemplaresparte ( codigo,serialfabri, ubicacion,estatus,codparte,codproducto) VALUES(:codigo, :serialfabri, :ubicacion, :estatus, :codparte, :codproducto)');
     
@@ -17,6 +17,31 @@
               return false;
             }
           }
+
+      public function get ($id = null) {
+          $items = [];
+          try {
+            if ( isset($id) ) {
+              $query = $this->db->connect()->prepare('SELECT codparte, COUNT(*) FROM ejemplaresparte WHERE codproducto = :id GROUP BY codparte;' );
+              $query->execute(['id'=>$id]);
+            } else {
+              $query = $this->db->connect()->query('SELECT * FROM partes');
+            }
+    
+            while($row = $query->fetch()){
+    
+              $item = new ejemplaresParteClass();
+            
+              $item->setCodParte($row['codparte']);
+              $item->setCantidad($row['count']);
+
+              array_push($items, $item);
+            }
+            return $items;
+          } catch (PDOException $e) {
+            return [];
+          }
+        }
     
       public function getError () {
         return $this->error;

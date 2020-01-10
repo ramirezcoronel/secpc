@@ -153,6 +153,28 @@
           </table>
       </div>
       </div>
+
+      <div class="tabla">
+      <div>
+          <table>
+            <caption>Partes Ensambladas:</caption>
+            <tr> <th>Codigo</th><th>Cantidad</th>
+            <tbody id="tbody-usuarios">
+              <?php
+                foreach($this->partesensambladas as $row){
+                 
+              ?>
+              </tr >
+              <tr>
+                <td><?php echo $row->getCodParte(); ?></td>
+                <td><?php echo $row->getCantidad(); ?></td>
+              </tr>
+              <?php } ?>
+            </tbody>
+          </table>
+      </div>
+      </div>
+
     <?php }?>
     </div>
     </main>
