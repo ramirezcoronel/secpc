@@ -15,7 +15,21 @@
       <main>
         <div class="produccion">
         <h2>Seguimiento de Ensamblado y Control de Producción de Canaima</h2>
-      </div>
+   
+        <div class="slider">
+          <ul>
+            <li><img src="<?php echo constant('URL')?>public/img/nova.jpg"></li>
+            <li><img src="<?php echo constant('URL')?>public/img/0.jpg"></li>
+            <li><img src="<?php echo constant('URL')?>public/img/01.jpg"></li>
+            <li><img src="<?php echo constant('URL')?>public/img/2.jpg"></li>
+            <li><img src="<?php echo constant('URL')?>public/img/3.png"></li>
+            <li><img src="<?php echo constant('URL')?>public/img/4.jpg"></li>
+            <li><img src="<?php echo constant('URL')?>public/img/5.jpg"></li>
+            <li><img src="<?php echo constant('URL')?>public/img/6.jpg"></li>
+          </ul>
+        </div>
+     </div>
+
       </main>
   </div>
 </body>
