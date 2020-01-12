@@ -72,7 +72,21 @@
 
     function insertPrueba ($data) {
       try{
-        $query = $this->db->connect()->prepare('INSERT INTO pruebaProducto (codPruebaProducto, codProductoPrueba, fechaPruebaProducto, horaPruebaProducto, resultPruebaProducto, obserbPruebaProducto) VALUES(:codPruebaProducto, :codProductoPrueba, :fechaPruebaProducto, :horaPruebaProducto, :resultPruebaProducto, obserbPruebaProducto: )');
+        $query = $this->db->connect()->prepare('INSERT INTO pruebaProducto (codPruebaProducto, 
+          codProductoPrueba, 
+          fechaPruebaProducto, 
+          horaPruebaProducto, 
+          resultPruebaProducto, 
+          obserbPruebaProducto, 
+          estatusPruebaProducto) 
+          VALUES(
+          :codPruebaProducto, 
+          :codProductoPrueba, 
+          :fechaPruebaProducto, 
+          :horaPruebaProducto, 
+          :resultPruebaProducto, 
+          :obserbPruebaProducto, 
+          :estatusPruebaProducto)');
 
         $query->execute(
           ['codPruebaProducto'=>$data['codPruebaProducto'],
@@ -80,10 +94,12 @@
           'fechaPruebaProducto'=>$data['fechaPruebaProducto'], 
           'horaPruebaProducto'=>$data['horaPruebaProducto'], 
           'resultPruebaProducto'=>$data['resultPruebaProducto'],
-          'obserbPruebaProducto'=>$data['obserbPruebaProducto']]);
+          'obserbPruebaProducto'=>$data['obserbPruebaProducto'],
+          'estatusPruebaProducto'=>$data['estatusPruebaProducto']]);
         
         return true;
       } catch(PDOException $e){
+        echo $e;
       return false;
       }
     }

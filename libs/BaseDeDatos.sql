@@ -135,10 +135,10 @@ CREATE TABLE pruebas (
   CONSTRAINT nomprueba_unica UNIQUE (nomprueba));
 
 CREATE TABLE pruebaProducto (
-  numPruebaProducto character varying(12),
+  numPruebaProducto serial,
   fechaPruebaProducto date,
   horaPruebaProducto time,
-  resultPruebaProducto character varying(1),
+  resultPruebaProducto character varying(20),
   obserbPruebaProducto character varying(250),
   estatusPruebaProducto character varying(1),
   codPruebaProducto character varying(12),
@@ -149,6 +149,7 @@ CREATE TABLE pruebaProducto (
     REFERENCES public.pruebas (codprueba) MATCH SIMPLE 
     ON UPDATE CASCADE
     ON DELETE CASCADE);
+
 
   CREATE TABLE ejemplaresParte (
     codigo character varying(50), --PK

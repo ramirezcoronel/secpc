@@ -25,7 +25,7 @@
         <div class="form__box">
           <div>
             <label>Tipo de Prueba</label>
-            <select name="codprueba" class="select" id="select">
+            <select name="codprueba" class="select" id="codprueba">
             <option value="0">Seleccione</option>
             <?php 
             foreach($this->pruebas as $row){
@@ -37,7 +37,7 @@
             </select>
           </div>
           <div>
-            <label for="produto">Serial:</label>
+            <label for="produto">Codigo producto:</label>
             <input type="text" name="produto" id="producto">
           </div>
             <div>
@@ -56,7 +56,8 @@
             </select>
           </div>
           <div>
-            <textarea name="observacion" placeholder="Escriba la observacion del equipo que no pasó la prueba">
+             <label for="select">Observacion si no aprobó</label>
+            <textarea name="observacion" id="observacion">
             </textarea>
           </div>
         </div>
@@ -67,19 +68,6 @@
           <a href="<?php echo constant('URL')?>pruebas" >Atras</a>
         </div>
       </form>
-
-
-      <div class="form"> 
-      <div class="form-header">
-          <p>Equipo</p>
-        </div>
-
-        <table class="tabla tabla-secundaria">
-          <th>Serial</th>
-          <th>equipo</th>
-          <th>Fecha</th>
-        </table>
-      </div>
     <script type="text/javascript" src="<?php echo constant('URL')?>public/js/stressing.js"></script>
   </main>
 </div>
