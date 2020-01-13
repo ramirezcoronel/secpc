@@ -14,7 +14,7 @@
         
         return true;
       } catch(PDOException $e){
-		  return false;
+      return false;
       }
     }
 
@@ -99,10 +99,21 @@
         
         return true;
       } catch(PDOException $e){
-        echo $e;
       return false;
       }
     }
+    function validar($producto){
+    try {
+    $query = $this->db->connect()->prepare('SELECT * FROM productos WHERE codigo = :codigo');
+    $query->execute(['codigo' => $producto]);
+
+    return $query->rowCount();
+
+    } catch(PDOException $e) {return false;}
+
+
+    }
+
 
 
 }

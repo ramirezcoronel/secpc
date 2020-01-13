@@ -10,8 +10,8 @@ function habilitar(obj) {
 (function(){
 	var formulario = document.getElementsByName('formulario')[0],
 		elementos = formulario.elements,
-		codigo = document.getElementById('codigo'),
-		produto = document.getElementById('produto'),
+		codprueba = document.getElementById('codprueba'),
+		producto = document.getElementById('producto'),
 		fecha = document.getElementById('fecha'),
 		hora = document.getElementById('hora'),
 		resultado = document.getElementById('resultado'),
@@ -19,12 +19,10 @@ function habilitar(obj) {
 		boton = document.getElementById('btn');
 		
 		var campos = function(e){
-			if (formulario.codigo.value == 0 
-				|| formulario.produto.value == 0 
+			if (formulario.codprueba.value == 0 
+				|| formulario.producto.value == 0 
 				|| formulario.fecha.value == 0 
-				|| formulario.hora.value == 0
-				||formulario.resultado.value == 0
-				) {
+				|| formulario.hora.value == 0) {
 				alert("Todos los campos son obligatorios");
 				e.preventDefault()
 			}else{
@@ -51,7 +49,7 @@ function habilitar(obj) {
 		}
 		var Vproducto = function(e){
 		var er = /^[0-9]{1,2}$/i;
-			var respuesta = er.test(produto.value);
+			var respuesta = er.test(producto.value);
 			if (respuesta == false) {
 				alert("El codigo del producto tiene formato xxxxxx");
 		 		e.preventDefault()
@@ -62,13 +60,12 @@ function habilitar(obj) {
 
 	function confirmar(e)
     {
-    var opcion = confirm("¿Guardar?");
+    var opcion = confirm("¿Confirmar?");
     if (opcion == true) {
 	} else {
 		alert("se ha cancelado");
 	    e.preventDefault()
 	}
 }
-
 		formulario.addEventListener("submit", campos);
 }())
