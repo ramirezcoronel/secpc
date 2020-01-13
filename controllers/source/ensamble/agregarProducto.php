@@ -39,6 +39,7 @@
 				$estatus     = '2';
 				$serial      = ($_POST['numserialfabricante'] !== "") ? $_POST['numserialfabricante'] : NULL;
 				$cantidad    = ($_POST['cantidadparte'] !== "") ? $_POST['cantidadparte'] : NULL;
+				$codequipo = ($_POST['tipo'] !== "") ? $_POST['tipo'] : NULL;
 
 				if (!isset($serial)) {
 					for ($i=0; $i < $cantidad; $i++) { 
