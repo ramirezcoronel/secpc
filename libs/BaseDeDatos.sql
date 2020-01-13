@@ -179,7 +179,7 @@ CREATE TABLE pruebaProducto (
     horaFin time, 
     desActividad text, 
     estatus character varying(1), 
-    numPrueba character varying(50), -- FK
+    numPrueba serial, -- FK
 
   CONSTRAINT pk_numSoporteProducto PRIMARY KEY (num),
   CONSTRAINT fk_numPruebaProductoSoporte FOREIGN KEY (numPrueba) 
