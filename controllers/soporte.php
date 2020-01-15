@@ -5,6 +5,9 @@ class Soporte extends Controller{
 	}
 
 	public function render(){
+		$soportes = $this->model->soporte->get();
+		$this->view->soportes = $soportes;
+
 		  $this->view->render('soporte/index');
 	}
 

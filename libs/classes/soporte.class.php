@@ -1,6 +1,6 @@
 <?php 
 
-class SoporteTec extends Database{
+class SoporteClass extends Database{
     
     private $numSop;
     private $fallaReport;
@@ -9,6 +9,7 @@ class SoporteTec extends Database{
 	private $horaSda;
 	private $estatus;
 	private $desActividad;
+	private $numPrueba;
 
 
 
@@ -39,6 +40,9 @@ class SoporteTec extends Database{
 	public function getDesActividad(){
 		return $this->desactividad;
 	}
+	public function getNumPrueba(){
+		return $this->desactividad;
+	}
 	
 
 
@@ -47,8 +51,8 @@ class SoporteTec extends Database{
        $this->numSop = $numSop;
 	}
 
-	public function setFallaReport($fallareport){
-       $this->fallareport = $fallaReport;
+	public function setFallaReport($fallaReport){
+       $this->fallaReport = $fallaReport;
 	}
 
 	public function setFecha($fecha){
@@ -63,12 +67,16 @@ class SoporteTec extends Database{
        $this->horaSda = $horaSda;
 	}
 
-	public function setEstatus($etatus){
+	public function setEstatus($estatus){
        $this->estatus = $estatus;
 	}
 
 	public function setDesActividad($desActividad){
 		$this->desactividad = $desActividad;
+	}
+
+	public function setNumPrueba($numPrueba){
+		$this->numPrueba = $numPrueba;
 	}
 	
 }

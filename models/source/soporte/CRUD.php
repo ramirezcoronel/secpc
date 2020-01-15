@@ -21,18 +21,19 @@
      function get(){
      	$items = [];
      	try{
-     		$query = $this->db->connect()->query('SELECT * FROM soportesproducto', 'SELECT * FROM pruebasproducto');
-            
+     		$query = $this->db->connect()->query('SELECT * FROM soporteproducto');
 
      		while($row = $query->fetch()){
-     			$item = new soporteTec();
+     			$item = new soporteClass();
 
-     			$item->setNumSop($row['numSoporteProducto']);
-     			$item->setResultado($row['resultPruebaProducto']);
-     			$item->setDetalles($row['detallefalla']);
-     			$item->setFecha($row['fechaIngreso']);
-     			$item->setHoraEn($row['horaEnSoporte']);
-     			$item->setHoraSda($row['horaSdaSoporte']);
+     			$item->setNumSop($row['num']);
+     			$item->setFallaReport($row['fallareportada']);
+     			$item->setFecha($row['fecha']);
+     			$item->setHoraEn($row['horainicio']);
+     			$item->setHoraSda($row['horafin']);
+     			$item->setEstatus($row['estatus']);
+                $item->setDesActividad($row['desactividad']);
+                $item->setNumPrueba($row['numprueba']);
 
      			array_push($items, $item);
      	   }

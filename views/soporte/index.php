@@ -30,8 +30,25 @@
                   <th>Descripcion de Actividad</th>
                   <th>Modificar</th>
                   <th>Eliminar</th>
-            <tbody id="tbody-usuarios">
-              
+            <tbody id="tbody-soporteproducto">
+              <?php
+                foreach($this->soportes as $row){
+                  $soporte = $row;
+              ?>
+              </tr >
+              <tr id="fila-<?php echo $soporte->getNumSop(); ?>">
+                <td><?php echo $soporte->getNumSop(); ?></td>
+                <td><?php echo $soporte->getFallaReport(); ?></td>
+                <td><?php echo $soporte->getFecha(); ?></td>
+                <td><?php echo $soporte->getHoraEn(); ?></td>
+                <td><?php echo $soporte->getHoraSda(); ?></td>
+                <td><?php echo $soporte->getEstatus(); ?></td>
+                <td><?php echo $soporte->getDesActividad(); ?></td>
+                <td><?php echo $soporte->getNumPrueba(); ?></td>
+                <td><a class="crud" href="<?php echo constant('URL')?>soporte/actualizarSoporte/<?php echo $soporte->getNumSop() ?>">Modificar</a></td>
+              <td><button class="crud eliminar" data-id="<?php echo $soporte->getNumSop(); ?>">Eliminar</button></td>
+              </tr>
+              <?php } ?>
             </tbody>
           </table>
       </div>
