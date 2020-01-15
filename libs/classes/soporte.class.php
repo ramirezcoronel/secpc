@@ -18,7 +18,7 @@ class SoporteClass extends Database{
 	}
 
 	public function getFallaReport(){
-       return $this->fallareport;
+       return $this->fallaReport;
 	}
 
 	public function getFecha(){

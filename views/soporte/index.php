@@ -18,7 +18,7 @@
       <div class="text-header">
             <h2>Soporte</h2> 
         </div>
-    <div class="tabla" id="form" data-eliminar="eliminarUsuario">
+    <div class="tabla" id="form" data-eliminar="eliminarSoporte">
       <div>
           <table>
             <caption>Gestionar Soporte</caption>
