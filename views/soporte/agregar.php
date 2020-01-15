@@ -30,11 +30,6 @@
             <label for="num">Numero de Soporte:</label>
             <input type="number" data-patron="^[a-zA-Z]{3,12}$" name="num" id="num">
          </div>
-         
-         <div>
-            <label for="username">Username:</label>
-            <input type="text" data-patron="^[a-zA-Z]{3,12}$" name="username" id="username">
-         </div>
           <div>
              <label for="horaInicio">Hora Inicio de Soporte:</label>
              <input type="time" id="horaInicio" name="horaInicio" min="09:00" max="18:00" required>
@@ -55,6 +50,18 @@
             <label for="descripcion">Descripcion de Soporte:</label>
             <textarea id="descripcion" name="descripcion" placeholder="Describa el procedimiento de la prueba" maxlength="250"></textarea>
          </div>
+         <div>
+              <label for="numPrueba ">Numero de Prueba: </label>
+              <select name="numPrueba" class="select" id="select">
+                <option value="0">Seleccione</option>
+                <?php
+              foreach($this->pruebas as $row){
+                $prueba = $row;
+            ?>
+              <option value="<?php echo $prueba->getCod()?>"><?php echo $prueba->getNombre().' - '.$prueba->getCod(); ?></option>
+            <?php } ?>
+              </select>
+           </div>
         </div>
 
         <div class="bottom">

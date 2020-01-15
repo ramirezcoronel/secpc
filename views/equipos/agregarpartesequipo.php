@@ -24,7 +24,7 @@
         </div>
         <form action="<?php echo constant('URL')?>equipos/agregarPartesEquipo" method="POST" class="form">
         <div class="form__box centrar">
-          <div class="margin-lados">
+          <div>
               <label for="codequipo ">Equipo: </label>
               <select name="codequipo" class="select" id="select">
                 <option value="0">Seleccione</option>
