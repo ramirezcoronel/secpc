@@ -14,7 +14,13 @@
                     'estatus' => $estatus, 'numprueba' => $numeroPrueba);
 
       if ( $this->model->soporte->insert($data)) {
-        $this->view->mensaje = 'Agregado exitosamente';
+        $updateData = array('numpruebaproducto' => $numeroPrueba, 
+                            'resultPruebaProducto'=> 'Pasó la prueba');
+        if ( $this->model->pruebaproducto->updateEstado($updateData) ){
+          $this->view->mensaje = 'Agregado Exitosamente!';
+        } else {
+          $this->view->error = $this->model->pruebaproducto->getError();
+        }
       } else {
         $this->view->error = $this->model->soporte->getError();
       }

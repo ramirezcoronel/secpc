@@ -5,8 +5,8 @@
     function __construct() {
       parent::__construct();
     }
-   
 
+    public $error;
 
     public function getError () {
       return $this->error;
@@ -34,6 +34,23 @@
         }
         return $items;
       } catch (PDOException $e) {
+        return [];
+      }
+    }
+
+
+    public function updateEstado ($data) {
+      try {
+        $query = $this->db->connect()->prepare('UPDATE pruebaProducto SET  
+          resultPruebaProducto = :resultPruebaProducto
+          WHERE numpruebaproducto = :numpruebaproducto');
+
+        $query->execute(
+          ['numpruebaproducto'=>$data['numpruebaproducto'],
+          'resultPruebaProducto'=>$data['resultPruebaProducto']]);
+      } catch (PDOException $e) {
+        $this->error = $e->getMessage();
+        echo $e->getMessage();
         return [];
       }
     }
