@@ -1,5 +1,5 @@
 <?php
-	if ($this->error) {
+	if (isset($this->error)) {
 ?>
   <div class="modal-back">
   <div class="modal">

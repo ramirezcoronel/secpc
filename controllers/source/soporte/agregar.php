@@ -1,9 +1,23 @@
 <?php
 	if(isset($_POST['agregar'])){
-      $nombre    = ($_POST['nombre'] !== "") ? $_POST['nombre'] : NULL;
-      $id = ($_POST['id'] !== "") ? $_POST['id'] : NULL;
+      $numero    = ($_POST['num'] !== "") ? $_POST['num'] : NULL;
+      $horaInicio = ($_POST['horaInicio'] !== "") ? $_POST['horaInicio'] : NULL;
+      $horaFin = ($_POST['horaFin'] !== "") ? $_POST['horaFin'] : NULL;
+      $fecha = ($_POST['fecha'] !== "") ? $_POST['fecha'] : NULL;
+      $falla = ($_POST['falla'] !== "") ? $_POST['falla'] : NULL;
+      $descripcion = ($_POST['descripcion'] !== "") ? $_POST['descripcion'] : NULL;
+      $numeroPrueba = ($_POST['numPrueba'] !== "") ? $_POST['numPrueba'] : NULL;
       $estatus = 1;
-  
+
+      $data = array('num' => $numero, 'fallareportada' => $falla, 'fecha' => $fecha,
+                    'horainicio' => $horaInicio,  'horafin' => $horaFin, 'desactividad' =>$descripcion ,
+                    'estatus' => $estatus, 'numprueba' => $numeroPrueba);
+
+      if ( $this->model->soporte->insert($data)) {
+        $this->view->mensaje = 'Agregado exitosamente';
+      } else {
+        $this->view->error = $this->model->soporte->getError();
+      }
       
     }else{
       $this->view->mensaje = 'Rellene los campos';

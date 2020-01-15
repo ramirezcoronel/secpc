@@ -8,11 +8,12 @@
 
     function insert ($data){
      	try{
-     		$query = $this->db->connect()->prepare('INSERT INTO soportesproducto (fechaSoporteProducto, horaInicioSoporteProducto, horaFinSoporteProducto, desActividadSoporte,) VALUES (:fechaSoporteProducto,:horaInicioSoporteProducto, :horaFinSoporteProducto, :desActividadSoporte');
+     		$query = $this->db->connect()->prepare('INSERT INTO soporteproducto (num, fallareportada, fecha, horainicio,horafin, desactividad, estatus, numprueba) VALUES (:num,:fallareportada, :fecha, :horainicio, :horafin, :desactividad, :estatus, :numprueba)');
 
-     		$query->execute(['fechaSoporteProducto'=>$data['fechaSoporteProducto'], 'horaInicioSoporteProducto'=>$data['horaInicioSoporteProducto'], 'horaFinSoporteProducto'=>$data['horaFinSoporteProducto'], 'desActividadSoporte'=>$data['desActividadSoporte']]);
+     		$query->execute(['num'=>$data['num'], 'fallareportada'=>$data['fallareportada'], 'fecha'=>$data['fecha'], 'horainicio'=>$data['horainicio'], 'horafin'=>$data['horafin'], 'desactividad'=>$data['desactividad'], 'estatus'=>$data['estatus'], 'numprueba'=>$data['numprueba']]);
      		return true;
      	}catch(PDOException $e){
+            $this->error = $e->getMessage();
      		return false;
      	}
      }
@@ -82,5 +83,8 @@
      }
      	
   }
+   public function getError () {
+      return $this->error;
+    }
   }
 ?>

@@ -31,25 +31,7 @@
                   <th>Modificar</th>
                   <th>Eliminar</th>
             <tbody id="tbody-usuarios">
-              <?php
-                 foreach ($this->soporte as $row){
-                  $soporte = new SoporteTec();
-                  $soporte = $row;    
-              ?>
-              </tr >
-              <tr id="fila-<?php echo $usuario->getId(); ?>">
-                <td><?php echo $soporte->getNumSop(); ?></td>
-                  <td><?php echo $soporte->getFallaReport(); ?></td>
-                  <td><?php echo $soporte->getFecha(); ?></td>
-                  <td><?php echo $soporte->getHoraEn(); ?></td>
-                  <td><?php echo $soporte->getHoraSda(); ?></td>
-                  <td><?php echo $soporte->getDesActividad(); ?></td>
-                <td><a class="crud" href="<?php echo constant('URL')?>stressing/actualizarPrueba/<?php echo $stressing->getCod()?>">Modificar</a></td>
-                <td>
-                  <button class="crud eliminar" data-id="<?php echo $soporte->getNumSop()?>">Eliminar</button>
-                </td>
-              </tr>
-              <?php } ?>
+              
             </tbody>
           </table>
       </div>

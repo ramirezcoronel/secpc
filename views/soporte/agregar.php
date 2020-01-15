@@ -44,8 +44,8 @@
              <input id="fecha" name="fecha" type="date">
            </div>
            <div>
-            <label for="descripcion">Falla reportada:</label>
-            <textarea id="descripcion" name="descripcion" placeholder="Describa la falla reportada" maxlength="250"></textarea>
+            <label for="falla">Falla reportada:</label>
+            <textarea id="falla" name="falla" placeholder="Describa la falla reportada" maxlength="250"></textarea>
          </div>
          <div>
             <label for="descripcion">Descripcion de Soporte:</label>
