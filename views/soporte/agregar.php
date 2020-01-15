@@ -29,7 +29,7 @@
         <div class="form__box">
          <div>
             <label for="num">Numero de Soporte:</label>
-            <input type="number" data-patron="^[a-zA-Z]{3,12}$" name="num" id="num">
+            <input type="number" placeholder="Ingrese numero" data-patron="^[0-9]{3,12}$" name="num" id="num">
          </div>
           <div>
              <label for="horaInicio">Hora Inicio de Soporte:</label>
@@ -45,11 +45,11 @@
            </div>
            <div>
             <label for="descripcion">Falla reportada:</label>
-            <textarea id="descripcion" name="descripcion" placeholder="Describa el procedimiento de la prueba" maxlength="250"></textarea>
+            <textarea id="descripcion" name="descripcion" placeholder="Describa la falla reportada" maxlength="250"></textarea>
          </div>
          <div>
             <label for="descripcion">Descripcion de Soporte:</label>
-            <textarea id="descripcion" name="descripcion" placeholder="Describa el procedimiento de la prueba" maxlength="250"></textarea>
+            <textarea id="descripcion" name="descripcion" placeholder="Describa el procedimiento de el soporte" maxlength="250"></textarea>
          </div>
          <div>
               <label for="numPrueba ">Numero de Prueba: </label>
