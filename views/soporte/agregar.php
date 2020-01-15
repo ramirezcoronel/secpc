@@ -21,6 +21,7 @@
       <div class="text-header">
             <h2> <?php echo $this->mensaje ?> </h2> 
         </div>
+        <div class="horizontal">
         <form action="<?php echo constant('URL')?>soporte/agregar" method="POST" class="form">
           <div class="form-header">
             <p>Realizar Soporte</p>
@@ -55,11 +56,17 @@
               <select name="numPrueba" class="select" id="select">
                 <option value="0">Seleccione</option>
                 <?php
-              foreach($this->pruebas as $row){
-                $prueba = $row;
-            ?>
-              <option value="<?php echo $prueba->getCod()?>"><?php echo $prueba->getNombre().' - '.$prueba->getCod(); ?></option>
-            <?php } ?>
+                foreach($this->pruebas as $row){
+                  $prueba = $row;
+
+                  if ($prueba->getResultado() === 'No pasó la prueba'){
+                    ?>
+                     <option value="<?php echo $prueba->getNum()?>">
+                        <?php echo  'Prueba N°'.$prueba->getNum();?>
+                      </option>
+                    <?php
+                  }
+                } ?>
               </select>
            </div>
         </div>
@@ -71,6 +78,32 @@
         </div>
 
       </form>
+
+       <div class="tabla">
+      <div>
+          <table>
+            <caption>Pruebas A Dar Soporte:</caption>
+            <tr> <th>Num</th><th>Fecha</th>
+            <tbody>
+              <?php
+                foreach($this->pruebas as $row){
+                  $prueba = $row;
+
+                  if ($prueba->getResultado() === 'No pasó la prueba'){
+                    ?>
+                     </tr >
+                    <tr>
+                      <td><?php echo $prueba->getNum(); ?></td>
+                      <td><?php echo $prueba->getFecha(); ?></td>
+                    </tr>
+                    <?php
+                  }
+                } ?>
+            </tbody>
+          </table>
+      </div>
+      </div>
+    </div>
     </main>
   </div>
    <script src="<?php echo constant('URL')?>public/js/modal/modal.js"></script>

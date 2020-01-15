@@ -9,7 +9,7 @@
       $this->view->mensaje = 'Rellene los campos';
     }
 
-    $pruebas = $this->model->pruebas->get();
+    $pruebas = $this->model->pruebaproducto->get();
     $this->view->pruebas = $pruebas;
 
 	$this->view->render('soporte/agregar');
