@@ -18,15 +18,15 @@
         }
       }
 
-      function get ($num = null) {
+      function get ($serial = null) {
       $items = [];
 
       try {
-       if ( isset($num) ) {
+       if ( isset($serial) ) {
 
-        $query = $this->db->connect()->prepare('SELECT * FROM renglonesmovimientos WHERE numserialfabricante = :num');
+        $query = $this->db->connect()->prepare('SELECT * FROM renglonesmovimientos WHERE numserialfabricante = :serialfabri');
 
-        $query->execute(['num'=>$num['num']]);
+        $query->execute(['serialfabri'=>$serial]);
 
         }else {
          $query = $this->db->connect()->query('SELECT * FROM renglonesmovimientos');

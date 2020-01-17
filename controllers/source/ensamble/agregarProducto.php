@@ -66,15 +66,20 @@
 					 'estatus'=>$estatus,
 					 'codparte'=>$codparte,
 					 'codproducto'=>$codigo);
-					if ($this->model->ejemplaresparte->insert($data)){
-						$updateData = array('codpartes'=>$codparte, 'cantidadparte'=>$cantidad);
 
-						if ( $this->model->partes->update($updateData, "2")) {
-			        		$this->view->mensaje = 'Agregados Exitosamente';
-			        	}
+					if($this->model->renglonesmovimientos->get($serial)){
+						if ($this->model->ejemplaresparte->insert($data)){
+							$updateData = array('codpartes'=>$codparte, 'cantidadparte'=>$cantidad);
 
-					} else{
-						var_dump($data);
+							if ( $this->model->partes->update($updateData, "2")) {
+				        		$this->view->mensaje = 'Agregados Exitosamente';
+				        	}
+
+						} else{
+							$this->view->error = 'Ha ocurrido un error al insertar parte.';
+						}
+					} else {
+						$this->view->error = 'Serial no ha sido registrado en el sistema.';
 					}
 				}
 
