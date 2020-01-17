@@ -135,7 +135,7 @@ CREATE TABLE pruebas (
   CONSTRAINT nomprueba_unica UNIQUE (nomprueba));
 
 CREATE TABLE pruebaProducto (
-  numPruebaProducto serial,
+  numPruebaProducto character varying(12),
   fechaPruebaProducto date,
   horaPruebaProducto time,
   resultPruebaProducto character varying(20),
@@ -179,7 +179,7 @@ CREATE TABLE pruebaProducto (
     horaFin time, 
     desActividad text, 
     estatus character varying(1), 
-    numPrueba serial, -- FK
+    numPrueba character varying(12), -- FK
 
   CONSTRAINT pk_numSoporteProducto PRIMARY KEY (num),
   CONSTRAINT fk_numPruebaProductoSoporte FOREIGN KEY (numPrueba) 
