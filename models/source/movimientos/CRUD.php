@@ -16,7 +16,7 @@
           $this->error = $e->getMessage();
           return false;
         }
-      }      
+      }
 
       function insert ($data) {
         try{

@@ -97,7 +97,6 @@
  					$this->view->mensaje = 'Rellene los campos del nuevo producto';
 
  			}
-
  			$equipos = $this->model->equipos->get();
  			$this->view->equipos = $equipos;
  			$this->view->render('ensamble/agregarProducto');
