@@ -207,3 +207,25 @@ INSERT INTO renglonesmovimientos ("codparte","nummovimiento","cantidadparte","nu
         VALUES('ELD-001', '0001', '1','PAN-9217', '1');
 UPDATE partes SET stockactual = stockactual + 1 WHERE codpartes = 'ELD-001';
 
+
+
+INSERT INTO renglonesmovimientos ("codparte","nummovimiento","cantidadparte","numserialfabricante","estatus") 
+        VALUES('SEE-001', '0001', '1','MOU-9213', '1');
+UPDATE partes SET stockactual = stockactual + 1 WHERE codpartes = 'SEE-001';
+
+INSERT INTO renglonesmovimientos ("codparte","nummovimiento","cantidadparte","numserialfabricante","estatus") 
+        VALUES('SEE-001', '0001', '1','MOU-9214', '1');
+UPDATE partes SET stockactual = stockactual + 1 WHERE codpartes = 'SEE-001';
+
+INSERT INTO renglonesmovimientos ("codparte","nummovimiento","cantidadparte","numserialfabricante","estatus") 
+        VALUES('SEE-001', '0001', '1','MOU-9215', '1');
+UPDATE partes SET stockactual = stockactual + 1 WHERE codpartes = 'SEE-001';
+
+INSERT INTO renglonesmovimientos ("codparte","nummovimiento","cantidadparte","numserialfabricante","estatus") 
+        VALUES('SEE-001', '0001', '1','MOU-9216', '1');
+UPDATE partes SET stockactual = stockactual + 1 WHERE codpartes = 'SEE-001';
+
+INSERT INTO renglonesmovimientos ("codparte","nummovimiento","cantidadparte","numserialfabricante","estatus") 
+        VALUES('SEE-001', '0001', '1','MOU-9217', '1');
+UPDATE partes SET stockactual = stockactual + 1 WHERE codpartes = 'SEE-001';
+

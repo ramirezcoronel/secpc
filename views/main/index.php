@@ -18,7 +18,6 @@
    
         <div class="slider">
           <ul>
-            <li><img src="<?php echo constant('URL')?>public/img/nova.jpg"></li>
             <li><img src="<?php echo constant('URL')?>public/img/0.jpg"></li>
             <li><img src="<?php echo constant('URL')?>public/img/01.jpg"></li>
             <li><img src="<?php echo constant('URL')?>public/img/2.jpg"></li>
@@ -26,6 +25,7 @@
             <li><img src="<?php echo constant('URL')?>public/img/4.jpg"></li>
             <li><img src="<?php echo constant('URL')?>public/img/5.jpg"></li>
             <li><img src="<?php echo constant('URL')?>public/img/6.jpg"></li>
+            <li><img src="<?php echo constant('URL')?>public/img/7.jpg"></li>
           </ul>
         </div>
      </div>

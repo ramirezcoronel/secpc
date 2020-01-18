@@ -68,6 +68,8 @@
 					 'codproducto'=>$codigo);
 
 					if($this->model->renglonesmovimientos->get($serial)){
+						$updateEstatus = array('numserialfabricante' => $serial, 'estatus'=>'E');
+						$this->model->renglonesmovimientos->updateEstatus($updateEstatus);
 						if ($this->model->ejemplaresparte->insert($data)){
 							$updateData = array('codpartes'=>$codparte, 'cantidadparte'=>$cantidad);
 

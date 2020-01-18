@@ -48,6 +48,18 @@
         return [];
       }
     }
+
+    public function updateEstatus ($data) {
+      try{
+          $query = $this->db->connect()->prepare('UPDATE renglonesmovimientos SET estatus = :estatus WHERE numserialfabricante = :numserialfabricante');
+
+          $query->execute(['numserialfabricante'=>$data['numserialfabricante'],'estatus'=>$data['estatus']]);
+          return true;
+        } catch(PDOException $e){
+          $this->error = $e->getMessage();
+          return false;
+        }
+    }
       public function getError () {
         return $this->error;
       }
