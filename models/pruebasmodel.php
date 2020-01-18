@@ -72,7 +72,9 @@
 
     function insertPrueba ($data) {
       try{
-        $query = $this->db->connect()->prepare('INSERT INTO pruebaProducto (codPruebaProducto, 
+        $query = $this->db->connect()->prepare('INSERT INTO pruebaProducto (
+          numpruebaproducto,
+          codPruebaProducto, 
           codProductoPrueba, 
           fechaPruebaProducto, 
           horaPruebaProducto, 
@@ -80,6 +82,7 @@
           obserbPruebaProducto, 
           estatusPruebaProducto) 
           VALUES(
+          :numpruebaproducto,
           :codPruebaProducto, 
           :codProductoPrueba, 
           :fechaPruebaProducto, 
@@ -89,8 +92,9 @@
           :estatusPruebaProducto)');
 
         $query->execute(
-          ['codPruebaProducto'=>$data['codPruebaProducto'],
-           'codProductoPrueba'=>$data['codProductoPrueba'], 
+          ['numpruebaproducto'=>$data['numpruebaproducto'],
+          'codPruebaProducto'=>$data['codPruebaProducto'],
+          'codProductoPrueba'=>$data['codProductoPrueba'], 
           'fechaPruebaProducto'=>$data['fechaPruebaProducto'], 
           'horaPruebaProducto'=>$data['horaPruebaProducto'], 
           'resultPruebaProducto'=>$data['resultPruebaProducto'],

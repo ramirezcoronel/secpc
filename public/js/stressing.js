@@ -10,6 +10,7 @@ function habilitar(obj) {
 (function(){
 	var formulario = document.getElementsByName('formulario')[0],
 		elementos = formulario.elements,
+		numprueba = document.getElementById('numprueba'),
 		codprueba = document.getElementById('codprueba'),
 		producto = document.getElementById('producto'),
 		fecha = document.getElementById('fecha'),
@@ -22,11 +23,12 @@ function habilitar(obj) {
 			if (formulario.codprueba.value == 0 
 				|| formulario.producto.value == 0 
 				|| formulario.fecha.value == 0 
-				|| formulario.hora.value == 0) {
+				|| formulario.hora.value == 0
+				|| formulario.numprueba.value == 0) {
 				alert("Todos los campos son obligatorios");
 				e.preventDefault()
 			}else{
-				Vresultado(e);
+				Vnumprueba(e);
 			}
 		}
 		var Vresultado = function(e){
@@ -38,6 +40,17 @@ function habilitar(obj) {
 			}
 			
 		}
+			var Vnumprueba = function(e){
+		var er = /^[0-9]{1,5}$/;
+			var respuesta = er.test(numprueba.value);
+			if (respuesta == false) {
+				alert("Numero de prueba solo acepta numeros de 5 digitos como maximo");
+		 		e.preventDefault()
+			}else{
+				Vresultado(e);
+			}
+		}
+
 		var Vobservacion = function(e){
 		if(formulario.observacion.value == 0){
 					alert("No puede dejar el campo observacion vacio.");
@@ -47,16 +60,7 @@ function habilitar(obj) {
 				confirmar(e);
 			}
 		}
-		var Vproducto = function(e){
-		var er = /^[0-9]{1,2}$/i;
-			var respuesta = er.test(producto.value);
-			if (respuesta == false) {
-				alert("El codigo del producto tiene formato xxxxxx");
-		 		e.preventDefault()
-			}else{
-				confirmar(e);
-			}
-		}
+	
 
 	function confirmar(e)
     {

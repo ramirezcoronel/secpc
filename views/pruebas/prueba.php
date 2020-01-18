@@ -23,6 +23,10 @@
         </div>
 
         <div class="form__box">
+           <div>
+            <label for="numprueba">Numero de prueba:</label>
+            <input type="text" name="numero" id="numprueba">
+          </div>
           <div>
             <label>Tipo de Prueba</label>
             <select name="codprueba" class="select" id="codprueba">
@@ -36,6 +40,7 @@
              <?php } ?>
             </select>
           </div>
+          
           <div>
             <label for="produto">Codigo producto:</label>
             <input type="text" name="produto" id="producto">
