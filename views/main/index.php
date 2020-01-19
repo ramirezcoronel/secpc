@@ -12,45 +12,45 @@
   <?php require 'views/header.php'; ?> <!-- MENU -->
   <div class="container">
     <?php require 'views/menu.php'; ?> <!-- MENU -->
-      <main>
-        <div class="produccion">
-        <h2>Seguimiento de Ensamblado y Control de Producción de Canaima</h2>
-        <div class="contenedor">
-          <div>
-            <div class="slider">
-              <ul>
-                <li><img src="<?php echo constant('URL')?>public/img/0.jpg"></li>
-                <li><img src="<?php echo constant('URL')?>public/img/01.jpg"></li>
-                <li><img src="<?php echo constant('URL')?>public/img/2.jpg"></li>
-                <li><img src="<?php echo constant('URL')?>public/img/3.png"></li>
-                <li><img src="<?php echo constant('URL')?>public/img/4.jpg"></li>
-                <li><img src="<?php echo constant('URL')?>public/img/5.jpg"></li>
-                <li><img src="<?php echo constant('URL')?>public/img/6.jpg"></li>
-                <li><img src="<?php echo constant('URL')?>public/img/7.jpg"></li>
-              </ul>
-            </div>
-          </div>
-          <div> 
-            <div class="alerta">
-              <div class="alerta-header">
-                <h2>Alertas</h2>
-              </div>
-              <?php
-                foreach ($this->mensajeAlerta as $mensaje) {
-                  
-                
-              ?>
-             <div class="alerta-content">
-               <p><?php echo $mensaje;?></p>
-              </div>
-              <?php
-            }
-              ?>
+    <main>
+      <div class="produccion">
+      <h2>Seguimiento de Ensamblado y Control de Producción de Canaima</h2>
+      <div class="contenedor">
+        <div>
+          <div class="slider">
+            <ul>
+              <li><img src="<?php echo constant('URL')?>public/img/0.jpg"></li>
+              <li><img src="<?php echo constant('URL')?>public/img/01.jpg"></li>
+              <li><img src="<?php echo constant('URL')?>public/img/2.jpg"></li>
+              <li><img src="<?php echo constant('URL')?>public/img/3.png"></li>
+              <li><img src="<?php echo constant('URL')?>public/img/4.jpg"></li>
+              <li><img src="<?php echo constant('URL')?>public/img/5.jpg"></li>
+              <li><img src="<?php echo constant('URL')?>public/img/6.jpg"></li>
+              <li><img src="<?php echo constant('URL')?>public/img/7.jpg"></li>
+            </ul>
           </div>
         </div>
-     </div>
-
-      </main>
+        <div> 
+          <div class="alerta">
+            <div class="alerta-header">
+              <p>Alertas</p>
+            </div>
+            <div class="alerta-content">
+              <?php
+                foreach ($this->mensajeAlerta as $mensaje) {
+                 ?>
+                  <div class="alerta-mensaje">
+                    <p class="titulo">Atencion!</p>
+                    <p class="mensaje"><?php echo $mensaje;?></p>
+                  </div>
+                  <?php
+                }
+              ?>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
   </div>
 </body>
 </html>

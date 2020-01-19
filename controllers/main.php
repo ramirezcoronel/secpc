@@ -32,7 +32,7 @@
       $this->view->mensajeAlerta = [];
       foreach ($partes as $parte) {
         if ($parte->getStockActual() <= $parte->getPuntoReorden()) {
-          array_push($this->view->mensajeAlerta, 'La pieza '.$parte->getCodigo(). ' esta por debajo de su punto de reorden.');
+          array_push($this->view->mensajeAlerta, 'La pieza '.$parte->getCodigo(). ' tiene bajo stock.');
         }
       }
 
