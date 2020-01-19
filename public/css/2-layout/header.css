@@ -2,9 +2,11 @@
   Estilos al header 
      *************************************************************/
 .header {
-  padding: 10px;
   background: #333; /* Estilos es para poder usar el absolute en un elemento hijo */
   box-shadow: 0px 3px 9px 0px rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 /* esto es para que todos se posicionen uno de lado de otro */
 .header__texto,
@@ -24,13 +26,7 @@
   height: 70px;
   width: 200px;
   background: url(../../img/1.jpg) center / contain no-repeat;
-  /* esto es para centrarlo gracias a que usamos el relative en el element padre*/
-  position: absolute;
-  margin-left: auto;
-  margin-right: auto;
-  top: 0;
-  left: 0;
-  right: 0;
+ 
 }
 .header__uptaeb {
   background: url(../../img/UPTAEB.png) center / contain no-repeat;
