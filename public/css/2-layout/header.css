@@ -7,6 +7,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0 10px 0;
 }
 /* esto es para que todos se posicionen uno de lado de otro */
 .header__texto,
@@ -31,8 +32,6 @@
 .header__uptaeb {
   background: url(../../img/UPTAEB.png) center / contain no-repeat;
   width: 60px;
-  transform: scale(1.2); /* Para hacerlo mas grande */
-  float: right;
 }
 
 .header a:hover {
