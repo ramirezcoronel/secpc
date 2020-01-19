@@ -37,6 +37,10 @@
       public function getSerial() {
         return $this->serial;
       }
+
+      public function getEstatus () {
+        return $this->estatus;
+      }
   }
 
 ?>

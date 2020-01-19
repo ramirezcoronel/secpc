@@ -43,7 +43,11 @@
         return $this->codparte;
       }
 
-       public function getCantidad() {
+       public function getSerial() {
+        return $this->serialFabri;
+      }
+
+      public function getCantidad() {
         return $this->cantidad;
       }
      

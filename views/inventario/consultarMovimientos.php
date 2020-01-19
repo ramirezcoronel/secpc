@@ -21,7 +21,7 @@
       <div>
           <table>
             <caption>Movimientos</caption>
-            <tr> <th>Numero</th> <th>Tipo</th> <th>Fecha</th> <th>Hora</th> <th>Modificar</th> <th>Eliminar</th>
+            <tr> <th>Numero</th> <th>Tipo</th> <th>Fecha</th> <th>Hora</th><th>Examinar</th> <th>Modificar</th> <th>Eliminar</th>
             <tbody id="tbody-inventario">
               <?php
 
@@ -36,7 +36,9 @@
                 <td><?php echo $movimiento->getTipo(); ?></td>
                 <td><?php echo $movimiento->getFecha(); ?></td>
                 <td><?php echo $movimiento->getHora(); ?></td>
+                <td><a class="crud" href="<?php echo constant('URL')?>inventario/examinarMovimiento/<?php echo $movimiento->getNumero() ?>">Examinar</a></td>
                 <td><a class="crud" href="<?php echo constant('URL')?>inventario/actualizarMovimiento/<?php echo $movimiento->getNumero() ?>">Modificar</a></td>
+
                 <td><button class="crud eliminar" data-id="<?php echo $movimiento->getNumero(); ?>">Eliminar</button></td>
               </tr>
               <?php } ?>

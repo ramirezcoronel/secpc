@@ -34,6 +34,7 @@
               <td><?php echo $producto->getFecha(); ?></td>
               <td><?php echo $producto->getCodigoEquipo(); ?></td>
               <td><?php echo $producto->getEstatus(); ?></td>
+              <td><a class="crud" href="<?php echo constant('URL')?>ensamble/examinarProducto/<?php echo $producto->getCodigo() ?>">Examinar</a></td>
                 <td><a class="crud" href="<?php echo constant('URL')?>ensamble/actualizarProducto/<?php echo $producto->getCodigo() ?>">Modificar</a></td>
                 <td>
                   <button class="crud eliminar" data-id="<?php echo $producto->getCodigo(); ?>">Eliminar</button>
@@ -45,7 +46,7 @@
       </div>
       <div class="bottom">
          <a href="<?php echo constant('URL')?>ensamble/agregarProducto">Agregar</a>
-        <a href="<?php echo constant('URL')?>ensamble">Volver</a>
+        <a href="<?php echo constant('URL')?>">Volver</a>
       </div>
       </div>
     </main>

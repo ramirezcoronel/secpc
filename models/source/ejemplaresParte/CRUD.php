@@ -42,6 +42,29 @@
             return [];
           }
         }
+
+    public function getEjemplares ($producto) {
+      $items = [];
+      try {
+       
+        $query = $this->db->connect()->prepare('SELECT codparte, serialfabri, Count(*) FROM ejemplaresparte WHERE codproducto = :codproducto GROUP BY codparte, serialfabri' );
+              $query->execute(['codproducto'=>$producto]);
+
+        while($row = $query->fetch()){
+
+          $item = new ejemplaresParteClass();
+        
+          $item->setCodParte($row['codparte']);
+          $item->setSerial($row['serialfabri']);
+          $item->setCantidad($row['count']);
+
+          array_push($items, $item);
+        }
+        return $items;
+      } catch (PDOException $e) {
+        return [];
+      }
+    }
     
       public function getError () {
         return $this->error;

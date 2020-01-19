@@ -48,6 +48,36 @@
         return [];
       }
     }
+     function getMovimiento ($nummovimiento = null) {
+      $items = [];
+
+      try {
+       if ( isset($nummovimiento  ) ) {
+
+        $query = $this->db->connect()->prepare('SELECT * FROM renglonesmovimientos WHERE nummovimiento   = :nummovimiento');
+
+        $query->execute(['nummovimiento'=>$nummovimiento ]);
+
+        }else {
+         $query = $this->db->connect()->query('SELECT * FROM renglonesmovimientos');
+        }
+
+
+        while($row = $query->fetch()){
+          $item = new RenglonesMovimientosClass();
+          
+          $item->setSerial($row['numserialfabricante']);
+          $item->setCantidad($row['cantidadparte']);
+          $item->setCodParte($row['codparte']);
+          $item->setEstatus($row['estatus']);
+
+          array_push($items, $item);
+        }
+        return $items;
+      } catch (PDOException $e) {
+        return [];
+      }
+    }
 
     public function updateEstatus ($data) {
       try{
