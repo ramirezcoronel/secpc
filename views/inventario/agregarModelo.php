@@ -48,7 +48,7 @@
          </div>
          <div class="margin-lados">
             <label for="nommodelo">Nombre de Modelo:</label>
-            <input type="text" data-patron="^[a-zA-Z]{3,12}$" name="nommodelo" id="nommodelo" placeholder="...">
+            <input type="text" data-patron="^[A-Za-z0-9]{3,12}$" name="nommodelo" id="nommodelo" placeholder="...">
          </div>
         </div>
         
