@@ -23,7 +23,7 @@
             
         </div>
         <div class="horizontal">
-          <?php if ( isset($this->producto) ){ ?>
+          <?php if ( isset($this->producto) && sizeof($this->partesequipos) ){ ?>
 
         <form action="<?php echo constant('URL')?>ensamble/agregarProducto" method="POST" class="form">
           <div class="form-header">
@@ -87,7 +87,8 @@
     <?php }?>
       
       <!-- DESDE AQUI ESTA EL FORMULARIO PARA AGREGAR PARTES -->
-      <?php if ($this->visible) {?>
+      <?php if ($this->visible && sizeof($partesequipos)) {?>
+        
         <h2 class="text-header margin-bottom">Datos de parte a agregar:</h2>
         <div class="form__box centrar">
            <div id="validacion" data-validacion="parte">
@@ -131,7 +132,7 @@
           <button type="submit" id="submit" name="agregarParte" >Agregar</button>
         </div>  
       </form>
-
+    <?php if (sizeof($this->partesequipos)){?>
      <div class="tabla">
       <div class="tabla-titulo">Necesarias:</div>
       <div>
@@ -139,9 +140,12 @@
             <tr> <th>Codigo</th><th>Cantidad</th>
             <tbody id="tbody-usuarios">
               <?php
+            
                 foreach($this->partesequipos as $row){
                   $parteEquipos = new PartesEquiposClass();
                   $parteEquipos = $row;
+              
+              
               ?>
               </tr >
               <tr>
@@ -154,6 +158,9 @@
       </div>
       </div>
 
+    <?php }?>
+
+      <?php if (sizeof($this->partesensambladas)){?>
       <div class="tabla">
         <div class="tabla-titulo">Ensambladas:</div>
       <div>
@@ -176,6 +183,8 @@
       </div>
 
     <?php }?>
+    <?php }?>
+  
     </div>
     </main>
   </div>

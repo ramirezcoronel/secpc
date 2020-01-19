@@ -26,6 +26,12 @@
  					$partesequipos = $this->model->partesequipos->get($codequipo);
     				$this->view->partesequipos = $partesequipos;
 
+    				if (!sizeof($partesequipos)) {
+    					$this->model->productos->drop($codigo);
+    					$this->view->mensaje = 'Error al ensamblar producto.';
+    					$this->view->error = 'Al equipo seleccionado no se le han sido asignado piezas requeridas para su ensamble.';
+    				}
+
  			}else{
               
  					$this->view->mensaje = 'Ha ocurrido un error al registrar un nuevo producto';
