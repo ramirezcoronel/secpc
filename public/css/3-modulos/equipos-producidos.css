@@ -127,12 +127,18 @@
 }
 
 .alerta-mensaje {
-  background: #fff;
   margin: 10px;
   background-color: rgba(3, 3, 3, 0.3);
   color: #fff;
   padding: 10px;
   font-family: helvetica;
+  border-radius: 10px;
+  transition: transform ease .3s;
+}
+
+.alerta-mensaje:hover {
+  background-color: rgba(3, 3, 3, 0.1);
+  transform: scale(1.05,1.05);
 }
 
 .alerta-header {
