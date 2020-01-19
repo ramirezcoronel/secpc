@@ -116,6 +116,12 @@
   overflow: hidden;
 }
 
+.alerta-content {
+  max-height: 400px;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
 .alerta-header {
   color: #fff;
   font-family: helvetica;
