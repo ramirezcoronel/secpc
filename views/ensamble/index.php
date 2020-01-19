@@ -21,7 +21,7 @@
     <div class="tabla" id="form" data-eliminar="eliminarProducto">
       <div>
           <table>
-            <caption>Producto</caption>
+            <caption>Gestionar Productos</caption>
             <tr> <th>Codigo Producto</th> <th>Fecha</th> <th>Codigo de Equipo</th> <th>Estatus</th> <th>Examinar</th><th>Modificar</th><th>Eliminar</th>
             <tbody id="tbody-ensamble">
               <?php
