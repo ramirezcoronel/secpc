@@ -7,9 +7,16 @@
         }
         public function insert ($data) {
             try{
-              $query = $this->db->connect()->prepare('INSERT INTO ejemplaresparte ( codigo,serialfabri, ubicacion,estatus,codparte,codproducto) VALUES(:codigo, :serialfabri, :ubicacion, :estatus, :codparte, :codproducto)');
-    
-              $query->execute(['codigo'=>$data['codigo'], 'serialfabri'=>$data['serialfabri'],'ubicacion'=>$data['ubicacion'],'estatus'=>$data['estatus'],'codparte'=>$data['codparte'],'codproducto'=>$data['codproducto']]);
+              if (isset($data['serialfabri'])){
+                $query = $this->db->connect()->prepare('INSERT INTO ejemplaresparte ( codigo,serialfabri, ubicacion,estatus,codparte,codproducto) VALUES(:codigo, :serialfabri, :ubicacion, :estatus, :codparte, :codproducto)');
+      
+                $query->execute(['codigo'=>$data['codigo'], 'serialfabri'=>$data['serialfabri'],'ubicacion'=>$data['ubicacion'],'estatus'=>$data['estatus'],'codparte'=>$data['codparte'],'codproducto'=>$data['codproducto']]);
+
+              } else{
+                $query = $this->db->connect()->prepare('INSERT INTO ejemplaresparte ( codigo, ubicacion,estatus,codparte,codproducto) VALUES(:codigo, :ubicacion, :estatus, :codparte, :codproducto)');
+      
+                $query->execute(['codigo'=>$data['codigo'],'ubicacion'=>$data['ubicacion'],'estatus'=>$data['estatus'],'codparte'=>$data['codparte'],'codproducto'=>$data['codproducto']]);
+              }
               
               return true;
             } catch(PDOException $e){

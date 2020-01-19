@@ -18,7 +18,7 @@
  					$producto = $this->model->productos->get($codigo);
  					$this->view->producto = $producto[0];
 
- 					$this->view->visible = true;
+ 					
 
  					 $partes = $this->model->partes->get();
     				$this->view->partes = $partes;
@@ -26,15 +26,21 @@
  					$partesequipos = $this->model->partesequipos->get($codequipo);
     				$this->view->partesequipos = $partesequipos;
 
+    				$this->view->haypartesensambladas = false;
+
     				if (!sizeof($partesequipos)) {
+    					$this->view->validacion = false;
     					$this->model->productos->drop($codigo);
     					$this->view->mensaje = 'Error al ensamblar producto.';
     					$this->view->error = 'Al equipo seleccionado no se le han sido asignado piezas requeridas para su ensamble.';
+    				} else {
+    					$this->view->validacion = true;
     				}
 
  			}else{
               
  					$this->view->mensaje = 'Ha ocurrido un error al registrar un nuevo producto';
+ 					$this->view->validacion = false;
  					$this->view->error = $this->model->productos->getError();
 			  }
 			} else if( isset($_POST['agregarParte']) ){
@@ -94,7 +100,7 @@
 				$producto = $this->model->productos->get($codigo);
  					$this->view->producto = $producto[0];
 
- 					$this->view->visible = true;
+ 					$this->view->validacion = true;
 
  					 $partes = $this->model->partes->get();
     				$this->view->partes = $partes;
@@ -104,9 +110,10 @@
 
     				$partesensambladas = $this->model->ejemplaresparte->get($codigo);
     				$this->view->partesensambladas = $partesensambladas;
+    				$this->view->haypartesensambladas = true;
 			}
 			 else{
-
+			 		$this->view->validacion = false;
  					$this->view->mensaje = 'Rellene los campos del nuevo producto';
 
  			}
