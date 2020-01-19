@@ -19,9 +19,9 @@
             <h2>SECPC</h2> 
         </div>
     <div class="tabla" id="form" data-eliminar="eliminarUsuario">
+      <div class="tabla-titulo">Usuarios</div>
       <div>
           <table>
-            <caption>Usuarios</caption>
             <tr> <th>Nombre</th><th>Apellido</th><th>Username</th><th>C.I.</th><th>Contraseña</th><th>Rol</th><th>ID</th>    <th>Modificar</th> <th>Eliminar</th>
             <tbody id="tbody-usuarios">
               <?php

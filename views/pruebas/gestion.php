@@ -19,9 +19,9 @@
       </div>
 
       <div class="tabla" id="form" data-eliminar="eliminarPrueba">
+        <div class="tabla-titulo">Pruebas</div>
       <div>
           <table>
-            <caption>Pruebas</caption>
             <tr> 
               <th>codigo</th>
               <th>Nombre</th> 

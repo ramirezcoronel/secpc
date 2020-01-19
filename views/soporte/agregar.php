@@ -80,9 +80,9 @@
       </form>
 
        <div class="tabla">
+        <div class="tabla-titulo">Pruebas:</div>
       <div>
           <table>
-            <caption>Pruebas A Dar Soporte:</caption>
             <tr> <th>Num</th><th>Fecha</th>
             <tbody>
               <?php

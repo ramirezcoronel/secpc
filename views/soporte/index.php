@@ -19,9 +19,9 @@
             <h2>Soporte</h2> 
         </div>
     <div class="tabla" id="form" data-eliminar="eliminarSoporte">
+      <div class="tabla-titulo">Gestionar Soporte</div>
       <div>
           <table>
-            <caption>Gestionar Soporte</caption>
             <tr>  <th>Num. Soporte</th>
                   <th>falla Reportada</th>
                   <th>Fecha del Soporte</th>

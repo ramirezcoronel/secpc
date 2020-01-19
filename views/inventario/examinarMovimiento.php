@@ -18,17 +18,17 @@
     <main>
     <div class="text-header"><h2>Gestionar Movimientos</h2></div>
     <div class="tabla" id="form" data-eliminar="eliminarMovimiento">
-      <div>
+      <div class="tabla-titulo">Movimiento <?php echo $this->codigo; ?></div>
+      <div class="overflow">
           <table>
-            <caption>Movimiento <?php echo $this->codigo; ?></caption>
-            <tr> <th>Cod. Parte</th> <th>Cantidad</th> <th>Serial</th> <th>Estatus</th>
+            <tr> <th>Cod. Parte</th> <th>Cantidad</th> <th>Serial</th> <th>Estatus</th></tr>
             <tbody id="tbody-inventario">
               <?php
 
                 foreach($this->movimiento as $row){
                   $movimiento = $row;
               ?>
-              </tr>
+              
               <tr>
                 <td><?php echo $movimiento->getCodParte(); ?></td>
                 <td><?php echo $movimiento->getCantidad(); ?></td>

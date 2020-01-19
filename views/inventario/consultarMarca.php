@@ -18,9 +18,9 @@
     <main>
     <div class="text-header"><h2>Gestionar Marcas</h2></div>
     <div id="form" data-eliminar="eliminarMarca" class="tabla">
+      <div class="tabla-titulo">Marcas</div>
       <div>
           <table>
-            <caption>Marcas</caption>
             <tr> <th>ID</th> <th>Nombre</th> <th>Estatus</th> <th>Modificar</th> <th>Eliminar</th>
           <tbody id="tbody-inventario">
             <?php

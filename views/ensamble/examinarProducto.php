@@ -19,9 +19,9 @@
             <h2>Examinar Productos</h2> 
         </div>
     <div class="tabla" id="form" data-eliminar="eliminarProducto">
+      <div class="tabla-titulo">Producto <?php echo $this->codigo; ?></div>
       <div>
           <table>
-            <caption>Producto <?php echo $this->codigo; ?></caption>
             <tr> <th>Codigo de parte</th> <th>Serial</th> <th>Cantidad de piezas usadas</th>
             <tbody id="tbody-ensamble">
               <?php

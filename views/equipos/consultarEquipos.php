@@ -17,10 +17,9 @@
     <main>
     <div class="text-header"><h2>Gestionar Equipos</h2></div>
     <div  id="form" data-eliminar="eliminarEquipo" class="tabla">
+      <div class="tabla-titulo">Equipos</div>
       <div>
           <table>
-
-            <caption >Equipo</caption>
             <tr> <th>Codigo</th> <th>Nombre</th> <th>Estatus</th> <th>Codigo Tipo de Equipo</th> <th>Modificar</th><th>Eliminar</th>
             <tbody id="tbody-equipos">
 

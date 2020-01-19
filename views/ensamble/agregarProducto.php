@@ -133,9 +133,9 @@
       </form>
 
      <div class="tabla">
+      <div class="tabla-titulo">Necesarias:</div>
       <div>
           <table>
-            <caption>Partes Necesarias:</caption>
             <tr> <th>Codigo</th><th>Cantidad</th>
             <tbody id="tbody-usuarios">
               <?php
@@ -155,9 +155,9 @@
       </div>
 
       <div class="tabla">
+        <div class="tabla-titulo">Ensambladas:</div>
       <div>
           <table>
-            <caption>Partes Ensambladas:</caption>
             <tr> <th>Codigo</th><th>Cantidad</th>
             <tbody id="tbody-usuarios">
               <?php

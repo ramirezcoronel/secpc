@@ -18,9 +18,9 @@
     <main>
     <div class="text-header"><h2>Gestionar Movimientos</h2></div>
     <div class="tabla" id="form" data-eliminar="eliminarMovimiento">
+      <div class="tabla-titulo">Movimientos</div>
       <div>
           <table>
-            <caption>Movimientos</caption>
             <tr> <th>Numero</th> <th>Tipo</th> <th>Fecha</th> <th>Hora</th><th>Examinar</th> <th>Modificar</th> <th>Eliminar</th>
             <tbody id="tbody-inventario">
               <?php

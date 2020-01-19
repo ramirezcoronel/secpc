@@ -18,9 +18,9 @@
     <main>
     <div class="text-header margin-bottom"><h2>Gestionar Partes</h2></div>
     <div id="form" data-eliminar="eliminarPartes" class="tabla">
+      <div class="tabla-titulo">Partes</div>
       <div>
           <table>
-            <caption>Partes</caption>
             <tr> <th>Cod. Parte</th> <th>Serializable</th>  <th>Stock Actual</th> <th>Stock Max.</th> <th>Stock Min.</th> <th>Pto. Reorden</th> <th>id modelo</th> <th>Estatus</th> <th>Modificar</th> <th>Eliminar</th>
             <tbody id="tbody-inventario">
               <?php

@@ -17,9 +17,9 @@
     <main>
     <div class="text-header"><h2>Gestionar Tipos de Equipo</h2></div>
     <div class="tabla" id="form" data-eliminar="eliminarTipoEquipo">
+      <div class="tabla-titulo">Tipos de Equipo</div>
       <div>
           <table>
-            <caption>Tipos de Equipo</caption>
             <tbody id="tbody-equipos">
             <tr> <th>Codigo</th> <th>Nombre</th>  <th>Modificar</th><th>Eliminar</th>
             <?php
