@@ -4,6 +4,7 @@
 	$movimiento = $this->model->renglonesmovimientos->getMovimiento($param[0]);
 
     $this->view->movimiento = $movimiento;
+    $this->view->codigo = $param[0];
 
 
   if ( sizeof($movimiento) ) {

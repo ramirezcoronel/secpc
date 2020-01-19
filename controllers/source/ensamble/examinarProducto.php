@@ -3,6 +3,7 @@
 	$partes = $this->model->ejemplaresparte->getEjemplares($param[0]);
 
     $this->view->partes = $partes;
+    $this->view->codigo = $param[0];
 
 
   if ( sizeof($partes) ) {

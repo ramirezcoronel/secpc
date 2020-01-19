@@ -20,7 +20,7 @@
     <div class="tabla" id="form" data-eliminar="eliminarMovimiento">
       <div>
           <table>
-            <caption>Movimiento</caption>
+            <caption>Movimiento <?php echo $this->codigo; ?></caption>
             <tr> <th>Cod. Parte</th> <th>Cantidad</th> <th>Serial</th> <th>Estatus</th>
             <tbody id="tbody-inventario">
               <?php

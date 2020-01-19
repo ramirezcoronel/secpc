@@ -16,12 +16,12 @@
     <?php require 'views/menu.php'; ?> <!-- MENU -->
     <main>
       <div class="text-header">
-            <h2>Productos</h2> 
+            <h2>Examinar Productos</h2> 
         </div>
     <div class="tabla" id="form" data-eliminar="eliminarProducto">
       <div>
           <table>
-            <caption>Gestionar Productos</caption>
+            <caption>Producto <?php echo $this->codigo; ?></caption>
             <tr> <th>Codigo de parte</th> <th>Serial</th> <th>Cantidad de piezas usadas</th>
             <tbody id="tbody-ensamble">
               <?php
@@ -31,7 +31,7 @@
               </tr >
               <tr >
                 <td><?php echo $partes->getCodParte(); ?></td>
-              <td><?php echo $partes->getSerial(); ?></td>
+              <td><?php echo ($partes->getSerial() !== NULL) ? $partes->getSerial() : 'No serializable'; ?></td>
               <td><?php echo $partes->getCantidad(); ?></td>
               </tr>
               <?php } ?>
