@@ -70,7 +70,7 @@
 
           <div class="margin-lados">
              <label for="hora">Hora de movimiento:</label>
-             <input type="time" id="hora" name="hora" min="09:00" max="18:00" required>
+             <input type="time" id="hora" name="hora"required>
            </div>
            <div class="margin-lados">
              <label for="fecha">Fecha de Movimiento</label>

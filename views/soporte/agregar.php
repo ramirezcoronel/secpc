@@ -22,22 +22,22 @@
             <h2> <?php echo $this->mensaje ?> </h2> 
         </div>
         <div class="horizontal">
-        <form action="<?php echo constant('URL')?>soporte/agregar" method="POST" class="form">
+        <form action="<?php echo constant('URL')?>soporte/agregar" method="POST" class="form" name="formulario">
           <div class="form-header">
             <p>Realizar Soporte</p>
           </div>
         <div class="form__box">
          <div>
             <label for="num">Numero de Soporte:</label>
-            <input type="number" placeholder="Ingrese numero" data-patron="^[0-9]{3,12}$" name="num" id="num">
+            <input type="number" placeholder="Ingrese numero" name="num" id="num">
          </div>
           <div>
              <label for="horaInicio">Hora Inicio de Soporte:</label>
-             <input type="time" id="horaInicio" name="horaInicio" min="09:00" max="18:00" required>
+             <input type="time" id="horaInicio" name="horaInicio" >
            </div>
            <div>
              <label for="horaFin">Hora Fin de Soporte:</label>
-             <input type="time" id="horaFin" name="horaFin" min="09:00" max="18:00" required>
+             <input type="time" id="horaFin" name="horaFin">
            </div>
            <div>
              <label for="fecha">Fecha de Soporte:</label>
@@ -76,7 +76,6 @@
           <a href="<?php echo constant('URL')?>soporte" >Volver</a>
 
         </div>
-
       </form>
 
        <div class="tabla">
@@ -107,5 +106,6 @@
     </main>
   </div>
    <script src="<?php echo constant('URL')?>public/js/modal/modal.js"></script>
+   <script src="<?php echo constant('URL')?>public/js/soporte/agregar.js"></script>
 </body>
 </html>

@@ -30,9 +30,13 @@
 
 		let submit = d.querySelector('#submit') //input de submit
 
-		if (estaVacio(nombre, apellido, username, pass, conPass, cedula, rol) || !coincideExpresionRegular(nombre, apellido, username, cedula)) {
+		if (estaVacio(nombre, apellido, username, pass, conPass, cedula, rol)) {
+			alert('asegurese de llenar todos los campos')
 			return false
-		} 
+		} else if (!coincideExpresionRegular(nombre, apellido, username, cedula) ) {
+			return false
+			alert('hay campos que no coinciden con el tipo de dato esperado')
+		}
 		return true
 	}
 
