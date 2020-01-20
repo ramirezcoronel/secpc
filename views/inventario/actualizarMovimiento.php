@@ -18,36 +18,34 @@
             <h2> <?php echo $this->mensaje ?> </h2>
             
         </div>
-        <form action="<?php echo constant('URL')?>inventario/actualizarMovimiento" method="POST" class="form margin-lados margin-bottom">
-        <div class="form__box esquinas">
-         <div class="margin-lados">
+        <form action="<?php echo constant('URL')?>inventario/actualizarMovimiento" method="POST" class="form">
+          <div class="form-header"> <p>Actualizar Movimiento</p> </div>
+        <div class="form__box">
+         <div>
             <label for="num">Nº del Movimiento:</label>
             <input type="text" name="num" id="num" value="<?php echo $this->movimiento->getNumero();?>" readonly>
          </div>
-          <div class="margin-lados">
+          <div>
              <label for="tipo">Tipo de Movimiento:</label>
-             <input type="text" name="tipo" value="<?php echo $this->movimiento->getTipo();?>" readonly>
+             <input type="text" id="tipo" name="tipo" value="<?php echo $this->movimiento->getTipo();?>" readonly>
            </div>
-        </div>
-
-
-         <div class="form__box esquinas margin-bottom">
-          <div class="margin-lados">
+          <div>
              <label for="hora">Nueva Hora de movimiento:</label>
              <input type="time" id="hora" name="hora" min="09:00" max="18:00" value="<?php echo $this->movimiento->getHora();?> " required >
            </div>
-           <div class="margin-lados">
+           <div>
              <label for="fecha">Nueva Fecha de Movimiento</label>
              <input id="fecha" name="fecha" type="date" value="<?php echo $this->movimiento->getFecha();?>" >
            </div>
         </div>
-        <div class="centrar">
-          <button type="submit" name="actualizar" class="boton" value="actualizar">Actualizar Movimiento</button>
-          <a href="<?php echo constant('URL')?>inventario" class="boton margin-lados">Volver</a>
+        <div class="bottom">
+          <button type="submit" name="actualizar" id="submit" value="actualizar">Actualizar Movimiento</button>
+          <a href="<?php echo constant('URL')?>inventario">Volver</a>
         </div>
       </form>
     </main>
   </div>
+  <script src="<?php echo constant('URL')?>public/js/inventario/actualizarMovimiento.js"></script>
 
 </body>
 </html>

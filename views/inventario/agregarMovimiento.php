@@ -24,7 +24,7 @@
         </div>
           <?php if ( isset($this->movimiento) ){ ?>
 
-             <form action="<?php echo constant('URL')?>inventario/agregarMovimiento" method="POST" class="form margin-lados margin-bottom">
+             <form action="<?php echo constant('URL')?>inventario/agregarMovimiento" method="POST" class="form">
 
            <div class="form-header"> <p>Agregar Movimiento</p> </div>
           

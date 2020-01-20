@@ -21,7 +21,7 @@
 
 	    }else{
          
-	    	$movimiento = $this->model->movimientos->get($param[0]);
+	    	$movimiento = $this->model->movimientos->get(['num'=>$param[0]]);
 	        $this->view->movimiento = $movimiento[0];
 
 
