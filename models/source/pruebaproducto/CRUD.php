@@ -48,6 +48,8 @@
         $query->execute(
           ['numpruebaproducto'=>$data['numpruebaproducto'],
           'resultPruebaProducto'=>$data['resultPruebaProducto']]);
+
+        return true;
       } catch (PDOException $e) {
         $this->error = $e->getMessage();
         echo $e->getMessage();

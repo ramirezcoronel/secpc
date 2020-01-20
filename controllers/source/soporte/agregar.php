@@ -20,9 +20,11 @@
           $this->view->mensaje = 'Agregado Exitosamente!';
         } else {
           $this->view->error = $this->model->pruebaproducto->getError();
+          $this->view->mensaje = 'Error!';
         }
       } else {
         $this->view->error = $this->model->soporte->getError();
+        $this->view->mensaje = 'Error!';
       }
       
     }else{
