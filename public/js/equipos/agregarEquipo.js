@@ -61,7 +61,7 @@
 		elementos.forEach(elemento => {
 			let valor = elemento.value.trim()
  			//en caso de que haya alguno vacio
-			if (valor.length <= 0) {
+			if (valor.length <= 3) {
 				//si entra en la condicional es porque
 				//hay uno vacio
 				validacion = true 
