@@ -49,9 +49,9 @@
 				//si entra en la condicional es porque
 				//hay uno vacio
 				validacion = true 
-				elemento.parentNode.classList.add('alerta')
+				elemento.classList.add('alerta-input')
 			} else {
-				elemento.parentNode.classList.remove('alerta')
+				elemento.classList.remove('alerta-input')
 			}
 		})
 		return validacion
@@ -65,9 +65,9 @@
 
 			if (!valor.match(patron)) {
 				validacion = false
-				elemento.parentNode.classList.add('alerta')
+				elemento.classList.add('alerta-input')
 			} else {
-				elemento.parentNode.classList.remove('alerta')
+				elemento.classList.remove('alerta-input')
 			}
 		})
 		return validacion

@@ -5,12 +5,10 @@
 		submit.addEventListener('click', (e)=>{
 
 			
+				e.preventDefault() //prevenir que se envie el formulario
 
 			if (validacionEstaBien()) { //function principal de validacion
-				c('validacion correcta!')
 			}else{
-				c('validacion incorrecta')
-				e.preventDefault() //prevenir que se envie el formulario
 			}
 		})
 
@@ -24,9 +22,13 @@
 
 		let submit = d.querySelector('#submit') //input de submit
 
-		if (estaVacio(codTipoEquipo, nomTipoEquipo) || !coincideExpresionRegular(codTipoEquipo, nomTipoEquipo)) {
+		if (estaVacio(codTipoEquipo, nomTipoEquipo)) {
+			alert('asegurese de llenar todos los campos')
 			return false
-		} 
+		} else if (!coincideExpresionRegular(codTipoEquipo, nomTipoEquipo)) {
+			alert('hay campos que no coinciden con el tipo de dato esperado')
+			return false
+		}
 		return true
 	}
 
@@ -39,11 +41,9 @@
 				//si entra en la condicional es porque
 				//hay uno vacio
 				validacion = true 
-				elemento.parentNode.style.border = '2px solid #e93624'
-				elemento.parentNode.style.borderRadius = '5px'
+				elemento.classList.add('alerta-input')
 			} else {
-				elemento.parentNode.style.border = '0px solid #fff'
-				elemento.parentNode.style.borderRadius = '5px'
+				elemento.classList.remove('alerta-input')
 			}
 		})
 		return validacion
@@ -51,14 +51,18 @@
 
 	const coincideExpresionRegular = (...elementos) => {
 		let validacion = true
-		c('prueba')
 		elementos.forEach(elemento => {
 			let patron = elemento.dataset.patron
 			let valor = elemento.value.trim()
 
 			if (!valor.match(patron)) {
-				c('no coincide')
+				c(elemento.nextElementSibling)
 				validacion = false
+				elemento.classList.add('alerta-input')
+				elemento.nextElementSibling.classList.remove('esconder')
+			} else {
+				elemento.classList.remove('alerta-input')
+				elemento.nextElementSibling.classList.add('esconder')
 			}
 		})
 		return validacion

@@ -118,7 +118,7 @@
   border: 2px solid #fff;
 }
 
-.form .alerta {
+.form .alerta-input {
   border: 5px transparent solid;
   animation: alerta 2s infinite alternate;
 }
@@ -134,4 +134,21 @@
   100% {
     border: 5px transparent solid;
   }
+}
+
+
+.form .ayuda {
+  display: inline;
+  margin: 0;
+  font-family: sans-serif;
+  padding: 2px;
+  background: rgba(3, 3, 3, 0.4);
+  font-size: 0.9em;
+  transition: all ease 1s;
+}
+
+.form .esconder {
+  visibility: hidden;
+  height: 0;
+  padding: 0;
 }
