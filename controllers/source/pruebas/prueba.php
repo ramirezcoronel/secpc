@@ -1,6 +1,7 @@
 <?php 
 
   if(isset($_POST['agregar'])){
+      $numprueba  = ($_POST['numero'] !== "") ? $_POST['numero'] : NULL;
       $codprueba    = ($_POST['codprueba'] !== "") ? $_POST['codprueba'] : NULL;
       $produto = ($_POST['produto'] !== "") ? $_POST['produto'] : NULL;
       $fecha = ($_POST['fecha'] !== "") ? $_POST['fecha'] : NULL;
@@ -12,6 +13,7 @@
       if ($this->model->validar($produto)) {
 
          if ($this->model->insertPrueba([
+          'numpruebaproducto'=>$numprueba,
           'codPruebaProducto'=>$codprueba, 
           'codProductoPrueba'=>$produto, 
           'fechaPruebaProducto'=>$fecha, 

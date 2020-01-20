@@ -28,6 +28,7 @@
                   <th>Hora de Entrada</th>
                   <th>Hora de Salida</th>
                   <th>Descripcion de Actividad</th>
+                  <th>Num. de Prueba</th>
                   <th>Modificar</th>
                   <th>Eliminar</th>
             <tbody id="tbody-soporteproducto">
@@ -42,7 +43,6 @@
                 <td><?php echo $soporte->getFecha(); ?></td>
                 <td><?php echo $soporte->getHoraEn(); ?></td>
                 <td><?php echo $soporte->getHoraSda(); ?></td>
-                <td><?php echo $soporte->getEstatus(); ?></td>
                 <td><?php echo $soporte->getDesActividad(); ?></td>
                 <td><?php echo $soporte->getNumPrueba(); ?></td>
                 <td><a class="crud" href="<?php echo constant('URL')?>soporte/actualizarSoporte/<?php echo $soporte->getNumSop() ?>">Modificar</a></td>

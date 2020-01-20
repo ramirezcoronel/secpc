@@ -41,7 +41,7 @@ class SoporteClass extends Database{
 		return $this->desactividad;
 	}
 	public function getNumPrueba(){
-		return $this->desactividad;
+		return $this->numPrueba;
 	}
 	
 
