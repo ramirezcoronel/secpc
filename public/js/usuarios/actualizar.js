@@ -4,6 +4,8 @@
 
 		submit.addEventListener('click', (e)=>{
 
+			
+
 			if (validacionEstaBien()) { //function principal de validacion
 				c('validacion correcta!')
 			}else{
@@ -22,14 +24,19 @@
 		let username = d.querySelector('#username') //input de username
 		let pass = d.querySelector('#pass') //input de pass
 		let conPass = d.querySelector('#conPass') //input de confirmar pass
+		let cedula = d.querySelector('#cedula') //input de confirmar cedula
 
 		let rol = d.querySelector('#rol') //input de confirmar rol
 
 		let submit = d.querySelector('#submit') //input de submit
 
-		if (estaVacio(nombre, apellido, username, pass, conPass, rol) || !coincideExpresionRegular(nombre, apellido, username)) {
+		if (estaVacio(nombre, apellido, username, pass, conPass, cedula, rol)) {
+			alert('asegurese de llenar todos los campos')
 			return false
-		} 
+		} else if (!coincideExpresionRegular(nombre, apellido, username, cedula) ) {
+			alert('hay campos que no coinciden con el tipo de dato esperado')
+			return false
+		}
 		return true
 	}
 
@@ -41,24 +48,26 @@
 			if (valor.length <= 3) {
 				//si entra en la condicional es porque
 				//hay uno vacio
-				a('Asegurese de ingresar mas de 3 caracteres por campo de texto y contraseña')
 				validacion = true 
-				elemento.style.border = "thick solid red"
-			} 
+				elemento.parentNode.classList.add('alerta')
+			} else {
+				elemento.parentNode.classList.remove('alerta')
+			}
 		})
 		return validacion
 	}
 
 	const coincideExpresionRegular = (...elementos) => {
 		let validacion = true
-		c('prueba')
 		elementos.forEach(elemento => {
 			let patron = elemento.dataset.patron
 			let valor = elemento.value.trim()
 
 			if (!valor.match(patron)) {
-				c('no coincide' + elemento)
 				validacion = false
+				elemento.parentNode.classList.add('alerta')
+			} else {
+				elemento.parentNode.classList.remove('alerta')
 			}
 		})
 		return validacion

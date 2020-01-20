@@ -117,3 +117,21 @@
   margin-left: 20px;
   border: 2px solid #fff;
 }
+
+.alerta {
+  border: 5px transparent solid;
+  animation: alerta 2s infinite alternate;
+}
+
+@keyframes alerta {
+  0% {
+    border: 5px transparent solid;
+  }
+  
+  50% {
+    border: 5px red solid;
+  }
+  100% {
+    border: 5px transparent solid;
+  }
+}

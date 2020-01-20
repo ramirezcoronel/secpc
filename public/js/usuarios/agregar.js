@@ -34,8 +34,8 @@
 			alert('asegurese de llenar todos los campos')
 			return false
 		} else if (!coincideExpresionRegular(nombre, apellido, username, cedula) ) {
-			return false
 			alert('hay campos que no coinciden con el tipo de dato esperado')
+			return false
 		}
 		return true
 	}
@@ -49,11 +49,9 @@
 				//si entra en la condicional es porque
 				//hay uno vacio
 				validacion = true 
-				elemento.parentNode.style.border = '2px solid #e93624'
-				elemento.parentNode.style.borderRadius = '5px'
+				elemento.parentNode.classList.add('alerta')
 			} else {
-				elemento.parentNode.style.border = '0px solid #fff'
-				elemento.parentNode.style.borderRadius = '5px'
+				elemento.parentNode.classList.remove('alerta')
 			}
 		})
 		return validacion
@@ -61,14 +59,15 @@
 
 	const coincideExpresionRegular = (...elementos) => {
 		let validacion = true
-		c('prueba')
 		elementos.forEach(elemento => {
 			let patron = elemento.dataset.patron
 			let valor = elemento.value.trim()
 
 			if (!valor.match(patron)) {
-				c('no coincide')
 				validacion = false
+				elemento.parentNode.classList.add('alerta')
+			} else {
+				elemento.parentNode.classList.remove('alerta')
 			}
 		})
 		return validacion
