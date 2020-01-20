@@ -25,9 +25,16 @@
 
 		let submit = d.querySelector('#submit') //input de submit
 
-		if (estaVacio( select, codpartes, stockmaximo, stockminimo, puntoreorden) || !coincideExpresionRegular(codpartes) || serializable) {
+		if (estaVacio( select, codpartes, stockmaximo, stockminimo, puntoreorden)) {
+			alert('Asegurese de rellenar todos los campos.')
 			return false
-		} 
+		} else if ( !coincideExpresionRegular(codpartes) ) {
+			alert('hay campos que no coinciden con el tipo de dato esperado')
+			return false
+		} else if ( serializable ) {
+			alert('Indique si es serializable o no')
+			return false
+		}
 		return true
 	}
 
@@ -36,15 +43,13 @@
 		elementos.forEach(elemento => {
 			let valor = elemento.value.trim()
  			//en caso de que haya alguno vacio
-			if (valor.length <= 1) {
+			if (valor.length <= 0) {
 				//si entra en la condicional es porque
 				//hay uno vacio
 				validacion = true 
-				elemento.parentNode.style.border = '2px solid #e93624'
-				elemento.parentNode.style.borderRadius = '5px'
+				elemento.classList.add('alerta-input')
 			} else {
-				elemento.parentNode.style.border = '0px solid #fff'
-				elemento.parentNode.style.borderRadius = '5px'
+				elemento.classList.remove('alerta-input')
 			}
 		})
 		return validacion
@@ -57,8 +62,12 @@
 			let valor = elemento.value.trim()
 
 			if (!valor.match(patron)) {
-				c('no coincide')
 				validacion = false
+				elemento.classList.add('alerta-input')
+				elemento.nextElementSibling.classList.remove('esconder')
+			} else {
+				elemento.classList.remove('alerta-input')
+				elemento.nextElementSibling.classList.add('esconder')
 			}
 		})
 		return validacion

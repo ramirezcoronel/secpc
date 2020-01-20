@@ -30,7 +30,7 @@
           <div>
             <label for="modelo">Modelo de Parte</label>
             <select class="select" name="idmodelo" id="select">
-              <option value="0">Seleccione</option>
+              <option value="">Seleccione</option>
               <?php 
                 foreach($this->modelos as $row){
                   $tipo = new ModelosClass();
@@ -53,7 +53,8 @@
           </div>
           <div>
             <label for="codpartes">Codigo de Partes:</label>
-            <input type="text" data-patron="[A-Z]{3}\-[0-9]{3}" name="codpartes" id="codpartes" placeholder="AAA-111">
+            <input type="text" data-patron="^([A-Z]{3}\-[0-9]{3})$" name="codpartes" id="codpartes" placeholder="XXX-000">
+            <p class="ayuda esconder">*Recuerda usar el formato XXX-000</p>
           </div>
          <div>
             <label for="stockmaximo">Stock Maximo:</label>
