@@ -67,11 +67,13 @@
             </div>
             <div>
               <label for="codequipo">codigo de Equipo:</label>
-              <input type="text" name="codequipo" data-patron="[A-Z]{3}\-[0-9]{3}" id="codequipo" placeholder="AAA-111" />
+              <input type="text" name="codequipo" data-patron="^([A-Z]{3}\-[0-9]{3})$" id="codequipo" placeholder="AAA-111" />
+              <p class="ayuda esconder">*Recuerda usar el formato XXX-000</p>
             </div>
             <div>
               <label for="nomequipo">Nombre de Equipo:</label>
-              <input type="text" data-patron="^[a-zA-Z]{4,12}$" name="nomequipo" id="nomequipo" placeholder="..." />
+              <input type="text" data-patron="^([A-Za-z\s]){3,100}$" name="nomequipo" id="nomequipo" placeholder="..." />
+              <p class="ayuda esconder">*4 a 100 letras.</p>
             </div>
           </div>
 
@@ -112,7 +114,8 @@
           </div>
           <div>
             <label for="codequipopartes">Codigo Parte a Equipo:</label>
-            <input type="text" name="codequipopartes" data-patron="[A-Z]{3}\-[0-9]{3}" id="codequipopartes" placeholder="AAA-111" />
+            <input type="text" name="codequipopartes" data-patron="^([A-Z]{3}\-[0-9]{3})$" id="codequipopartes" placeholder="AAA-111" />
+            <p class="ayuda esconder">*Recuerda usar el formato XXX-000.</p>
           </div>
         </div>
 

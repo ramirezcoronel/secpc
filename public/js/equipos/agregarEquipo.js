@@ -28,9 +28,13 @@
 
 			let submit = d.querySelector('#submit') //input de submit
 
-			if (estaVacio(cantidadParte, select, codequipopartes) || !coincideExpresionRegular(codequipopartes)) {
+			if (estaVacio(cantidadParte, select, codequipopartes) ) {
+				alert('Asegurate de llenar todos los campos.')
 				return false
-			} 
+			} else if ( !coincideExpresionRegular(codequipopartes) ) {
+				alert('hay campos que no coinciden con el tipo de dato esperado')
+				return false
+			}
 			return true	
 
 		} else {
@@ -41,9 +45,13 @@
 
 			let submit = d.querySelector('#submit') //input de submit
 
-			if (estaVacio(codequipo, nomequipo, select) || !coincideExpresionRegular(codequipo, nomequipo)) {
+			if (estaVacio(codequipo, nomequipo, select) ) {
+				alert('Asegurate de llenar todos los campos.')
 				return false
-			} 
+			} else if ( !coincideExpresionRegular(codequipo, nomequipo) ) {
+				alert('hay campos que no coinciden con el tipo de dato esperado')
+				return false
+			}
 			return true	
 		}
 	}
@@ -53,16 +61,13 @@
 		elementos.forEach(elemento => {
 			let valor = elemento.value.trim()
  			//en caso de que haya alguno vacio
-			if (valor.length < 1) {
+			if (valor.length <= 0) {
 				//si entra en la condicional es porque
 				//hay uno vacio
 				validacion = true 
-				elemento.parentNode.style.border = '2px solid #e93624'
-				elemento.parentNode.style.borderRadius = '5px'
-				c(valor)
+				elemento.classList.add('alerta-input')
 			} else {
-				elemento.parentNode.style.border = '0px solid #fff'
-				elemento.parentNode.style.borderRadius = '5px'
+				elemento.classList.remove('alerta-input')
 			}
 		})
 		return validacion
@@ -70,14 +75,17 @@
 
 	const coincideExpresionRegular = (...elementos) => {
 		let validacion = true
-		c('prueba')
 		elementos.forEach(elemento => {
 			let patron = elemento.dataset.patron
 			let valor = elemento.value.trim()
 
 			if (!valor.match(patron)) {
-				c('no coincide')
 				validacion = false
+				elemento.classList.add('alerta-input')
+				elemento.nextElementSibling.classList.remove('esconder')
+			} else {
+				elemento.classList.remove('alerta-input')
+				elemento.nextElementSibling.classList.add('esconder')
 			}
 		})
 		return validacion
