@@ -81,8 +81,9 @@
 	const contraseñasCoinciden = (a, b) => {
 		let valorA = a.value.trim()
 		let valorB = b.value.trim()
-
-		if ( valorB === valorB ) {
+		
+		if ( valorA === valorB ) {
+			c('si pasa')
 			return true
 		} else {
 			return false
