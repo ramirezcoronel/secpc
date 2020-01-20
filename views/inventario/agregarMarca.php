@@ -33,11 +33,13 @@
         <div class="form__box">
          <div>
             <label for="id">Id de la marca:</label>
-            <input type="text" data-patron="[A-Z]{3}\-[0-9]{3}"  name="id" id="id" placeholder="AAA-111">
+            <input type="text" data-patron="^([A-Z]{3}\-[0-9]{3})$"  name="id" id="id" placeholder="AAA-111">
+            <p class="ayuda esconder">*Recuerda el formato XXX-000</p>
          </div>
          <div>
             <label for="nombre">Nombre de la marca:</label>
-            <input type="text" data-patron="^[a-zA-Z]{3,12}$" name="nombre" id="nombre" placeholder="...">
+            <input type="text" data-patron="^[a-zA-Z]{3,25}$" name="nombre" id="nombre" placeholder="...">
+            <p class="ayuda esconder">*De 3 a 25 catacteres.</p>
          </div>
         </div>
          

@@ -27,18 +27,21 @@
          </div>
          <div>
             <label for="nombre">Nombre de Modelo:</label>
-            <input type="text" name="nombre" id="nombre">
+            <input type="text" name="nombre" id="nombre" data-patron="^[a-zA-Z]{3,25}$" placeholder="...">
+            <p class="ayuda esconder">*De 3 a 25 catacteres.</p>
          </div>
         </div>
          
         <div class="bottom">
-          <button type="submit" name="actualizar" value="agregar">actualizar</button>
+          <button type="submit" name="actualizar" id="submit" value="agregar">actualizar</button>
           <a href="<?php echo constant('URL')?>inventario/consultarMarca">Volver</a>
         </div>
         
       </form>
     </main>
   </div>
+    <script src="<?php echo constant('URL')?>public/js/inventario/agregarMarca.js"></script>
+
 
 </body>
 </html>
