@@ -62,7 +62,7 @@
           <div class="margin-lados">
              <label for="tipo">Tipo de Movimiento:</label>
              <select name="tipo" class="select" id="tipo">
-               <option value="0">Seleccione</option>
+               <option value="">Seleccione</option>
                <option value="1">Entrada</option>
                <option value="2">Salida</option>
              </select>
@@ -93,7 +93,7 @@
            <div class="margin-lados"id="validacion" data-validacion="parte">
               <label for="codparte">Partes: </label>
               <select name="codparte" class="select" id="codparte">
-                <option value="0">Seleccione</option>
+                <option value="" data-serial="0">Seleccione</option>
                 <?php
                   foreach($this->partes as $row){
                     $parte = new PartesClass();

@@ -56,16 +56,13 @@
 		elementos.forEach(elemento => {
 			let valor = elemento.value.trim()
  			//en caso de que haya alguno vacio
-			if (valor.length < 1) {
+			if (valor.length <= 0) {
 				//si entra en la condicional es porque
 				//hay uno vacio
-				validacion = true
-				elemento.parentNode.style.border = '2px solid #e93624'
-				elemento.parentNode.style.borderRadius = '5px'
-				c(valor)
+				validacion = true 
+				elemento.classList.add('alerta-input')
 			} else {
-				elemento.parentNode.style.border = '0px solid #fff'
-				elemento.parentNode.style.borderRadius = '5px'
+				elemento.classList.remove('alerta-input')
 			}
 		})
 		return validacion
@@ -73,14 +70,18 @@
 
 	const coincideExpresionRegular = (...elementos) => {
 		let validacion = true
-		c('prueba')
 		elementos.forEach(elemento => {
 			let patron = elemento.dataset.patron
 			let valor = elemento.value.trim()
 
 			if (!valor.match(patron)) {
-				c('no coincide')
+				c(elemento.nextElementSibling)
 				validacion = false
+				elemento.classList.add('alerta-input')
+				elemento.nextElementSibling.classList.remove('esconder')
+			} else {
+				elemento.classList.remove('alerta-input')
+				elemento.nextElementSibling.classList.add('esconder')
 			}
 		})
 		return validacion
@@ -92,6 +93,12 @@
 	let parte       = d.querySelector('#codparte')
 	let cantidadBox = d.querySelector('#cantidadparte') //input de apellido
 	let serialBox   = d.querySelector('#numserialfabricante') //input de apellido 
+
+	serialBox.readOnly = true;
+			serialBox.value = '';
+			serialBox.parentNode.style.display = 'none';
+			cantidadBox.readOnly = false;
+			cantidadBox.value = '';
 	
 	parte.addEventListener('click', ()=>{
 		let serial = parte.options[parte.selectedIndex].dataset.serial
