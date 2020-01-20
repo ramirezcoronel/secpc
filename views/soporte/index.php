@@ -31,7 +31,7 @@
                   <th>Num. de Prueba</th>
                   <th>Modificar</th>
                   <th>Eliminar</th>
-            <tbody id="tbody-soporteproducto">
+            <tbody id="tbody-soporte">
               <?php
                 foreach($this->soportes as $row){
                   $soporte = $row;

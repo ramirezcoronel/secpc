@@ -88,8 +88,8 @@
 
      	try{
 
-     	$query = $this->db->connect()->prepare('DELETE FROM soportesproducto WHERE numSoporteProducto = :numSoporteProdcuto');
-     	$query->execute(['numSoporteProducto'=>$num]);
+     	$query = $this->db->connect()->prepare('DELETE FROM soporteproducto WHERE num = :num');
+     	$query->execute(['num'=>$num]);
 
      	if($query->rowcount()){
      		return true;     	
