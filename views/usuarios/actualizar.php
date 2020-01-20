@@ -30,14 +30,17 @@
          <div>
             <label for="nombre">Nombre:</label>
             <input type="text" data-patron="^[a-zA-Z]{3,12}$" name="nombre" id="nombre" value="<?php echo $this->usuarios->getNombre();?>">
+            <p class="ayuda esconder">*3 a 12 letras.</p>
          </div>
          <div>
             <label for="apellido">Apellido:</label>
             <input type="text" data-patron="^[a-zA-Z]{3,12}$" name="apellido" id="apellido" value="<?php echo $this->usuarios->getApellido();?>">
+            <p class="ayuda esconder">*3 a 12 letras.</p>
          </div>
          <div>
             <label for="username">Username:</label>
             <input type="text" data-patron="^[a-zA-Z]{3,12}$" name="username" id="username" value="<?php echo $this->usuarios->getUsername();?>">
+            <p class="ayuda esconder">*3 a 12 letras.</p>
          </div>
          <div>
             <label for="rol">Rol:</label>
@@ -52,14 +55,17 @@
             <div class="margin-lados">
                 <label for="pass">Contraseña:</label>
                 <input type="password" name="pass" id="pass" value="<?php echo $this->usuarios->getPass();?>" required>
+                <p class="ayuda esconder">*hasta 16 caracteres alfanumericos</p>
             </div>
             <div class="margin-lados">
                 <label for="conPass">Confirmar contraseña:</label>
                 <input type="password" name="pass-confirmar" id="conPass" required>
+                <p class="ayuda esconder">*hasta 16 caracteres alfanumericos</p>
             </div>
           <div>
             <label for="cedula">Pregunta de seguridad(Cedula:)</label>
             <input type="text" data-patron="^[0-9]{6,9}$" name="cedula" id="cedula" placeholder="Ingrese su cedula" value="<?php echo $this->usuarios->getCedula();?>" required readonly>
+            <p class="ayuda esconder">*6 a 9 numeros</p>
           </div>  
         </div>
         

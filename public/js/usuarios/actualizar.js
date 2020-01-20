@@ -4,8 +4,6 @@
 
 		submit.addEventListener('click', (e)=>{
 
-			
-
 			if (validacionEstaBien()) { //function principal de validacion
 				c('validacion correcta!')
 			}else{
@@ -30,11 +28,14 @@
 
 		let submit = d.querySelector('#submit') //input de submit
 
-		if (estaVacio(nombre, apellido, username, pass, conPass, cedula, rol)) {
+		if (estaVacio(nombre, apellido, username, pass, conPass, rol)) {
 			alert('asegurese de llenar todos los campos')
 			return false
-		} else if (!coincideExpresionRegular(nombre, apellido, username, cedula) ) {
+		} else if (!coincideExpresionRegular(nombre, apellido, username, cedula, pass, conPass) ) {
 			alert('hay campos que no coinciden con el tipo de dato esperado')
+			return false
+		} else if (!contraseñasCoinciden(pass,conPass)){
+			alert('Contraseñas no coinciden.')
 			return false
 		}
 		return true
@@ -49,9 +50,9 @@
 				//si entra en la condicional es porque
 				//hay uno vacio
 				validacion = true 
-				elemento.parentNode.classList.add('alerta')
+				elemento.classList.add('alerta-input')
 			} else {
-				elemento.parentNode.classList.remove('alerta')
+				elemento.classList.remove('alerta-input')
 			}
 		})
 		return validacion
@@ -65,12 +66,26 @@
 
 			if (!valor.match(patron)) {
 				validacion = false
-				elemento.parentNode.classList.add('alerta')
+				elemento.classList.add('alerta-input')
+				elemento.nextElementSibling.classList.remove('esconder')
 			} else {
-				elemento.parentNode.classList.remove('alerta')
+				elemento.classList.remove('alerta-input')
+				elemento.nextElementSibling.classList.add('esconder')
 			}
 		})
 		return validacion
+	}
+
+	const contraseñasCoinciden = (a, b) => {
+		let valorA = a.value.trim()
+		let valorB = b.value.trim()
+
+		if ( valorA === valorB ) {
+			c('si pasa')
+			return true
+		} else {
+			return false
+		}
 	}
 
 })(console.log, document, alert)

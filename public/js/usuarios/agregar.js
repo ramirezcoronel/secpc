@@ -4,8 +4,6 @@
 
 		submit.addEventListener('click', (e)=>{
 
-			
-
 			if (validacionEstaBien()) { //function principal de validacion
 				c('validacion correcta!')
 			}else{
@@ -81,7 +79,7 @@
 	const contraseñasCoinciden = (a, b) => {
 		let valorA = a.value.trim()
 		let valorB = b.value.trim()
-		
+
 		if ( valorA === valorB ) {
 			c('si pasa')
 			return true
