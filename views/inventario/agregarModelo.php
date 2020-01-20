@@ -44,11 +44,13 @@
               </div>
          <div class="margin-lados">
             <label for="idmodelo">Id del modelo:</label>
-            <input type="text" data-patron="[A-Z]{3}\-[0-9]{3}" name="idmodelo" id="idmodelo" placeholder="AAA-111">
+            <input type="text" data-patron="^([A-Z]{3}\-[0-9]{3})$" name="idmodelo" id="idmodelo" placeholder="AAA-111">
+            <p class="ayuda esconder">*Recuerda usar el formato XXX-000</p>
          </div>
          <div class="margin-lados">
             <label for="nommodelo">Nombre de Modelo:</label>
-            <input type="text" data-patron="^[A-Za-z0-9]{3,12}$" name="nommodelo" id="nommodelo" placeholder="...">
+            <input type="text" data-patron="^([A-Za-z0-9\s]){3,25}$" name="nommodelo" id="nommodelo" placeholder="...">
+            <p class="ayuda esconder">*3 a 25 caracteres alfanumericos.</p>
          </div>
         </div>
         

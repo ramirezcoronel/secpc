@@ -9,8 +9,8 @@
 			if (validacionEstaBien()) { //function principal de validacion
 				c('validacion correcta!')
 			}else{
-				c('validacion incorrecta')
 				e.preventDefault() //prevenir que se envie el formulario
+				c('validacion incorrecta')
 			}
 		})
 
@@ -19,7 +19,7 @@
 
 	const validacionEstaBien = ()=> {
 		//tomar inputs y botones
-		let idmodelo = d.querySelector('#idmodelo') //input de id
+		let idmodelo = d.querySelector('#id') //input de id
 		let nommodelo = d.querySelector('#nommodelo') //input de nombre
 		let select = d.querySelector('#select') //input de nombre
 
@@ -28,7 +28,7 @@
 		if (estaVacio(idmodelo, nommodelo, select)) {
 			alert('Asegurate de llenar todos los campos.')
 			return false
-		} else if ( !coincideExpresionRegular(idmodelo, nommodelo) ) {
+		} else if ( !coincideExpresionRegular(nommodelo) ) {
 			alert('hay campos que no coinciden con el tipo de dato esperado')
 			return false
 		}
