@@ -33,8 +33,11 @@
 		if (estaVacio(nombre, apellido, username, pass, conPass, cedula, rol)) {
 			alert('asegurese de llenar todos los campos')
 			return false
-		} else if (!coincideExpresionRegular(nombre, apellido, username, cedula) ) {
+		} else if (!coincideExpresionRegular(nombre, apellido, username, cedula, pass, conPass) ) {
 			alert('hay campos que no coinciden con el tipo de dato esperado')
+			return false
+		} else if (!contraseñasCoinciden(pass,conPass)){
+			alert('Contraseñas no coinciden.')
 			return false
 		}
 		return true
@@ -66,11 +69,24 @@
 			if (!valor.match(patron)) {
 				validacion = false
 				elemento.classList.add('alerta-input')
+				elemento.nextElementSibling.classList.remove('esconder')
 			} else {
 				elemento.classList.remove('alerta-input')
+				elemento.nextElementSibling.classList.add('esconder')
 			}
 		})
 		return validacion
+	}
+
+	const contraseñasCoinciden = (a, b) => {
+		let valorA = a.value.trim()
+		let valorB = b.value.trim()
+
+		if ( valorB === valorB ) {
+			return true
+		} else {
+			return false
+		}
 	}
 
 })(console.log, document, alert)

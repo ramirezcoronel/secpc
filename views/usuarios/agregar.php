@@ -29,14 +29,17 @@
          <div>
             <label for="nombre">Nombre:</label>
             <input type="text" data-patron="^[a-zA-Z]{3,12}$" name="nombre" id="nombre">
+            <p class="ayuda esconder">*3 a 12 letras.</p>
          </div>
          <div>
             <label for="apellido">Apellido:</label>
             <input type="text" data-patron="^[a-zA-Z]{3,12}$" name="apellido" id="apellido">
+            <p class="ayuda esconder">*3 a 12 letras.</p>
          </div>
          <div>
             <label for="username">Username:</label>
             <input type="text" data-patron="^[a-zA-Z]{3,12}$" name="username" id="username">
+            <p class="ayuda esconder">*3 a 12 letras.</p>
          </div>
          <div>
             <label for="rol">Rol:</label>
@@ -50,15 +53,18 @@
          </div>
             <div>
                 <label for="pass">Contraseña:</label>
-                <input type="password" name="pass" id="pass" required>
+                <input type="password" name="pass" data-patron="^[a-zA-Z0-9]*$" id="pass" required>
+                <p class="ayuda esconder">*hasta 16 caracteres alfanumericos</p>
             </div>
             <div>
                 <label for="pass">Confirmar contraseña:</label>
-                <input type="password" name="pass-confirmar" id="conPass" required>
+                <input type="password" name="pass-confirmar" data-patron="^([a-zA-Z0-9]){3,16}$"id="conPass" required>
+                <p class="ayuda esconder">*hasta 16 caracteres alfanumericos</p>
             </div>
           <div>
             <label for="cedula">Pregunta de seguridad(Cedula:)</label>
-            <input type="text" name="cedula" id="cedula" data-patron="^[0-9]{6,9}$" placeholder="Ingrese su cedula" required>
+            <input type="text" name="cedula" id="cedula" data-patron="^([a-zA-Z0-9]){3,16}$" placeholder="Ingrese su cedula" required>
+            <p class="ayuda esconder">*6 a 9 numeros</p>
 
           </div>
         </div>
