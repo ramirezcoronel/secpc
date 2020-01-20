@@ -1,0 +1,76 @@
+(( c, d, a )=>{
+
+	d.addEventListener('DOMContentLoaded',()=>{
+
+		submit.addEventListener('click', (e)=>{
+
+			if (validacionEstaBien()) { //function principal de validacion
+				c('validacion correcta!')
+			}else{
+				c('validacion incorrecta')
+				e.preventDefault() //prevenir que se envie el formulario
+			}
+		})
+	})
+
+	const validacionEstaBien = ()=> {
+		//tomar inputs y botones
+		let select = d.querySelector('#select') //input de select
+		let codpartes = d.querySelector('#codpartes') //input de codpartes
+		let stockmaximo = d.querySelector('#stockmaximo') //input de stockmaximo
+		let stockminimo = d.querySelector('#stockminimo') //input de stockminimo
+		let puntoreorden = d.querySelector('#puntoreorden') //input de puntoreorden
+
+		let serializable = d.querySelectorAll('input[name="serializable"]:checked').length ? false : true //input de serializable
+
+		let submit = d.querySelector('#submit') //input de submit
+
+		if (estaVacio( select, codpartes, stockmaximo, stockminimo, puntoreorden)) {
+			alert('Asegurese de rellenar todos los campos.')
+			return false
+		} else if ( !coincideExpresionRegular(codpartes) ) {
+			alert('hay campos que no coinciden con el tipo de dato esperado')
+			return false
+		} else if ( serializable ) {
+			alert('Indique si es serializable o no')
+			return false
+		}
+		return true
+	}
+
+	const estaVacio = (...elementos) => {
+		let validacion = false
+		elementos.forEach(elemento => {
+			let valor = elemento.value.trim()
+ 			//en caso de que haya alguno vacio
+			if (valor.length <= 0) {
+				//si entra en la condicional es porque
+				//hay uno vacio
+				validacion = true 
+				elemento.classList.add('alerta-input')
+			} else {
+				elemento.classList.remove('alerta-input')
+			}
+		})
+		return validacion
+	}
+
+	const coincideExpresionRegular = (...elementos) => {
+		let validacion = true
+		elementos.forEach(elemento => {
+			let patron = elemento.dataset.patron
+			let valor = elemento.value.trim()
+
+			if (!valor.match(patron)) {
+				validacion = false
+				elemento.classList.add('alerta-input')
+				elemento.nextElementSibling.classList.remove('esconder')
+			} else {
+				elemento.classList.remove('alerta-input')
+				elemento.nextElementSibling.classList.add('esconder')
+			}
+		})
+		return validacion
+	}
+
+})(console.log, document, alert)

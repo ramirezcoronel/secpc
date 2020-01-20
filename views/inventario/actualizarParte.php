@@ -25,7 +25,7 @@
             <div>
               <label for="modelo">Modelo de Parte</label>
               <select class="select" name="idmodelo" id="select">
-                <option value="0">Seleccione</option>
+                <option value="">Seleccione</option>
                 <?php 
                   foreach($this->modelos as $row){
                     $tipo = new ModelosClass();
@@ -49,34 +49,32 @@
           <div>
             <label for="codpartes">Codigo de Partes:</label>
             <input type="text" name="codpartes" id="codpartes" value="<?php echo $this->parte->getCodigo(); ?>" readonly>
+            <p class="ayuda esconder">*Recuerda usar el formato XXX-000</p>
           </div>
          <div>
             <label for="stockmaximo">Stock Maximo:</label>
-            <input type="number" name="stockmaximo" id="stockmaximo">
+            <input type="number" name="stockmaximo" id="stockmaximo"  value="<?php echo $this->parte->getStockMaximo(); ?>">
          </div>
          <div>
             <label for="stockminimo">Stock Minimo:</label>
-            <input type="number" name="stockminimo" id="stockminimo">
+            <input type="number" name="stockminimo" id="stockminimo"  value="<?php echo $this->parte->getStockMinimo(); ?>">
          </div>
-         <div class="margin-lados">
+         <div >
             <label for="puntoreorden">Punto de Reorden:</label>
-            <input type="number" name="puntoreorden" id="puntoreorden">
-         </div>
-         <div class="margin-lados">
-            <label for="estatus">Estatus del Modelo:</label>
-            <input type="text" name="estatus" id="estatus">
+            <input type="number" name="puntoreorden" id="puntoreorden"  value="<?php echo $this->parte->getPuntoReorden(); ?>">
          </div>
 
         </div>
          
         <div class="bottom">
           <a href="<?php echo constant('URL')?>inventario">Volver</a>
-          <button type="submit" name="actualizar" value="agregar">Actualizar Partes</button>
+          <button type="submit" name="actualizar" id="submit" value="agregar">Actualizar Partes</button>
         </div>
         
       </form>
     </main>
   </div>
+  <script src="<?php echo constant('URL')?>public/js/inventario/actualizarPartes.js"></script>
 
 </body>
 </html>
