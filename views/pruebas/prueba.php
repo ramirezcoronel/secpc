@@ -62,8 +62,7 @@
           </div>
           <div>
              <label for="select">Observacion si no aprobó</label>
-            <textarea name="observacion" id="observacion">
-            </textarea>
+            <textarea name="observacion" id="observacion"></textarea>
           </div>
         </div>
 
