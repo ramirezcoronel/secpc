@@ -18,10 +18,16 @@
      	}
      }
 
-     function get(){
-     	$items = [];
-     	try{
-     		$query = $this->db->connect()->query('SELECT * FROM soporteproducto');
+     function get($id = null){
+     	 $items = [];
+        try {
+          if ( isset($id) ) {
+            $query = $this->db->connect()->prepare('SELECT * FROM soporteproducto WHERE num = :id');
+            $query->execute(['id'=>$id]);
+          }else {
+  
+           $query = $this->db->connect()->query('SELECT * FROM soporteproducto');
+          }
 
      		while($row = $query->fetch()){
      			$item = new soporteClass();
@@ -41,6 +47,18 @@
      	}   catch (PDOException $e) {
      		return [];
      	}
+     }
+
+     public function update ($data) {
+        try{
+        $query = $this->db->connect()->prepare('UPDATE soporteproducto SET  fallareportada = :fallareportada, fecha = :fecha, horainicio = :horainicio,horafin = :horafin, desactividad = :desactividad WHERE num = :num');
+
+        $query->execute(['num'=>$data['num'], 'fallareportada'=>$data['fallareportada'], 'fecha'=>$data['fecha'], 'horainicio'=>$data['horainicio'], 'horafin'=>$data['horafin'], 'desactividad'=>$data['desactividad']]);
+        return true;
+      }catch(PDOException $e){
+            $this->error = $e->getMessage();
+        return false;
+      }
      }
 
       function gett(){
