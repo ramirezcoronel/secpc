@@ -29,15 +29,17 @@
           <div>
             <label for="codTipoEquipo">Codigo de Tipo de Equipo:</label>
             <input type="text" name="codTipoEquipo" id="codTipoEquipo" value="<?php echo $this->tipo->getCodigo();?>" readonly/>
+            <p class="ayuda esconder">*Recuerda el formato XXX-000</p>
           </div>
           <div>
             <label for="nombre">Nombre de Tipo de Equipo:</label>
-            <input type="text" name="nomTipoEquipo" id="nombre" value="<?php echo $this->tipo->getNombre();?>" />
+            <input type="text" name="nomTipoEquipo" data-patron="^([A-Za-z\s]){3,19}$" id="nombre" value="<?php echo $this->tipo->getNombre();?>" />
+             <p class="ayuda esconder">*3 a 25 caracteres.</p>
           </div>
         </div>
 
         <div class="bottom">
-          <button type="submit" name="actualizar">Actualizar Tipo de Equipo</button>
+          <button type="submit" name="actualizar" id="submit">Actualizar Tipo de Equipo</button>
           <a href="<?php echo constant('URL')?>equipos/consultarTipoEquipo">Volver</a>
         </div>
         
@@ -45,6 +47,7 @@
       </form>
     </main>
   </div>
+  <script src="<?php echo constant('URL')?>public/js/equipos/agregarTipo.js"></script>
 
 </body>
 </html>
