@@ -118,7 +118,7 @@
   border: 2px solid #fff;
 }
 
-.alerta {
+.form .alerta {
   border: 5px transparent solid;
   animation: alerta 2s infinite alternate;
 }
