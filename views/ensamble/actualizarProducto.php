@@ -18,29 +18,19 @@
             <h2> <?php echo $this->mensaje ?> </h2>
             
         </div>
-        <form action="<?php echo constant('URL')?>inventario/actualizarProducto" method="POST" class="form">
+        <form action="<?php echo constant('URL')?>ensamble/actualizarProducto" method="POST" class="form">
            <div class="form-header"> <p>Actualizar Producto</p> </div>
           <div class="form__box">
          <div>
-              <label for="marca">Marca</label>
-              <select class="select" name="idmarca" id="select">
-                <option value="0">Seleccione</option>
-                <?php 
-                  foreach($this->equipo as $row){
-                    $equipo = new EquiposClass();
-                    $equipo = $row;
-               ?>
-              <option value="<?php echo $equipo->getCodigo()?>"><?php echo $equipo->getNombre(); ?></option>
-                <?php } ?>
-              </select>
-              
+              <label for="codequipo">Codigo de Equipo</label>
+               <input type="text" name="codequipo" id="codequipo" value="<?php echo $this->producto->getCodigoEquipo(); ?>" readonly>
             </div>
          <div>
-            <label for="codigo">codigo :</label>
-            <input type="text" name="codigo" id="codigo" value="<?php echo $this->equipo->getCodigo(); ?>" readonly>
+            <label for="codigo">Codigo:</label>
+            <input type="text" name="codigo" id="codigo" value="<?php echo $this->producto->getCodigo(); ?>" readonly>
          </div>
          <div>
-            <label for="fecha">fecha Produccion:</label>
+            <label for="fecha">Fecha de Produccion:</label>
             <input type="date" name="fecha" id="fecha">
          </div>
         </div>

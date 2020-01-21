@@ -20,11 +20,11 @@
 
   	  			}else{	
 
-  	  				$equipo = $this->model->productos->get($param[0]);
+  	  				$producto = $this->model->productos->get($param[0]);
 
-              $this->view->equipo = $equipo[0];
+              $this->view->producto = $producto[0];
 
-  	  				if (sizeof($equipo)) {
+  	  				if (sizeof($producto)) {
   	  					$this->view->mensaje = 'Rellene lo campos';
   	  					$this->view->render('ensamble/actualizarProducto');
 

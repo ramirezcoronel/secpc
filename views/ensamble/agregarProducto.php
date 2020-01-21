@@ -47,15 +47,15 @@
           
     <?php } else {?>
 
-    <form name="formulario" method="post" action="<?php echo constant('URL')?>ensamble/agregarProducto"  class="form" id="form">
-        <div class="form-header">
+    <form name="formulario" method="post" action="<?php echo constant('URL')?>ensamble/agregarProducto"  class="form" id="form" >
+        <div class="form-header" data-validacion="producto" id="validacion">
             <p>Agregar Producto</p>
           </div>
           <div class="form__box">
             <div>
               <label for="codequipo ">Codigo Equipo</label>
-              <select name="codequipo" class="select" id="select">
-                <option value="0">Seleccione</option>
+              <select name="codequipo" class="select" id="select" placeholder="XXX-000">
+                <option value="">Seleccione</option>
                 <?php 
               foreach($this->equipos as $row){
                 $equipo = new EquiposClass();
@@ -67,7 +67,8 @@
             </div>
             <div>
               <label for="codigo">codigo de Producto:</label>
-              <input type="text" name="codigo" id="codigo" />
+              <input type="text" name="codigo" id="codigo" data-patron="^([A-Z]{3}\-[0-9]{3})$" />
+              <p class="ayuda esconder">*Recuerda usar el formato XXX-000</p>
             </div>
             <div>
               <label for="fecha">Fecha de Produccion:</label>
@@ -77,7 +78,7 @@
 
           <div class="bottom">
           <a href="<?php echo constant('URL')?>ensamble">Volver</a>
-          <button type="submit" name="agregar">Agregar Producto</button>
+          <button type="submit" id="submit" name="agregar">Agregar Producto</button>
 
         </div>
         
@@ -91,10 +92,10 @@
         
         <h2 class="text-header margin-bottom">Datos de parte a agregar:</h2>
         <div class="form__box centrar">
-           <div id="validacion" data-validacion="parte">
+           <div data-validacion="parte" id="validacion">
               <label for="codparte">Partes: </label>
               <select name="codparte" class="select" id="codparte">
-                <option value="0">Seleccione</option>
+                <option value="">Seleccione</option>
                 <?php
                   foreach($this->partes as $row){
                     $parte = new PartesClass();
@@ -120,7 +121,8 @@
           </div>
           <div>
             <label for="codigoEjemplar">Codigo:</label>
-            <input type="text" name="codigoEjemplar" id="codigoEjemplar" />
+            <input type="text" name="codigoEjemplar" id="codigoEjemplar" data-patron="^([A-Z]{3}\-[0-9]{3})$"/>
+            <p class="ayuda esconder">*Recuerda usar el formato XXX-000</p>
           </div>
           <div>
             <label for="numserialfabricante">Serial fabricante:</label>
