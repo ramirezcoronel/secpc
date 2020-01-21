@@ -38,7 +38,7 @@
             <div class="alerta-content">
 
               <?php
-              if (sizeof($this->mensajeAlertan)) {
+              if (sizeof($this->mensajeAlerta)) {
 
                 foreach ($this->mensajeAlerta as $mensaje) {
                  ?>
