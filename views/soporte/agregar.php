@@ -59,7 +59,7 @@
                 foreach($this->pruebas as $row){
                   $prueba = $row;
 
-                  if ($prueba->getResultado() === 'No pasó la prueba'){
+                  if ($prueba->getResultado() === 'No pasa la prueba'){
                     ?>
                      <option value="<?php echo $prueba->getNum()?>">
                         <?php echo  'Prueba N°'.$prueba->getNum();?>
@@ -88,7 +88,7 @@
                 foreach($this->pruebas as $row){
                   $prueba = $row;
 
-                  if ($prueba->getResultado() === 'No pasó la prueba'){
+                  if ($prueba->getResultado() === 'No pasa la prueba'){
                     ?>
                      </tr >
                     <tr>
