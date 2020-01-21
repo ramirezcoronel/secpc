@@ -29,7 +29,9 @@
           $item->setnumpruebaproducto($row['numpruebaproducto']);
           $item->setResultado($row['resultpruebaproducto']);
           $item->setFecha($row['fechapruebaproducto']);
-
+          $item->setHora($row['horapruebaproducto']);
+          $item->setobservacion($row['obserbpruebaproducto']);
+          $item->setcodproducto($row['codproductoprueba']);
           array_push($items, $item);
         }
         return $items;

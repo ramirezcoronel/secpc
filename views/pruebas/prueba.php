@@ -56,8 +56,8 @@
           <div>
             <label for="select">Resultado de la prueba</label>
             <select onchange="habilitar(this)" name="resultado" id="select">
-              <option>No pasó la prueba</option>
-              <option>Pasó la prueba</option> 
+              <option>No pasa la prueba</option>
+              <option>Pasa la prueba</option> 
             </select>
           </div>
           <div>

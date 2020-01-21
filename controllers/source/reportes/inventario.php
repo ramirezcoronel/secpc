@@ -24,7 +24,7 @@
 		$pdf->Cell(30, 10,  'Id',1, 0,'C', 0);
 		$pdf->Cell(30, 10, 'Nombre',1, 0,'C', 0);
 		$pdf->Cell(20, 10, 'Estatus',1, 0,'C', 0);
-		$pdf->Cell(30, 10, 'Marca',1, 0,'C', 0);
+		$pdf->Cell(30, 10, 'Id marca',1, 0,'C', 0);
 
 		$pdf->Ln(10);
 

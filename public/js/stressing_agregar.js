@@ -23,10 +23,10 @@
 
 
 		var Vcod = function(e){
-		var er = /^[a-z]{3}[0-9]{3}$/i;
+		var er = /^[a-zA-Z]{3}[-][0-9]{3}$/i;
 			var respuesta = er.test(cod.value);
 			if (respuesta == false) {
-				alert("El codigo debe tener el siguiente formato xxx000");
+				alert("El codigo debe tener el siguiente formato XXX-000");
 		 		e.preventDefault()
 			}else{
 				Vnombre(e);
