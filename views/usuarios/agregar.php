@@ -63,7 +63,7 @@
             </div>
           <div>
             <label for="cedula">Pregunta de seguridad(Cedula:)</label>
-            <input type="text" name="cedula" id="cedula" data-patron="^([a-zA-Z0-9]){3,16}$" placeholder="Ingrese su cedula" required>
+            <input type="text" name="cedula" id="cedula" data-patron="^[0-9]{6,9}$" placeholder="Ingrese su cedula" required>
             <p class="ayuda esconder">*6 a 9 numeros</p>
 
           </div>
