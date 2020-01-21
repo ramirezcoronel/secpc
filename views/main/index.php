@@ -36,7 +36,10 @@
               <p>Alertas</p>
             </div>
             <div class="alerta-content">
+
               <?php
+              if (sizeof($this->mensajeAlertan)) {
+
                 foreach ($this->mensajeAlerta as $mensaje) {
                  ?>
                   <div class="alerta-mensaje">
@@ -45,6 +48,14 @@
                   </div>
                   <?php
                 }
+              } else {
+                ?>
+                <div class="alerta-mensaje">
+                    <p class="titulo-bueno">Que bien!</p>
+                    <p class="mensaje">No tienes alertas en el sistema.</p>
+                  </div>
+                <?php
+              }
               ?>
             </div>
           </div>
