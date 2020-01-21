@@ -27,7 +27,7 @@
          </div>
          <div>
             <label for="nombre">Nombre de Modelo:</label>
-            <input type="text" name="nombre" id="nombre" data-patron="^[a-zA-Z]{3,25}$" placeholder="...">
+            <input type="text" name="nombre" id="nombre" data-patron="^([A-Za-z\s]){3,25}$" placeholder="...">
             <p class="ayuda esconder">*De 3 a 25 catacteres.</p>
          </div>
         </div>
